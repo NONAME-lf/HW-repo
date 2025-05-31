@@ -1,0 +1,48 @@
+iframe {
+    width: 1000px;
+    height: 700px;
+    border: none;
+}
+
+#cv-iframe {
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: 700px;
+    height: 100%;
+}
+
+body {
+    /* text-align: center; */
+}
+
+h1 {
+    background-color: #eaeaea;
+}
+
+h2 {
+    background-color: #eaeaea;
+}
+
+article {
+    background-color: #f5f4f4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+section {
+    background-color: #f5f4f4;
+    border-radius: 5px;
+}
+
+nav {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
