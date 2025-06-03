@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 05 - Forms</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            margin-bottom: 10px;
+        }
+
+        .form-row label {
+            display: inline-block;
+            width: 200px;
+        }
+
+        .form-buttons {
+            text-align: center;
+        }
+
+        .form-radio {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <form action="#" method="post">
+                <div class="form-row">
+                    <label for="full-name">Повне ім'я</label>
+                    <input type="text" name="full-name" id="full-name" minlength="2" required>
+                </div>
+                <div class="form-row">
+                    <label for="email" lang="en">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" id="password" minlength="7" required>
+                </div>
+                <div class="form-row">
+                    <label for="confirm-password">Пароль ще раз</label>
+                    <input type="password" name="confirm-password" id="confirm-password" minlength="7" required>
+                </div>
+                <div class="form-row">
+                    <span>Стать</span>
+                    <label> Чоловіча
+                        <input type="radio" name="sex" value="male" checked>
+                    </label>
+                    <label> Жіноча
+                        <input type="radio" name="sex" value="female">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label for="age">Вік</label>
+                    <input type="number" name="age" id="age" min="4" max="120" required>
+                </div>
+                <div class="form-radio"> <!--why form-row?-->
+                    <label for="select">Курс</label>
+                    <select name="select" id="select" required>
+                        <option value="" disabled selected>-=Виберіть курс=-</option>
+                        <option value="front-end" lang="en">Front-End</option>
+                        <option value="back-end" lang="en">Back-End</option>
+                        <option value="pm" lang="en">Project Management</option>
+                        <option value="qa" lang="en">QA Manual</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="adress">Повна адреса</label>
+                    <textarea name="adress" id="adress" placeholder="Країна, регіон, місто/селище, вулиця"></textarea>
+                </div>
+                <div class="form-check">
+                    <label for="checkbox">Я погоджуюсь з обробкою персональний даних</label>
+                    <input type="checkbox" name="checkbox" id="checkbox" value="checked" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="reset">Очистити форму</button>
+                    <button type="submit">Зареєструватися</button>
+                </div>
+            </form>
+            <a href="extra/index.html">Екстра</a>
+        </div>
+    </main>
+</body>
+
+</html>
