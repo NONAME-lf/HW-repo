@@ -24,7 +24,7 @@
             text-align: center;
         }
 
-        .form-radio {
+        .form-radio span {
             display: inline-block;
             width: 200px;
         }
@@ -51,7 +51,7 @@
                     <label for="confirm-password">Пароль ще раз</label>
                     <input type="password" name="confirm-password" id="confirm-password" minlength="7" required>
                 </div>
-                <div class="form-row">
+                <div class="form-radio">
                     <span>Стать</span>
                     <label> Чоловіча
                         <input type="radio" name="sex" value="male" checked>
@@ -64,7 +64,7 @@
                     <label for="age">Вік</label>
                     <input type="number" name="age" id="age" min="4" max="120" required>
                 </div>
-                <div class="form-radio"> <!--why form-row?-->
+                <div class="form-row">
                     <label for="select">Курс</label>
                     <select name="select" id="select" required>
                         <option value="" disabled selected>-=Виберіть курс=-</option>
