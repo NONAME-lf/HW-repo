@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--Black, #070707);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 60.625rem;
+    height: 500px;
+    margin: 0 auto;
+}
+
+/* Header */
+.container.navigation {
+    height: 79px;
+}
+
+.container ul {
+    width: 100%;
+    margin: 0 auto;
+    height: 79px;
+    /* 79.5? */
+}
+
+.main-menu ul {
+    font-size: 0;
+}
+
+.main-menu ul li {
+    display: inline-block;
+    padding: 27.5px 20px;
+    letter-spacing: 0.36px;
+    font-size: 1.125rem;
+}
+
+.main-menu ul li a {
+    color: var(--Black, #070707);
+    color: #828282;
+    text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+    color: var(--Black, #070707);
+}
+
+.main-menu ul li #home-link {
+    color: var(--Black, #070707);
+}
+
+.header-line {
+    width: 970px;
+    height: 1px;
+    background: #828282;
+    /* position: absolute;
+    left: 235px;
+    top: 80px; */
+    /* ??? wrong position */
+}
+
+/* Main Section */
+.main-section h1 {
+    color: var(--Black, #070707);
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: left;
+    background-color: #fff;
+    height: 60px;
+    width: 300px;
+    margin: 12px 0 0 0;
+    /* width: 300px;
+    height: 60px;
+    flex-shrink: 0; */
+}
+
+.container.main-section {
+    height: 497px;
+}
+
+.main-section img {
+    margin: 50px 0 0 0;
+}
+
+/* Section About Me */
+.about-section h2 {
+    padding: 100px 0 35px 0;
+    font-size: 2.125rem;
+    font-weight: 700;
+}
+
+.about-section p {
+    padding: 15px 0 15px 0;
+    margin: 0 245px;
+}
+
+.about-section {
+    background: var(--bg-gray, #F6F6F6);
+}
+
+/* Skills */
+.container.skills-section {
+    height: 564px;
+}
+
+.skills-section hgroup h2 {
+    padding: 100px 0 0 0;
+    margin: 0 0 20px 0;
+    font-size: 2.125rem;
+    font-weight: 700;
+    /* height: 140px; */
+}
+
+.skills-section hgroup {
+    padding-bottom: 50px;
+    /* height: 84px; */
+}
+
+
+
+.skills-section ul {
+    display: flex;
+    width: 970px;
+    height: 230px;
+    justify-content: center;
+    align-items: center;
+    gap: 97px;
+    flex-shrink: 0;
+
+}
+
+.skills-section ul li {
+    display: inline-block;
+    letter-spacing: 0.36px;
+    font-size: 1.125rem;
+}
+
+.skills-section ul li figure img {
+    padding-bottom: 25px;
+}
+
+.skills-section ul li figcaption {
+    color: var(--text, #828282);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.018rem;
+}
+
+.skills-section ul li div {
+    padding-top: 60px;
+}
+
+
+/* Portfolio */
+.portfolio-section {
+    background: var(--bg-gray, #F6F6F6);
+    height: 2268px;
+}
+
+.container.fashion-store {
+    height: 630px;
+}
+
+.portfolio-section h2 {
+    padding: 100px 0 50px 0;
+}
+
+.container.fashion-store figure {
+    height: 630px;
+}
+
+.container.fashion-store figure figcaption {
+    padding-top: 40px;
+}
+
+figure figcaption a {
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    display: inline-block;
+    color: var(--Black, #070707);
+
+}
+
+.container.fashion-store figure figcaption a {
+    height: 50px;
+    width: 200px;
+}
+
+.container.reebok-store {
+    margin-top: 70px;
+    height: 604px;
+}
+
+.container.reebok-store figure {
+    height: 604px;
+}
+
+.container.reebok-store figure figcaption {
+    margin-top: 40px;
+}
+
+.container.reebok-store figure figcaption a {
+    height: 24px;
+    width: 200px;
+}
+
+.container.braun-landing {
+    margin-top: 70px;
+}
+
+.container.braun-landing figure figcaption {
+    margin-top: 40px;
+}
+
+.container.braun-landing figure figcaption a {
+    width: 260px;
+    height: 24px;
+}
+
+/* Footer */
+footer .container {
+    height: 400px;
+}
+
+footer .container hgroup h2 {
+    display: inline-block;
+    margin: 100px 0 20px 0;
+    font-size: 2.125rem;
+    height: 40px;
+    width: 150px;
+}
+
+footer .container hgroup p {
+    height: 46px;
+    width: 280px;
+    margin: 0 auto;
+}
+
+#button {
+    margin: 60px auto 30px auto;
+    display: flex;
+    width: 180px;
+    height: 44px;
+    padding: 0px 16px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    background: var(--Black, #070707);
+    font-weight: 700;
+    letter-spacing: 0.112rem;
+    color: #FFF;
+    text-decoration: none;
+}
+
+footer .container ul {
+    display: flex;
+    width: 310px;
+    height: 40px;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+footer .container ul li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+
+#footer-text {
+    margin: 60px auto 0 auto;
+    padding-bottom: 100px;
+    width: 200px;
+    height: 60px;
+    flex-shrink: 0;
+    color: #828282;
+    font-size: 0.875rem;
+}
+
+.test {
+    height: 100px;
+    background-color: red;
+}
