@@ -113,19 +113,21 @@ header .container {
     display: inline-block;
     text-align: center;
     position: relative;
-    left: 30vw;
+    left: 20vw;
 
+    min-width: 900px;
     color: #fff;
     text-align: left;
     width: 400px;
-    margin-left: 30px;
-    padding: 0 51px;
+    /* margin-left: 30px; */
+    padding: 0 251px;
 }
 
-/* .main-section hgroup h3,
+.main-section hgroup h3,
 p {
-    max-width: 390px;
-} */
+    min-width: 100px;
+    max-width: 250px;
+}
 
 .burgundy-div {
     background-color: #780f1f;
