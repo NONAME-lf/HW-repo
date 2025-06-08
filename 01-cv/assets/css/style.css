@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    border-right: 1px solid #767676;
+    border-left: 1px solid #767676;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
@@ -28,10 +33,17 @@ li a:hover {
     color: #780f1f;
 }
 
+h3 {
+    padding: 20px 0 20px 0;
+    display: inline-block;
+    margin-left: 10px;
+}
+
 /* HEADER */
 header {
     background-color: #ebebeb;
     border-bottom: 1px solid #767676;
+    border-top: 1px solid #767676;
 }
 
 header .container {
@@ -55,10 +67,8 @@ header .container {
     text-decoration: none;
     scale: 1.1;
     display: block;
-    transition: color 0.3s ease;
-    transition: scale 0.15s ease;
+    transition: all 0.3s ease;
 }
-
 
 .language-switch-active {
     position: absolute;
@@ -101,10 +111,21 @@ header .container {
 
 .main-section hgroup {
     display: inline-block;
-    padding: 0 0 0 0;
+    text-align: center;
     position: relative;
-    top: -7dvh;
+    left: 30vw;
+
+    color: #fff;
+    text-align: left;
+    width: 400px;
+    margin-left: 30px;
+    padding: 0 51px;
 }
+
+/* .main-section hgroup h3,
+p {
+    max-width: 390px;
+} */
 
 .burgundy-div {
     background-color: #780f1f;
@@ -115,19 +136,24 @@ header .container {
     z-index: -1;
 }
 
-.main-section hgroup {
-    color: #fff;
-    text-align: left;
-    width: 400px;
-    margin-left: 30px;
-    padding: 0 51px;
-}
-
 .main-section hgroup h3 {
     font-size: 2.5rem;
     line-height: 45px;
 }
 
+.h-icon img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.container ul li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
 
 /* CONTACT Section */
 .contact-section {
@@ -136,24 +162,10 @@ header .container {
     margin-top: -44px;
 }
 
-.contact-section .contact-img img {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-}
-
 .contact-section h2 {
     display: inline-block;
     margin-bottom: 30px;
     margin-left: 10px;
-}
-
-.contact-section ul li img {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    vertical-align: middle;
 }
 
 .contact-section ul li:not(:last-child) {
@@ -174,32 +186,77 @@ header .container {
     background-color: #dbd9dc;
 }
 
-.social-networks-section h3 {
-    padding: 20px 0 20px 0;
-    background-color: #dbd9dc;
-    display: inline-block;
-    margin-left: 10px;
-}
-
 .social-networks-section li {
     display: block;
     margin-bottom: 20px;
 }
 
-.social-networks-section .socnet-img img {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-.social-networks-section .soc-icon img {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-}
-
 .social-networks-section ul span {
     margin-right: 30px;
+}
+
+.social-networks-section {
+    border-bottom: 3px solid #780f1f;
+}
+
+/* SKILLS Section */
+.skills-section {
+    padding: 50px 0;
+    background-color: #efefef;
+}
+
+.skills-section ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+/* LANG Section */
+.lang-section {
+    padding-bottom: 50px;
+    background-color: #efefef;
+    border-bottom: 3px solid #780f1f;
+}
+
+.lang-section ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+/* EDUCATION section */
+.edu-section {
+    padding: 50px 0 50px 0;
+}
+
+.edu-section ul {
+    list-style-image: url('../img/dot_icon.svg');
+    list-style-position: inside;
+}
+
+.edu-section ul .edu-text:not(:last-child) {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* EXPERIENCE Section */
+.exp-section {
+    padding-bottom: 50px;
+    border-bottom: 3px solid #780f1f;
+}
+
+.exp-section ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+}
+
+.exp-section ol span {
+    padding-left: 10px;
+}
+
+.exp-section ol div {
+    padding-left: 25px;
+    max-width: 600px;
+}
+
+.exp-section ol li:not(:last-child) {
+    margin-bottom: 20px;
 }
