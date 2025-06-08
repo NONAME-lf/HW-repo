@@ -5,44 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <div class="container">
+            <div class="language-switch">
+                <a href="../uk/">
+                    <h1>Resume</h1>English
+                </a>
+                <div class="language-switch-active">
+                    <a href="../uk/" lang="uk">
+                        <span class="span-switch">Резюме</span> Українська
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
     <main>
-        <h1>Resume</h1>
-        <a href="../uk/">Українська</a>
-        <br>
-        <img src="../assets/img/IMG_9360_copy.JPG" alt="" width="200" height="200">
-        <br>
-        <h3>Artemii Mekshakov</h3>
-        <span>Computer Science Student | Backend Developer</span>
-        <br>
-        <h2>Contact Information</h2>
-        <ul>
-            <li>
-                Phone: <a href="tel:+380686139611">+380 (68) 613 96 11</a>
-            </li>
-            <li>
-                Mail: <a href="mailto:mekshakov.art@gmail.com">mekshakov.art@gmail.com</a>
-            </li>
-            <li>
-                GitHub: <a href="https://github.com/NONAME-lf" target="_blank">NONAME-lf</a>
-            </li>
-        </ul>
-        <h3>Social Networks</h3>
-        <ul>
-            <li>
-                LinkedIn: <a href="https://www.linkedin.com/in/artemii-mekshakov-7767b2343/" target="_blank">Artemii
-                    Mekshakov</a>
-            </li>
-            <li>
-                Telegram: <a href="https://t.me/Nonami_lf" target="_blank">@Nonami_lf</a>
-            </li>
-        </ul>
+        <section class="main-section">
+            <div class="container">
+                <img src="../assets/img/IMG_9360_copy.JPG" alt="">
+                <hgroup>
+                    <h3>Artemii Mekshakov</h3>
+                    <span>Computer Science Student | Backend Developer</span>
+                </hgroup>
+            </div>
+            <div class="burgundy-div"></div>
+        </section>
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-img">
+                    <img src="../assets/img/contacts_icon.svg" alt="phone_icon">
+                    <h2>Contact Information</h2>
+                </div>
+                <ul>
+                    <li>
+                        <img src="../assets/img/phone_icon.png" alt="phone_icon">
+                        <span>Phone:</span><a href="tel:+380686139611">+380 (68) 613 96 11</a>
+                    </li>
+                    <li>
+                        <img src="../assets/img/email_icon.svg" alt="phone_icon">
+                        <span>Mail:</span><a href="mailto:mekshakov.art@gmail.com">mekshakov.art@gmail.com</a>
+                    </li>
+                    <li>
+                        <img src="../assets/img/github_icon.svg" alt="phone_icon">
+                        <span>GitHub:</span><a href="https://github.com/NONAME-lf" target="_blank">NONAME-lf</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="social-networks-section">
+            <div class="container">
+                <div class="socnet-img">
+                    <img src="../assets/img/socnet_icon.svg" alt="social network">
+                    <h3>Social Networks</h3>
+                </div>
+                <ul>
+                    <li>
+                        <div class="soc-icon">
+                            <img src="../assets/img/linkedin_icon.svg" alt="">
+                            <span>LinkedIn:</span> <a href="https://www.linkedin.com/in/artemii-mekshakov-7767b2343/"
+                                target="_blank">Artemii
+                                Mekshakov</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="soc-icon">
+                            <img src="../assets/img/telegram_icon.png" alt="">
+                            <span>Telegram:</span> <a href="https://t.me/Nonami_lf" target="_blank">@Nonami_lf</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
         <h3>Education</h3>
         <ul>
             <li>
-                <strong>2023 - 2027</strong> - TARAS SHEVCHENKO NATIONAL UNIVERSITY OF KYIV, <br> faculty of Computer
+                <strong>2023 - 2027</strong> - TARAS SHEVCHENKO NATIONAL UNIVERSITY OF KYIV, <br> faculty of
+                Computer
                 Science and Cybernetics, specialty "Computer Science".
                 <br>
                 <strong>Degree:</strong> Bachelor
@@ -89,6 +136,7 @@
                 <strong>Russian:</strong> Native
             </li>
         </ul>
+        </div>
     </main>
 </body>
 
