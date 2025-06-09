@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    border: 5px solid #fff;
+}
+
 img {
     vertical-align: top;
 }
@@ -15,6 +19,7 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: normal;
+    transition: all .1s ease-in;
 }
 
 .container {
@@ -38,7 +43,7 @@ header hgroup h1 {
 }
 
 header hgroup p {
-    font-size: 1 rem;
+    font-size: 1rem;
 }
 
 /* BODY */
@@ -85,11 +90,11 @@ header hgroup p {
     text-decoration: line-through;
 }
 
-.shopping-list .form-checkbox label span::before {
+.shopping-list .form-checkbox span::before {
     content: "(";
 }
 
-.shopping-list .form-checkbox label span::after {
+.shopping-list .form-checkbox span::after {
     content: ")";
 }
 
@@ -102,11 +107,26 @@ header hgroup p {
     margin: 0 auto;
     display: block;
     text-align: center;
-    background-color: #4A4F56;
+    background-color: #4a4f56ff;
     width: 100%;
     height: 45px;
     color: #FF8984;
     border: none;
+    font-size: 1.125rem;
+}
+
+.btn:hover {
+    background-color: rgba(74, 79, 86, 0.7);
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: #FF8984;
+    color: #fff;
+}
+
+.btn-wrap {
+    padding-bottom: 33px;
 }
 
 .shopping-list .form-checkbox:hover {
@@ -115,8 +135,6 @@ header hgroup p {
     border-top: 3px solid #fff;
     border-bottom: 3px solid #fff;
 }
-
-
 
 .form-checkbox img[src*="Checklist"] {
     display: inline-block;
@@ -132,8 +150,12 @@ header hgroup p {
     padding: 11px 0 13px 0;
 }
 
-.form-checkbox p span {
+.form-checkbox p+span {
+    display: inline-block;
     font-size: 0.688rem;
+    padding: 1px 0 0 3px;
+    vertical-align: middle;
+    height: 16px;
 }
 
 .form-checkbox input[type="checkbox"] {
@@ -152,7 +174,8 @@ header hgroup p {
     display: inline-block
 }
 
-.form-checkbox input[type="checkbox"]:checked~p {
+.form-checkbox input[type="checkbox"]:checked~p,
+.form-checkbox input[type="checkbox"]:checked~span {
     text-decoration: line-through;
     color: #9B96AC;
 }
