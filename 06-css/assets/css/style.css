@@ -52,10 +52,12 @@ header .container {
 .main-menu ul li a:hover,
 .main-menu ul li a.active {
     color: #070707;
-    /* text-shadow: 1px 0 1px #070707, 0 1px 1px #070707, -1px 0 1px #070707, 0 -1px 1px #070707; */
+    text-shadow: 1px 0 1px #070707
+        /*, 0 1px 1px #070707, -1px 0 1px #070707, 0 -1px 1px #070707*/
+    ;
     /* font-weight: 700; */
     /* font-size: 1.4rem; */
-    scale: 1.2;
+    /* scale: 1.2; */
     /* transform: scale(1.2); */
 }
 
@@ -166,7 +168,8 @@ hgroup h2 {
 }
 
 .portfolio-item div a:hover {
-    text-decoration: none;
+    /* text-decoration: none; */
+    opacity: 0.5;
 }
 
 
@@ -186,6 +189,7 @@ hgroup h2 {
     font-weight: 700;
     letter-spacing: 0.125rem;
 }
+
 
 .btn:hover {
     color: #070707;
