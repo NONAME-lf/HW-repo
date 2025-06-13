@@ -13,6 +13,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    transition: all .1s ease-in;
 }
 
 ul {
@@ -24,13 +26,12 @@ img {
 }
 
 body {
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
     font-size: 1.125rem;
     color: #fff;
     font-weight: 400;
     font-style: normal;
     line-height: normal;
-    transition: all .2s ease-in;
 }
 
 .container {
