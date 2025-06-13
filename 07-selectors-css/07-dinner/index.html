@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW 07 - Selectors CSS Dinner</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,42 +26,57 @@
         <section class="shopping-list">
             <div class="container">
                 <form action="#" method="get" class="shlist-form">
-                    <div class="form-checkbox">
-                        <input type="checkbox" checked>
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>A lot of pickles</p><span>for the next lessons about CSS</span>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox">
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>10 apples</p><span>for more CSS manipulations</span>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox">
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>20 oranges</p><span>because they are awesome</span>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox">
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>13 plates</p><span>hm... they always dissapear</span>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox">
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>15 bentos</p>
-                    </div>
-                    <div class="form-checkbox">
-                        <input type="checkbox">
-                        <img src="assets/img/Checklist.svg" alt="checked checkbox">
-                        <img src="assets/img/Checklist_unchecked.svg" alt="unchecked checkbox">
-                        <p>1 bottle of Sake</p><span>for my friends</span>
-                    </div>
+                    <ul>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check1" checked>
+                                <label for="check1">
+                                    <span>A lot of pickles<span class="small">for the next lessons about
+                                            CSS</span></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check2">
+                                <label for="check2">
+                                    <span>10 apples<span class="small">for more CSS manipulations</span></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check3">
+                                <label for="check3">
+                                    <span>20 oranges<span class="small">because they are awesome</span></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check4">
+                                <label for="check4">
+                                    <span>13 plates<span class="small">hm... they always dissapear</span></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check5">
+                                <label for="check5">
+                                    <span>15 bentos</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-checkbox">
+                                <input type="checkbox" name="check[]" id="check6">
+                                <label for="check6">
+                                    <span>1 bottle of Sake<span class="small">for my friends</span></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
                     <div class="btn-wrap">
                         <button type="submit" class="btn">Bon appetit :)</button>
                     </div>
