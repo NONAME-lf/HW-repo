@@ -60,6 +60,7 @@ main {
 
     ul {
         font-size: 0;
+        background-color: #fff;
 
         &:has(li:hover) {
             li:not(:hover) {
