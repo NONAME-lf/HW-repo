@@ -179,17 +179,7 @@ header {
 
 // Features Section
 .features-section {
-
-    .bg {
-        position: absolute;
-        z-index: -1;
-        top: 875px;
-        width: 2211px;
-        height: 388.239px;
-        // background-color: #2F281E;
-        // height: 100%;
-        // width: 100%;
-    }
+    background: no-repeat center center / cover url(../img/bg.svg);
 
     svg {
         position: absolute;
@@ -202,7 +192,6 @@ header {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
-    // background: linear-gradient(0deg, rgba(255, 229, 210, 0.63) 0.33%, rgba(255, 244, 229, 0.00) 99.67%);
 
     .container {
         display: flex;
