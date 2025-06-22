@@ -83,24 +83,24 @@ ul {
 
     .img-wrap-1 {
         display: grid;
-        grid-column-end: span 1;
-        grid-row-end: span 1;
+        grid-column: span 1;
+        grid-row: span 1;
 
     }
 
     .img-wrap-2 {
         display: grid;
-        grid-column-end: span 2;
+        grid-column: span 2;
     }
 
     .img-wrap-1-2 {
-        grid-column-end: span 1;
-        grid-row-end: span 2;
+        grid-column: span 1;
+        grid-row: span 2;
     }
 
     .img-wrap-2-2 {
-        grid-column-end: span 2;
-        grid-row-end: span 2;
+        grid-column: span 2;
+        grid-row: span 2;
     }
 }
 
