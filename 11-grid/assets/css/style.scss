@@ -68,7 +68,7 @@ main {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(370px, 370px));
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 30px;
 
     li {
@@ -78,6 +78,10 @@ ul {
         div {
             background: linear-gradient(0deg, #241F24 0%, rgba(91, 91, 91, 0.45) 34.11%, rgba(187, 186, 192, 0.26) 62.5%);
             border-radius: 20px;
+        }
+
+        &:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
     }
 
