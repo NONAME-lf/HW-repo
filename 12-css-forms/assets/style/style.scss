@@ -95,7 +95,7 @@ body {
         flex-direction: row;
     }
 
-    h1 {
+    h2 {
         color: $text-heavy;
         font-size: 1.5rem;
         font-style: normal;
@@ -119,6 +119,7 @@ body {
         border-radius: 6px;
         padding: 7px 10px;
         width: 245px;
+        width: 100%;
 
         &:focus {
             border-color: $border-active;
