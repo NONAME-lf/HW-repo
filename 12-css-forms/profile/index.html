@@ -4,67 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW 12 View Profile</title>
+    <title>HW 12 Profile</title>
+    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
     <link rel="stylesheet" href="../assets/style/style.min.css">
 </head>
 
 <body>
-    <div class="page-wrapper">
+    <div class="page-wrapper profile-page">
         <header></header>
         <main>
             <div class="container">
                 <div class="form-wrap">
                     <form action="#" method="post" class="create-form">
-                        <h2>Create an account</h2>
+                        <h2>Profile</h2>
                         <div class="form-row">
-                            <label for="first-name">First name</label>
-                            <input type="text" id="first-name" name="first-name" required>
-                        </div>
-
-                        <div class="form-row">
-                            <label for="last-name">Last name</label>
-                            <input type="text" id="last-name" name="last-name" required>
-                        </div>
-
-                        <div class="form-row email">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="accent">We'll never share your email with anyone else.</span>
-                        </div>
-
-                        <div class="radio-wrap">
-                            <label for="male">
-                                <input type="radio" value="male" id="male" name="gender" checked>
-                                Male
-                            </label>
-                            <label for="female">
-                                <input type="radio" value="female" id="female" name="gender">
-                                Female
-                            </label>
+                            <div class="form-element avatar">
+                                <img src="../assets/img/📷 Image.png" alt="Profile photo">
+                            </div>
+                            <div class="form-element">
+                                <div class="file-wrap">
+                                    <input type="file" name="profile-photo" id="profile-photo">
+                                </div>
+                                <span>Up to 1 MB (300x300 px)</span>
+                            </div>
+                            <div class="form-element">
+                                <button></button>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for="country">Country</label>
-                            <select name="country" id="country">
-                                <option value="">Country 1</option>
-                                <option value="">Country 2</option>
-                                <option value="">Country 3</option>
-                            </select>
-                        </div>
+                            <div class="form-element">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required autofocus>
+                            </div>
 
+                            <div class="form-element">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
                         <div class="form-row">
-                            <label for="city">City</label>
-                            <input type="text" id="city" name="city" required>
+                            <div class="form-element">
+                                <label for="country">Country</label>
+                                <select name="country" id="country">
+                                    <option value="none" disabled selected>Select</option>
+                                    <option value="">Country 1</option>
+                                    <option value="">Country 2</option>
+                                    <option value="">Country 3</option>
+                                    <option value="">Country 4</option>
+                                    <option value="">Country 5</option>
+                                </select>
+                            </div>
+                            <div class="form-element">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-element">
+                                <label for="zip-code">Zip Code</label>
+                                <input type="text" id="zip-code" name="zip-code" required>
+                            </div>
 
-                        <button type="submit">Sign Up</button>
-
-                        <div class="accent terms">
-                            By clicking the 'Sign Up' button, you confirm that you accept our <a href="#">Terms of
-                                Use</a> and <a href="#">Privacy Policy</a>
+                            <div class="form-element">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="tel" id="phone-number" name="phone-number" required>
+                            </div>
                         </div>
-                        <div class="line"></div>
-                        <div class="login">
-                            Have an account? <a href="../profile/index.html">Log in</a>
+                        <div class="form-row">
+                            <button type="submit" class="btn">Update</button>
                         </div>
                     </form>
                 </div>
@@ -74,13 +81,13 @@
     </div>
 
 
-    <!-- <script src="../assets/js/jquery-3.7.1.js"></script>
+    <script src="../assets/js/jquery-3.7.1.js"></script>
     <script src="../assets/plugins/select2/js/select2.full.min.js"></script>
     <script>
         $(function () {
             $('select').select2();
         })
-    </script> -->
+    </script>
 </body>
 
 </html>

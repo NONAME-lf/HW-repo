@@ -27,6 +27,9 @@ button {
 a {
     text-decoration: none;
     color: $border-active;
+    font-family: Inter, sans-serif;
+    line-height: 1.125rem;
+    letter-spacing: -0.00625rem;
 }
 
 button {
@@ -98,28 +101,28 @@ body {
     h2 {
         color: $text-heavy;
         font-size: 1.5rem;
-        font-style: normal;
         font-weight: 500;
         line-height: 2rem;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
         width: 100%;
     }
 
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
+    input[type="number"],
     select {
         color: $text-color;
         font-family: Inter;
         font-size: 0.9375rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.375rem;
-        letter-spacing: -0.0125rem;
         border: 1px solid $border-color;
         border-radius: 6px;
-        padding: 7px 10px;
-        width: 245px;
+        padding: 9px 10px;
         width: 100%;
+
+        // &:disabled {
+        //     color: $text-color;
+        // }
 
         &:focus {
             border-color: $border-active;
@@ -131,7 +134,6 @@ body {
         width: 20px;
         height: 20px;
         appearance: none;
-        position: relative;
 
         &:before {
             content: '';
@@ -161,38 +163,55 @@ body {
         letter-spacing: -0.00625rem;
         text-align: center;
 
+        a {
+            padding: 0px 4px 0 3px;
+        }
+
         &.terms {
             padding: 0 52px 20px 52px;
+            border-bottom: 1px solid $border-color;
+            width: 100%;
+            margin-bottom: 20px;
         }
     }
 }
 
 .form-row {
-    display: inline-flex;
-    // width: 245px;
-    // height: 67px;
-    flex-direction: column;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 7px;
     flex-shrink: 0;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 20px;
 
-    &.email {
-        padding: 20px 0;
-
-        input[type="email"] {
-            width: 500px;
-        }
+    &:nth-child(6) {
+        margin-bottom: 22px;
     }
+
+    // &.email {
+    //     padding: 20px 0;
+
+    //     input[type="email"] {
+    //         width: 500px;
+    //     }
+    // }
 }
 
-.radio-wrap {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 21px;
+.form-element {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
     width: 100%;
-    padding-bottom: 21px;
+}
+
+label {
+    margin-right: 9px;
+
+    input[type="radio"] {
+        margin-right: 8px;
+    }
 }
 
 
@@ -208,26 +227,204 @@ body {
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
-    padding: 7px 10px;
+    padding: 4px 10px;
 }
 
-button {
-    margin: 20px 0 22px 0;
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: $text-color;
+
+    &:disabled {
+        color: $accent-color;
+    }
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $border-active;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    background: no-repeat url('../img/Arrow_icon.svg') center center/ 18px 18px;
+    height: 36px;
+    width: 36px;
+
+    b {
+        display: none;
+    }
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    color: $text-color;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    padding: 9px 10px;
     width: 100%;
+
+    &:focus {
+        border-color: $border-active;
+        outline: none;
+    }
+}
+
+.btn {
+    // width: 100%;
     background-color: $border-active;
     border: 1px solid $border-color;
     color: #fff;
     border-radius: 6px;
-    padding: 8px 0;
-}
+    padding: 10px 51px;
+    font-weight: 500;
+    font-family: Roboto;
+    letter-spacing: 0.6px;
 
-.line {
-    border: 1px solid $border-color;
-    width: 100%;
-    margin-bottom: 20px;
+    &.big {
+        width: 100%;
+    }
 }
 
 .login {
     text-align: center;
     width: 100%;
+
+    span {
+        padding-right: 17px;
+    }
+
+    a {
+        font-weight: 500;
+    }
+}
+
+
+// Profile
+.avatar {
+    width: 80px;
+
+    margin-right: 8px;
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    border-radius: 50%;
+}
+
+.file-wrap {
+    display: flex;
+    color: $text-color;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    padding: 9px 10px;
+    width: 138px;
+    // width: 100%;
+    height: 30px;
+    position: relative;
+    margin-bottom: 1px;
+    background: no-repeat url('../img/camera_icon.svg') 112px 8px / 18px 12px;
+
+    &:focus {
+        border-color: $border-active;
+        // outline: none;
+
+    }
+
+    input[type="file"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.file-wrap+span {
+    color: $accent-color;
+    font-size: 0.8125rem;
+    line-height: 1.188rem;
+    /* 138.462% */
+    letter-spacing: -0.00625rem;
+    min-width: 141px;
+}
+
+.form-element {
+    &:has(.file-wrap) {
+        width: revert;
+        margin-top: 11px;
+    }
+
+    button {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        border: 1px solid $border-color;
+        background-color: transparent;
+        background: no-repeat url("../img/can_icon.svg") center center / 12px 12px;
+    }
+}
+
+.container {
+    background-color: #fff;
+    padding: 35px 34px 16px 36px;
+    margin: 55px auto;
+    border-radius: 6px;
+}
+
+// pxl perfect
+.create-page {
+    .form-row:nth-child(5) {
+
+        gap: 10px;
+
+        .select2 select2-container select2-container--default {
+            width: 245px;
+        }
+    }
+
+    .form-row:nth-child(2) {
+
+        .form-element:first-child {
+            margin-left: -2px;
+
+        }
+    }
+
+    .form-row.email span.accent {
+        line-height: 17px;
+
+    }
+
+    label {
+        input {
+            margin-top: 2px;
+            line-height: 19px;
+        }
+
+        &[for="female"] {
+            margin-left: 1px;
+        }
+    }
+}
+
+
+.profile-page {
+    .container {
+        padding: 35px 35px 82px 35px;
+
+        .form-row:nth-child(2) {
+            .form-element:nth-child(3) {
+                margin-top: 11px;
+                margin-left: -5px;
+            }
+
+        }
+
+        .form-row:not(:nth-child(2)) {
+            gap: 10px;
+        }
+    }
 }
