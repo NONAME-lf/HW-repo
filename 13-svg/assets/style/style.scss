@@ -1,0 +1,228 @@
+@import 'fonts';
+
+$text-color: #16133D;
+$accent-color: #7690A8;
+$border-color: #E5EAF4;
+$link-color: #3DB370;
+$border-accent: #1565D81A;
+
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a,
+button {
+    transition: all .2s ease;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // object-position: top top;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+
+body {
+    font-size: 1rem;
+    color: $text-color;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.75rem;
+    /* 175% */
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+
+
+img {
+    max-width: 200px;
+}
+
+header {
+    padding: 22px 0;
+    border-bottom: 1px solid #EFEEF3;
+    max-height: 80px;
+}
+
+li {
+    .img-wrap {
+        // aspect-ratio: 4/3;
+        max-width: 64px;
+        max-height: 64px;
+        border: 1px solid;
+        border-color: $border-accent;
+        border-radius: 15px;
+        padding: 12px 0px 0px 12px;
+
+    }
+
+    &:nth-child(2) .img-wrap {
+        padding: 12px 0 0 11px;
+    }
+
+    &:nth-child(3) .img-wrap {
+        padding: 12px 0 0 19px;
+    }
+}
+
+.services-section {
+    padding: 100px 0;
+
+    .container>hgroup {
+        margin-bottom: 34px;
+        margin-top: 1px;
+
+        h1 {
+            font-family: "Nunito Sans";
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 3.25rem;
+            /* 130% */
+            letter-spacing: 0.0125rem;
+        }
+
+        p {
+            margin: -1px 0 14px 3px;
+            color: $accent-color;
+            line-height: 1.3125rem;
+            /* 131.25% */
+        }
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+            color: $link-color;
+            font-weight: 800;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:active {
+                opacity: 0.7;
+            }
+        }
+
+        .service-item {
+            border: 1px solid $border-color;
+            border-radius: 8px;
+            padding: 40px 40px 36px 39px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 30px;
+
+            use:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:hover {
+                border-color: $link-color;
+
+                use:nth-child(2) {
+                    opacity: 1;
+                }
+
+                use:first-child {
+                    opacity: 0;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            line-height: 1.33rem;
+            /* 88.667% */
+            letter-spacing: 0.0125rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        p {
+            max-width: 275px;
+            margin-bottom: -8px;
+        }
+    }
+
+
+
+}
+
+footer {
+    background-color: $text-color;
+    padding: 40px 0;
+
+    img {
+        margin-bottom: 40px;
+    }
+
+    ul {
+        li {
+            display: inline-block;
+            margin-right: 6px;
+
+            &:hover {
+                .icon {
+                    filter: brightness(0) saturate(100%) invert(63%) sepia(51%) saturate(498%) hue-rotate(93deg) brightness(85%) contrast(89%);
+                }
+            }
+
+            a {
+                display: inline-block;
+                background-color: #EFEEF3;
+                border-radius: 5px;
+                width: 38px;
+                height: 38px;
+                padding: 9px;
+            }
+
+            &:nth-child(2) a {
+                padding: 9px 0px 0px 14px;
+            }
+        }
+
+
+        svg {
+            max-width: 20px;
+            max-height: 20px;
+        }
+
+
+    }
+}

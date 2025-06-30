@@ -21,27 +21,41 @@ button {
 }
 
 a {
-    color: inherit;
-    display: inline-block;
+    color: #0a0a0a;
 }
 
 body {
     font-size: 1rem;
     color: #232323;
     font-family: sans-serif;
-    background-color: #121212;
+    background-color: #0a0a0a;
 }
 
-*::selection {
-    color: #fff;
+.container {
+    background-color: #232323;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 7.5dvh auto;
+
+
+    &>a:hover {
+        color: #4f4f4f;
+    }
+
+    &>a:active {
+        color: #fff;
+    }
 }
 
-a:hover:has(h1) {
-    color: #fff
+
+h1 {
+    text-align: center;
 }
 
 li {
+
     list-style: disc;
+    color: #0a0a0a;
 
     &:has(a:hover) {
         list-style: circle;
@@ -50,7 +64,7 @@ li {
     .a-wrap {
         display: inline-block;
         border-radius: 5px;
-        background-color: #232323;
+        background-color: #0a0a0a;
         padding: 3px 15px;
         margin: 7px 0;
         cursor: pointer;
@@ -74,7 +88,7 @@ li {
             background-color: #232323;
             color: #fff;
             transition: all 0.2s ease;
-            opacity: 0.6;
+            opacity: 0.8;
 
             a {
                 color: #fff;
