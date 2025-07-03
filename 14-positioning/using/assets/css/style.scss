@@ -1,0 +1,176 @@
+$card-background: #E6E6E6;
+$border-color: #BFBFBF;
+
+body {
+    background: none;
+}
+
+main {
+    padding-top: 161px;
+}
+
+.divider {
+    display: inline-block;
+    margin-right: 13px;
+    margin-bottom: 19px;
+    height: 8px;
+}
+
+h1 {
+    display: inline-block;
+    margin-bottom: 29px;
+
+    font-family: Roboto, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0.09rem;
+
+    position: relative;
+    top: -11px;
+}
+
+.cards-grid {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 19px 15px;
+
+    ul {
+        display: grid;
+        grid-template-columns: 270px 270px 270px 270px;
+        grid-template-rows: 180px 180px;
+        gap: 30px;
+
+        li {
+            position: relative;
+            perspective: 1000px;
+            background-color: transparent;
+
+            .flip-card-inner {
+                background-color: $card-background;
+                padding: 50px 30px;
+                border-radius: 8px;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all .5s ease;
+                position: relative;
+            }
+
+            &:hover .flip-card-inner {
+                transform: rotateX(180deg);
+                background-color: #000;
+            }
+
+            .flip-card-front,
+            .flip-card-back {
+                position: absolute;
+                backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
+                width: 100%;
+                height: 100%;
+            }
+
+            .flip-card-back {
+                transform: rotateX(180deg);
+                filter: invert(1);
+            }
+
+            &:nth-child(1) {
+                .flip-card-front {
+                    top: 70px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -70px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(2) {
+                .flip-card-front {
+                    top: 67px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -67px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(3) {
+                .flip-card-front {
+                    top: 61px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -61px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(4) {
+                .flip-card-front {
+                    top: 59px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -59px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(5) {
+                .flip-card-front {
+                    top: 66px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -66px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(6) {
+                .flip-card-front {
+                    top: 56px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -56px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(7) {
+                .flip-card-front {
+                    top: 20px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -20px;
+                    right: -35px;
+                }
+            }
+
+            &:nth-child(8) {
+                .flip-card-front {
+                    top: 33px;
+                    right: -35px;
+                }
+
+                .flip-card-back {
+                    top: -33px;
+                    right: -35px;
+                }
+            }
+        }
+    }
+
+}
