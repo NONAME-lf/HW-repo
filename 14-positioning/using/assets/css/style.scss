@@ -75,101 +75,106 @@ h1 {
                 filter: invert(1);
             }
 
-            &:nth-child(1) {
-                .flip-card-front {
-                    top: 70px;
-                    right: -35px;
-                }
 
-                .flip-card-back {
-                    top: -70px;
-                    right: -35px;
+            .flip-card-front,
+            .flip-card-back {
+                right: -35px;
+            }
+
+            $positions: 70px, 67px, 61px, 59px, 66px, 56px, 20px, 33px;
+
+            @for $i from 1 through 8 {
+                &:nth-child(#{$i}) {
+                    .flip-card-front {
+                        top: nth($positions, $i);
+                    }
+
+                    .flip-card-back {
+                        top: -(nth($positions, $i));
+                    }
                 }
             }
 
-            &:nth-child(2) {
-                .flip-card-front {
-                    top: 67px;
-                    right: -35px;
-                }
 
-                .flip-card-back {
-                    top: -67px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(1) {
+            //     .flip-card-front {
+            //         top: 70px;
+            //     }
 
-            &:nth-child(3) {
-                .flip-card-front {
-                    top: 61px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -70px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -61px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(2) {
+            //     .flip-card-front {
+            //         top: 67px;
+            //     }
 
-            &:nth-child(4) {
-                .flip-card-front {
-                    top: 59px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -67px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -59px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(3) {
+            //     .flip-card-front {
+            //         top: 61px;
+            //     }
 
-            &:nth-child(5) {
-                .flip-card-front {
-                    top: 66px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -61px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -66px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(4) {
+            //     .flip-card-front {
+            //         top: 59px;
+            //     }
 
-            &:nth-child(6) {
-                .flip-card-front {
-                    top: 56px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -59px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -56px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(5) {
+            //     .flip-card-front {
+            //         top: 66px;
+            //     }
 
-            &:nth-child(7) {
-                .flip-card-front {
-                    top: 20px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -66px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -20px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(6) {
+            //     .flip-card-front {
+            //         top: 56px;
+            //     }
 
-            &:nth-child(8) {
-                .flip-card-front {
-                    top: 33px;
-                    right: -35px;
-                }
+            //     .flip-card-back {
+            //         top: -56px;
+            //     }
+            // }
 
-                .flip-card-back {
-                    top: -33px;
-                    right: -35px;
-                }
-            }
+            // &:nth-child(7) {
+            //     .flip-card-front {
+            //         top: 20px;
+            //     }
+
+            //     .flip-card-back {
+            //         top: -20px;
+            //     }
+            // }
+
+            // &:nth-child(8) {
+            //     .flip-card-front {
+            //         top: 33px;
+            //     }
+
+            //     .flip-card-back {
+            //         top: -33px;
+            //     }
+            // }
         }
     }
 
