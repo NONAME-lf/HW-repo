@@ -153,6 +153,7 @@ header {
 // Aside
 aside {
     position: sticky;
+    z-index: -1;
 
     a {
         font-family: 'Francois One', sans-serif;
