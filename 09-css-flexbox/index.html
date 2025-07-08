@@ -12,158 +12,151 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="assets/img/logo.svg" alt="Productly logo"></a>
-            </div>
-            <nav>
-                <ul class="main-menu">
-                    <li>
-                        <a href="#">Product</a>
-                    </li>
-                    <li>
-                        <a href="#">Customers</a>
-                    </li>
-                    <li>
-                        <a href="#">Pricing</a>
-                    </li>
-                    <li>
-                        <a href="#">Resources</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="button-group">
-                <button class="btn btn-secondary">Sign In</button>
-                <button class="btn">Sign Up</button>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="hero-section">
+    <div class="page-wrapper">
+        <header>
             <div class="container">
-                <div class="content-wrap">
-                    <hgroup>
-                        <h1>The Design Thinking superpowers</h1>
-                        <p>Tools, tutorials, design and innovation experts, all in one place! The most intuitive way to
-                            imagine
-                            your next user experience.</p>
-                    </hgroup>
-                    <button class="btn">Get started</button>
+                <div class="logo">
+                    <a href="#"><img src="assets/img/logo.svg" alt="Productly logo"></a>
                 </div>
-                <div class="img">
-                    <img src="assets/img/people.svg" alt="">
-                </div>
-            </div>
-        </section>
-        <section class="features-section">
-            <!-- <img src="assets/img/bg.svg" alt="Background gradient" class="bg"> -->
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="390" viewBox="0 0 1440 390" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M712.843 389.237C228.336 389.83 -257.424 116.92 -399.823 30.0017C-412.476 22.2785 -406.921 3.71051 -392.097 3.69238L1832.31 0.973358C1847.17 0.95517 1852.74 19.5829 1840.03 27.2914C1696.09 114.59 1205.09 388.636 712.843 389.237Z"
-                    fill="url(#paint0_linear_36111_474)" />
-                <defs>
-                    <linearGradient id="paint0_linear_36111_474" x1="1840.4" y1="387.93" x2="1839.94" y2="-0.325465"
-                        gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#FFE5D2" stop-opacity="0.629261" />
-                        <stop offset="1" stop-color="#FFF4E5" stop-opacity="0.01" />
-                    </linearGradient>
-                </defs>
-            </svg> -->
-            <div class="container">
-                <div class="content-wrap">
-                    <h2>We design tools to your<br>superpowers</h2>
-                    <ul>
+                <nav>
+                    <!-- not working justify content space between in li??? -->
+                    <ul class="main-menu">
                         <li>
-                            <img src="assets/img/cursor-icon.svg" alt="Cursor icon">
-                            <h3>
-                                First click tests
-                            </h3>
-                            <div class="tools-description">
-                                While most people enjoy casino gambling,
-                            </div>
+                            <a href="#">Product</a>
                         </li>
                         <li>
-                            <img src="assets/img/symbol-icon.svg" alt="Symbol icon">
-                            <h3>
-                                Design surveys
-                            </h3>
-                            <div class="tools-description">
-                                Sports betting, lottery and bingo playing for the fun
-                            </div>
+                            <a href="#">Customers</a>
                         </li>
                         <li>
-                            <img src="assets/img/heart-icon.svg" alt="Heart icon">
-                            <h3>
-                                Preference tests
-                            </h3>
-                            <div class="tools-description">
-                                The Myspace page defines the individual.
-                            </div>
+                            <a href="#">Pricing</a>
                         </li>
                         <li>
-                            <img src="assets/img/time-icon.svg" alt="Time icon">
-                            <h3>
-                                Five second tests
-                            </h3>
-                            <div class="tools-description">
-                                Personal choices and the overall personality of the person.
-                            </div>
+                            <a href="#">Resources</a>
                         </li>
                     </ul>
+                </nav>
+                <div class="button-group">
+                    <button class="btn btn-secondary">Sign In</button>
+                    <button class="btn">Sign Up</button>
+                    <!-- <button class="btn registration">Register</button> -->
                 </div>
-                <a href="#" class="btn">Sign up now</a>
+                <div class="burger"><span></span></div>
             </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="assets/img/logo.svg" alt="Productly logo"></a>
+        </header>
+        <main>
+            <section class="hero-section">
+                <div class="container">
+                    <div class="content-wrap">
+                        <hgroup>
+                            <h1>The Design Thinking superpowers</h1>
+                            <p>Tools, tutorials, design and innovation experts, all in one place! The most intuitive way
+                                to
+                                imagine
+                                your next user experience.</p>
+                        </hgroup>
+                        <button class="btn">Get started</button>
+                    </div>
+                    <div class="img-wrap">
+                        <img src="assets/img/people.svg" alt="">
+                    </div>
+                </div>
+            </section>
+            <section class="features-section">
+                <div class="container">
+                    <div class="content-wrap">
+                        <h2>We design tools to your<br>superpowers</h2>
+                        <ul>
+                            <li>
+                                <img src="assets/img/cursor-icon.svg" alt="Cursor icon">
+                                <h3>
+                                    First click tests
+                                </h3>
+                                <div class="tools-description">
+                                    While most people enjoy casino gambling,
+                                </div>
+                            </li>
+                            <li>
+                                <img src="assets/img/symbol-icon.svg" alt="Symbol icon">
+                                <h3>
+                                    Design surveys
+                                </h3>
+                                <div class="tools-description">
+                                    Sports betting, lottery and bingo playing for the fun
+                                </div>
+                            </li>
+                            <li>
+                                <img src="assets/img/heart-icon.svg" alt="Heart icon">
+                                <h3>
+                                    Preference tests
+                                </h3>
+                                <div class="tools-description">
+                                    The Myspace page defines the individual.
+                                </div>
+                            </li>
+                            <li>
+                                <img src="assets/img/time-icon.svg" alt="Time icon">
+                                <h3>
+                                    Five second tests
+                                </h3>
+                                <div class="tools-description">
+                                    Personal choices and the overall personality of the person.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn">Sign up now</a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><img src="assets/img/logo.svg" alt="Productly logo"></a>
+                </div>
+                <ul>
+                    <li>
+                        <h4>Quick Links</h4>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacts</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <h4>Legal Stuff</h4>
+                    </li>
+                    <li>
+                        <a href="#">Disclaimer</a>
+                    </li>
+                    <li>
+                        <a href="#">Financing</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Service</a>
+                    </li>
+                </ul>
+                <form action="#" method="post">
+                    <!-- <div class="form-input"> -->
+                    <label for="phone-number">Knowing you're always on<br>the best energy deal.</label>
+                    <input type="number" id="phone-number" placeholder="Enter your phone Number" required>
+                    <button type="submit" class="btn">Sign up now</button>
+                    <!-- </div> -->
+                </form>
             </div>
-            <ul>
-                <li>
-                    <h4>Quick Links</h4>
-                </li>
-                <li>
-                    <a href="#">About Us</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Contacts</a>
-                </li>
-                <li>
-                    <a href="#">FAQ</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <h4>Legal Stuff</h4>
-                </li>
-                <li>
-                    <a href="#">Disclaimer</a>
-                </li>
-                <li>
-                    <a href="#">Financing</a>
-                </li>
-                <li>
-                    <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                    <a href="#">Terms of Service</a>
-                </li>
-            </ul>
-            <form action="#" method="post">
-                <!-- <div class="form-input"> -->
-                <label for="phone-number">Knowing you're always on<br>the best energy deal.</label>
-                <input type="number" id="phone-number" placeholder="Enter your phone Number" required>
-                <button type="submit" class="btn">Sign up now</button>
-                <!-- </div> -->
-            </form>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 
 </html>
