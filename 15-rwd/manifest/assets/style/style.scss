@@ -1,0 +1,231 @@
+@import 'fonts';
+
+$text-color: #565656;
+$text-accent-color: #7B7B7B;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a,
+button {
+    transition: all .2s ease;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    vertical-align: top;
+    // width: 100%;
+    // height: 100%;
+    object-fit: cover;
+    // object-position: top top;
+}
+
+.container {
+    width: min(90%, 1170px);
+    margin: 0 auto;
+}
+
+body {
+    font-size: 1rem;
+    color: $text-color;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 2rem;
+    letter-spacing: 0.05625rem;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+
+// .img-wrap {
+// aspect-ratio: 4/3;
+// max-width: 280px;
+// }
+
+// Header
+header {
+    padding: 40px 0;
+
+    .img-wrap {
+        max-height: 20px;
+        margin-bottom: -7px;
+        margin-right: 32.7%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+            max-width: 17px;
+            max-height: 16px;
+        }
+
+    }
+
+    nav {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .nav-list {
+        display: flex;
+        font-size: 0;
+        // gap: 38px;
+        max-height: 20px;
+
+        li {
+            font-size: 0.875rem;
+            line-height: normal;
+            letter-spacing: 0.2625rem;
+            text-transform: uppercase;
+            line-height: 1.313rem;
+
+            &:not(:last-child) {
+                margin-right: 38px;
+            }
+        }
+    }
+
+    a {
+        position: relative;
+        transition: .2s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            // width: 40px;
+            width: 0;
+            background-color: #000;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:hover::after {
+            width: 67%;
+        }
+    }
+
+    .btn {
+        height: 18px;
+        width: 17px;
+        margin-left: 3%;
+    }
+}
+
+// Section 1 - Hero Section
+.hero-section {
+    background: url(../img/bg-image.jpg) center center/cover no-repeat;
+    height: 600px;
+    padding-top: 100px;
+    margin-bottom: 90px;
+
+    h1 {
+        color: #000;
+        font-family: "Red Hat Display", sans-serif;
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 4rem;
+        letter-spacing: 0.15rem;
+        max-width: 1000px;
+    }
+}
+
+// Section 2 - Blog Section
+.blog-section {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    h2 {
+        color: #000;
+        font-family: "Red Hat Display", sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 4rem;
+        letter-spacing: 0.15rem;
+    }
+}
+
+.blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    li {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: center;
+
+        &:last-child {
+            flex-direction: row-reverse;
+        }
+    }
+
+    hgroup {
+        p {
+            color: $text-accent-color;
+            line-height: 166%;
+            letter-spacing: 0.1rem;
+
+            &:first-child {
+                // margin-bottom: 30px;
+            }
+        }
+
+        h3 {
+            color: #000;
+            font-family: "Red Hat Display", sans-serif;
+            font-size: 1.4375rem;
+            font-weight: 500;
+            line-height: 166%;
+            letter-spacing: 0.14375rem;
+            // margin-bottom: 15px;
+        }
+    }
+
+    .content {
+        &>p span {
+            font-family: Arrow;
+        }
+    }
+}
