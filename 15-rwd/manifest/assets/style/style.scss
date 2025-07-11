@@ -834,6 +834,7 @@ footer {
         .popular-list {
             margin-bottom: 65px;
             gap: 19px;
+            justify-content: space-evenly;
         }
 
         li {
@@ -933,5 +934,273 @@ footer {
             position: relative;
             bottom: -42px;
         }
+    }
+}
+
+@media screen and (max-width: 544px) {
+
+    .container {
+        width: min(94%, 300px);
+    }
+
+    header {
+        .container>picture {
+            margin-right: 0;
+        }
+
+        .short-nav {
+            gap: 20px;
+        }
+    }
+
+    .hero-section {
+        height: 500px;
+        padding-top: 70px;
+
+        h1 {
+            font-size: 1.875rem;
+            letter-spacing: 0.09375rem;
+        }
+    }
+
+    .blog-section {
+        text-align: center;
+
+        .blog-list {
+            li {
+                flex-direction: column-reverse;
+                text-align: left;
+                gap: 38px;
+
+                h3 {
+                    font-size: 1.375rem;
+                    letter-spacing: 0.1375rem;
+                    margin-bottom: 11px;
+                }
+
+                &:last-child .img-wrap {
+                    right: .5px;
+                    top: -.5px;
+                }
+            }
+
+            hgroup p:first-child {
+                margin-bottom: 30px;
+            }
+
+            hgroup p:last-child {
+                margin-bottom: 38px;
+            }
+
+            .content {
+                &>p {
+                    letter-spacing: 0.063rem;
+                }
+            }
+
+            .img-wrap {
+                max-width: 300px;
+                height: 250px;
+                position: relative;
+                right: -1px;
+            }
+        }
+    }
+
+    .posts-section {
+
+        .h-div {
+            display: block;
+            margin-bottom: 27.5px;
+
+            h2 {
+                line-height: 2.25rem;
+                letter-spacing: 0.0875rem;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            a {
+                position: static;
+            }
+        }
+
+        .posts-list {
+            margin-bottom: 65px;
+
+            li {
+                flex-direction: column;
+                margin-bottom: 49px;
+
+                &:nth-child(2n) {
+                    flex-direction: column;
+
+                    figure {
+                        right: .5px;
+                    }
+
+                    figcaption {
+                        position: static;
+                        font-size: 1rem;
+                        letter-spacing: 0.1rem;
+                    }
+
+                    .content {
+                        padding: 21px 0 0;
+
+                        h3 {
+                            margin-bottom: 22px;
+                        }
+                    }
+
+                    // .img-wrap {
+                    //     right: .5px;
+                    // }
+                }
+
+                figcaption {
+                    position: static;
+                    font-size: 1rem;
+                    letter-spacing: 0.1rem;
+                }
+
+                .content {
+                    padding: 21px 0 0 0px;
+                }
+            }
+
+            .img-wrap {
+                width: 300px;
+                height: 210px;
+                position: relative;
+                right: -.5px;
+            }
+        }
+    }
+
+    .most-popular-section {
+        .h-div {
+            display: block;
+            margin-bottom: 27px;
+
+            h2 {
+                margin-bottom: 3px;
+                letter-spacing: 0.0875rem;
+            }
+
+            a {
+                position: static;
+            }
+        }
+
+        .popular-list {
+            display: block;
+            margin-bottom: 92px;
+
+            li {
+                margin-bottom: 50px;
+
+                &:last-child {
+                    h3 {
+                        margin-bottom: 11px;
+                    }
+                }
+            }
+
+            .img-wrap {
+                width: 300px;
+                height: 150px;
+                margin-bottom: 21px;
+                right: .1px;
+                top: -0.5px;
+            }
+
+            figure {
+                margin-bottom: 10px;
+            }
+
+            figcaption {
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+                line-height: 1.75rem;
+            }
+
+            h3 {
+                font-weight: 600;
+                padding-right: 1px;
+                margin-bottom: 13px;
+                line-height: 2.313rem;
+            }
+
+            .btn-wrap {
+                margin-bottom: 71px;
+            }
+        }
+
+
+        .section-footer {
+            p {
+                font-size: 1.5rem;
+                letter-spacing: 0.15rem;
+                padding: 0;
+                margin-bottom: 10px;
+
+                span {
+                    bottom: 5px;
+                }
+            }
+
+            .smaller-text {
+                text-align: unset;
+                padding: 0;
+
+                p {
+                    font-size: 1.125rem;
+                    letter-spacing: 0.05625rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+    }
+
+    footer {
+        text-align: center;
+        padding: 38px 0 0 0;
+
+        .container {
+            display: block;
+        }
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+            margin-bottom: 9px;
+
+            &+span {
+                margin-bottom: 16px;
+            }
+        }
+
+        .info span {
+            font-size: 1.125rem;
+            letter-spacing: 0.1125rem;
+
+            &:last-child {
+                margin-bottom: 38px;
+            }
+        }
+
+        .copyright {
+            font-size: 1rem;
+            letter-spacing: 0.1rem;
+            position: static;
+        }
+
+        .soc-list {
+            position: static;
+            margin-bottom: 40px;
+            padding-left: 8%;
+        }
+
     }
 }
