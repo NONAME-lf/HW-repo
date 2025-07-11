@@ -1,5 +1,5 @@
-@import 'fonts';
-@import 'hamburger';
+@use 'fonts';
+@use 'hamburger' as *;
 
 $text-color: #565656;
 $text-accent-color: #7B7B7B;
@@ -352,14 +352,14 @@ header {
         max-width: 370px;
     }
 
-    figure {
+    .figure {
         max-width: 370px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 24px;
 
-        figcaption {
+        .figcaption {
             display: inline-block;
             color: $text-accent-color;
             font-size: 0.75rem;
@@ -466,14 +466,14 @@ h2+a {
         }
     }
 
-    figure {
+    .figure {
         max-width: 570px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 21px;
 
-        figcaption {
+        .figcaption {
             display: inline-block;
             color: $text-accent-color;
             font-size: 0.75rem;
@@ -784,11 +784,11 @@ footer {
                 &:nth-child(2n) {
                     flex-direction: row-reverse;
 
-                    figure {
+                    .figure {
                         right: -.5px;
                     }
 
-                    figcaption {
+                    .figcaption {
                         position: relative;
                         left: -106%;
 
@@ -803,13 +803,13 @@ footer {
                 }
             }
 
-            figure {
+            .figure {
                 max-width: 340px;
                 position: relative;
                 right: 0.5px;
                 margin-bottom: -17px;
 
-                figcaption {
+                .figcaption {
                     position: relative;
                     bottom: 93%;
                     left: 106%;
@@ -839,10 +839,10 @@ footer {
 
         li {
 
-            figure {
+            .figure {
                 max-width: 340px;
 
-                figcaption:last-child {
+                .figcaption:last-child {
                     margin-right: 3px;
                 }
             }
@@ -1035,11 +1035,11 @@ footer {
                 &:nth-child(2n) {
                     flex-direction: column;
 
-                    figure {
+                    .figure {
                         right: .5px;
                     }
 
-                    figcaption {
+                    .figcaption {
                         position: static;
                         font-size: 1rem;
                         letter-spacing: 0.1rem;
@@ -1058,7 +1058,7 @@ footer {
                     // }
                 }
 
-                figcaption {
+                .figcaption {
                     position: static;
                     font-size: 1rem;
                     letter-spacing: 0.1rem;
@@ -1115,11 +1115,11 @@ footer {
                 top: -0.5px;
             }
 
-            figure {
+            .figure {
                 margin-bottom: 10px;
             }
 
-            figcaption {
+            .figcaption {
                 font-size: 1rem;
                 letter-spacing: 0.1rem;
                 line-height: 1.75rem;
