@@ -1,5 +1,5 @@
-@use 'fonts';
-@use 'hamburger' as *;
+@use 'fonts.css' as *;
+@use 'hamburger.scss' as *;
 
 $text-color: #565656;
 $text-accent-color: #7B7B7B;
