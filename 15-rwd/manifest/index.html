@@ -12,9 +12,10 @@
     <div class="page-wrapper">
         <header>
             <div class="container">
-                <div class="img-wrap">
-                    <img src="assets/img/logo.svg" alt="Manfest logo">
-                </div>
+                <picture>
+                    <source srcset="assets/img/logo@768.svg" media="(max-width: 1104px)">
+                    <img src="assets/img/logo.svg" alt="Manifest logo">
+                </picture>
                 <nav>
                     <ul class="nav-list">
                         <li>
@@ -34,11 +35,19 @@
                         </li>
                     </ul>
                 </nav>
-                <button type="button" class="btn">
-                    <svg class="icon">
-                        <use xlink:href="assets/img/sprite.svg#search"></use>
-                    </svg>
-                </button>
+                <div class="short-nav">
+                    <button type="button" class="btn">
+                        <picture>
+                            <source srcset="assets/img/search@768.svg" media="(max-width: 1104px)">
+                            <img src="assets/img/search.svg" alt="Magnifying glass icon">
+                        </picture>
+                    </button>
+                    <button class="hamburger hamburger--spin" type="button" onclick="toggleMenu()">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
             </div>
         </header>
         <main>
@@ -62,7 +71,8 @@
                                     <p>6 May, 2020</p>
                                 </hgroup>
                                 <p>Transformation has to be driven by everybody, not just by climate groups, and we have
-                                    a responsibility to use our influence to drive this. <a href="#"></a></p>
+                                    a responsibility to use our <span>influence to drive this.</span> <a href="#"></a>
+                                </p>
                             </div>
                         </li>
                         <li>
@@ -241,6 +251,11 @@
             <span class="copyright">© Copyright Manifest Theme. Allrights reserved</span>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('is-active');
+        }
+    </script>
 </body>
 
 </html>
