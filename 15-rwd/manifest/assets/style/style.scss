@@ -938,6 +938,9 @@ footer {
 }
 
 @media screen and (max-width: 544px) {
+    .posts-section .posts-list .figure .figcaption {
+        left: 0;
+    }
 
     .container {
         width: min(94%, 300px);
