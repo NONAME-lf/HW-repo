@@ -108,7 +108,7 @@
                             <img src="assets/img/search.svg" alt="Magnifying glass icon">
                         </picture>
                     </button>
-                    <button class="hamburger hamburger--spin" type="button" onclick="toggleMenu()">
+                    <button class="hamburger hamburger--spin" type="button" onclick="toggleBurger()">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>
@@ -335,6 +335,7 @@
         window.addEventListener('resize', function (event) {
             if (event.target.outerWidth > 1104 && document.body.classList.contains('is-active')) {
                 document.body.classList.remove('is-active');
+                document.querySelectorAll('.hamburger').forEach(btn => btn.classList.remove('is-active'));
             }
         })
 
