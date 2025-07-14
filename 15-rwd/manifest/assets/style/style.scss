@@ -292,6 +292,10 @@ header {
         }
     }
 
+    .img-wrap {
+        aspect-ratio: 570/470;
+    }
+
     .content {
         max-width: 450px;
 
@@ -340,7 +344,7 @@ header {
 
     .img-wrap {
         margin-bottom: 26px;
-
+        aspect-ratio: 370/260;
     }
 
     li {
@@ -438,6 +442,7 @@ h2+a {
 
     .img-wrap {
         margin-bottom: 20px;
+        aspect-ratio: 570/260;
     }
 
     .popular-list {
