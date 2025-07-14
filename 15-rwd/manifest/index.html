@@ -61,7 +61,11 @@
                     <ul class="blog-list">
                         <li>
                             <div class="img-wrap">
-                                <img src="assets/img/arrow-image2.jpg" alt="Blog arrow image">
+                                <picture>
+                                    <source srcset="assets/img/arrow-image2@320.jpg" media="(max-width: 544px)">
+                                    <source srcset="assets/img/arrow-image2@768.jpg" media="(max-width: 1104px)">
+                                    <img src="assets/img/arrow-image2.jpg" alt="Blog arrow image">
+                                </picture>
                             </div>
                             <div class="content">
                                 <hgroup>
@@ -78,6 +82,7 @@
                             <div class="img-wrap">
                                 <picture>
                                     <source srcset="assets/img/blog-image3@320.jpg" media="(max-width: 544px)">
+                                    <source srcset="assets/img/blog-image3@768.jpg" media="(max-width: 1104px)">
                                     <img src="assets/img/blog-image3.jpg" alt="Blog main image">
                                 </picture>
                             </div>

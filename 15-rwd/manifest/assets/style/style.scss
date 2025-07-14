@@ -218,24 +218,24 @@ header {
 }
 
 .blog-list {
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 50px;
-
     li {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+
         gap: 30px;
         position: relative;
 
         &:first-child {
             margin-bottom: 50px;
+
         }
 
-        &:last-child {
-            flex-direction: row-reverse;
-            justify-content: flex-start;
-            gap: 37px;
+
+        &:nth-child(2n) {
+            gap: 30px;
+            grid-template-areas: "content img-wrap";
+            justify-items: end;
+
 
             h3 {
                 max-width: 370px;
@@ -243,8 +243,14 @@ header {
 
             .content {
                 max-height: 450px;
+                grid-area: content;
+                position: relative;
+                left: -7px;
             }
 
+            .img-wrap {
+                grid-area: img-wrap;
+            }
 
             p {
                 a {
@@ -321,21 +327,21 @@ header {
         font-family: "Red Hat Display", sans-serif;
         font-size: 1.75rem;
         font-weight: 600;
-        line-height: 166%;
+        line-height: 167%;
         letter-spacing: 0.175rem;
         display: inline-block;
         margin-bottom: 41px;
     }
 
     .posts-list {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
     }
 
+
     .img-wrap {
-        max-width: 370px;
-        max-height: 260px;
-        margin-bottom: 27px;
+        margin-bottom: 26px;
 
     }
 
@@ -357,6 +363,7 @@ header {
             font-size: 0.75rem;
             line-height: 166%;
             letter-spacing: 0.075rem;
+
         }
     }
 
@@ -415,7 +422,7 @@ h2+a {
         font-family: "Red Hat Display", sans-serif;
         font-size: 1.75rem;
         font-weight: 600;
-        line-height: 166%;
+        line-height: 168%;
         letter-spacing: 0.175rem;
 
         &+a {
@@ -432,15 +439,16 @@ h2+a {
     }
 
     .img-wrap {
-        max-width: 570px;
-        max-height: 260px;
         margin-bottom: 20px;
     }
 
     .popular-list {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 30px;
         margin-bottom: 53px;
+        justify-items: center;
+
     }
 
     li {
