@@ -123,7 +123,7 @@
             </div>
         </header>
         <main>
-            <section class="hero-section">
+            <section class="hero-section lazy" data-bg="assets/img/bg-image.jpg">
                 <div class="container">
                     <h1>Manifest is a newborn theme.<br>Clean, simple and fast.</h1>
                 </div>
@@ -347,7 +347,7 @@
     </footer>
     <script src="assets/js/lazyload.min.js"></script>
     <script>
-        // const lazyLoadInstance = new LazyLoad();
+        const lazyLoadInstance = new LazyLoad();
     </script>
     <script>
         const toggleMenu = () => document.body.classList.toggle('is-active');
