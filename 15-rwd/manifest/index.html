@@ -9,6 +9,72 @@
 </head>
 
 <body>
+    <div class="overlay"></div>
+    <div class="mobile-menu-panel">
+        <div class="mm-top">
+            <div class="logo">
+                <a href="#">
+                    <img src="assets/img/logo@768.svg" alt="Manifest logo">
+                </a>
+            </div>
+            <div class="hamburger-div">
+                <button class="hamburger hamburger--spin" type="button" onclick="toggleBurger()">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-menu">
+            <ul class="nav-list">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Works</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Works</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Works</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div class="page-wrapper">
         <header>
             <div class="container">
@@ -48,6 +114,7 @@
                         </span>
                     </button>
                 </div>
+            </div>
         </header>
         <main>
             <section class="hero-section">
@@ -259,9 +326,18 @@
         </div>
     </footer>
     <script>
-        function toggleMenu() {
-            document.querySelector('.hamburger').classList.toggle('is-active');
+        const toggleMenu = () => document.body.classList.toggle('is-active');
+        const toggleBurger = () => {
+            document.querySelectorAll('.hamburger').forEach(btn => btn.classList.toggle('is-active'));
+            toggleMenu();
         }
+
+        window.addEventListener('resize', function (event) {
+            if (event.target.outerWidth > 1104 && document.body.classList.contains('is-active')) {
+                document.body.classList.remove('is-active');
+            }
+        })
+
     </script>
 </body>
 

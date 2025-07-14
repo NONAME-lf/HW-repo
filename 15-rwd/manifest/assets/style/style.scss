@@ -98,6 +98,8 @@ body {
 
 .hamburger {
     display: none;
+    position: relative;
+    z-index: 1004;
 }
 
 // Header
@@ -108,12 +110,7 @@ header {
     background-color: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    // .img-wrap {
-    //     max-height: 20px;
-    //     margin-bottom: -7px;
-    //     margin-right: 32.7%;
-    // }
-
+    transition: all .2s ease;
 
     .container {
         display: flex;
@@ -124,7 +121,8 @@ header {
         >picture {
             max-height: 20px;
             margin-bottom: -7px;
-            // margin-right: 29.7%;
+            opacity: 1;
+            visibility: visible;
         }
     }
 
@@ -632,5 +630,135 @@ footer {
         transform: translateX(-51%);
     }
 }
+
+.is-active {
+
+    header {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    .mobile-menu-panel {
+        transform: translateX(0); // Slide in when active
+
+        .mobile-menu {
+            display: block;
+            overflow-y: scroll;
+            height: calc(100dvh - 60px);
+
+            a {
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: all 0.2s ease;
+}
+
+.hamburger {
+    &-div {
+        position: relative;
+        top: 4px;
+    }
+}
+
+.mobile-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+
+    .mm-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        height: 60px;
+
+        .logo {
+            max-height: 20px;
+            position: relative;
+            top: 2px;
+
+            a {
+                height: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
+    .nav-list {
+        text-align: center;
+
+        li {
+            border-top: 3px solid #90c1c5;
+            padding: 5px;
+
+            &:last-child {
+                border-bottom: 3px solid #90c1c5;
+
+            }
+
+            a {
+                position: relative;
+                width: 100%;
+                display: inline-block;
+
+                &::after {
+                    transition: all .2s ease;
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    // width: 40px;
+                    width: 0;
+                    background-color: #000;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &:hover::after {
+                    width: 17%;
+                }
+            }
+
+            &:has(a:hover) {
+                background-color: #f8a671;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+    }
+}
+
+
 
 @import 'rwd';
