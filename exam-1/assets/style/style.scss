@@ -17,6 +17,9 @@ $divider-color-dark: #515773;
     box-sizing: border-box;
 }
 
+*:focus {
+    outline-color: $dark-button-color-hover;
+}
 
 ul,
 ol {
@@ -47,7 +50,6 @@ img {
 
 body {
     background-color: $main-dark-color;
-    background-image: url('../img/first-screen-image-min.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -60,6 +62,7 @@ body {
     font-weight: 300;
     line-height: 1.625rem;
     padding-top: 30px;
+    min-width: 350px;
 }
 
 .page-wrapper {
@@ -276,6 +279,7 @@ li a {
 
     .nav-list {
         text-align: center;
+        backdrop-filter: blur(10px);
 
         li {
 
@@ -395,7 +399,7 @@ li a {
         display: grid;
         grid-template-columns: 48% 52%;
         opacity: 0.9;
-        background: var(--colors-blue-deep, #161926);
+        background: $main-dark-color;
         left: -22.43%;
         top: 45px;
         max-width: 770px;
@@ -542,7 +546,7 @@ li a {
 
 // === QUOTE SECTION === //
 .quote-section {
-    background: no-repeat url('../img/quote-background-min.jpg');
+    background: no-repeat;
     min-height: 400px;
     padding: 8.547% 25.64% 8.547% 13.675%;
     margin-bottom: 116px;
@@ -630,7 +634,7 @@ li a {
     }
 
     hgroup {
-        padding-left: 100px;
+        padding-left: 4.274%;
     }
 
     h2 {
@@ -688,7 +692,7 @@ li a {
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            border-color: $dark-button-color-hover;
 
             .btn {
                 color: $dark-button-color-hover;
@@ -751,18 +755,9 @@ li a {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-
-        &:nth-child(1) {
-            background: url('../img/reviews-img-1-min.jpg') lightgray 50% / cover no-repeat;
-        }
-
-        &:nth-child(2) {
-            background: url('../img/reviews-img-2-min.jpg') lightgray 50% / cover no-repeat;
-        }
-
-        &:nth-child(3) {
-            background: url('../img/reviews-img-3-min.jpg') lightgray 50% / cover no-repeat;
-        }
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
 
         span {
             color: rgba(255, 255, 255, 1);
@@ -772,12 +767,14 @@ li a {
             font-weight: 400;
             line-height: 1.25rem;
             letter-spacing: 0.1rem;
+            opacity: 0.8;
         }
     }
 
     blockquote {
         font-size: 1rem;
         font-weight: 400;
+        opacity: 0.8;
     }
 }
 
@@ -885,6 +882,16 @@ footer {
 }
 
 // === MEDIA QUERIES === //
+@media screen and (max-width: 1299px) {
+    .reviews-section {
+        blockquote {
+            font-size: 1.25rem;
+            line-height: 167%;
+            height: 100%;
+        }
+    }
+}
+
 @media screen and (max-width: 992px) {
     header {
         nav {
@@ -899,4 +906,219 @@ footer {
             right: -.4px;
         }
     }
+
+    .half-grid-section,
+    .promises-section.half-grid-section {
+        grid-template-columns: 100%;
+
+        .content {
+            left: 0;
+            opacity: 1;
+            background-color: rgba($color: $main-dark-color, $alpha: 0.9);
+            backdrop-filter: blur(5px);
+        }
+
+        .img-wrap-inner {
+            position: static;
+        }
+
+        .img-wrap {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 64%;
+        }
+    }
+
+    .video-section {
+        .tablet {
+            // width: 50%;
+            padding: 29.25px 29.25px 69.02px 29.25px;
+
+            iframe {
+                height: 100%;
+            }
+
+            &::before {
+                top: 1.5%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &::after {
+                top: 91%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    .half-grid-section.promises-section {
+        .content {
+            justify-self: center;
+            width: 100%;
+            padding: 45px 0;
+            column-gap: 5%;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .img-wrap {
+            width: 57%;
+        }
+
+        .btn-wrap a::after {
+            width: calc(33% - 7.5px);
+            bottom: 37%;
+            left: 36%;
+        }
+    }
+
+    .reviews-section {
+        blockquote {
+            font-size: 1.125rem;
+            line-height: 1.625rem;
+        }
+    }
+
+    footer {
+        .container {
+            gap: 10%;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 855px) {
+
+    .reviews-section {
+        blockquote {
+            font-size: clamp(1.25rem, 4vw, 2rem);
+            line-height: 160%;
+        }
+
+        li span {
+            font-size: clamp(1.25rem, 4vw, 1.75rem);
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .img-wrap:not(.logo) {
+        display: none;
+    }
+
+    .is-active {
+
+        .mobile-menu-panel {
+            transform: translateY(58.5px);
+        }
+    }
+
+    header {
+        height: 60px;
+    }
+
+    .half-grid-section:not(.promises-section) {
+        .content {
+            grid-template-columns: 1fr 1fr;
+            gap: 5%;
+        }
+    }
+
+    .quote-section {
+        background-size: cover;
+        padding: 8.547% 13.64% 8.547% 13.675%;
+    }
+
+    .benefits-section {
+        ul {
+            grid-template-columns: 100%;
+        }
+    }
+
+    .promises-section.half-grid-section {
+        .content {
+            grid-template-columns: 100%;
+            text-align: center;
+
+            .btn-wrap {
+                height: 90px;
+                width: 50%;
+                margin: 0 auto;
+
+                a::after {
+                    width: 112px;
+                    bottom: 35%;
+                    left: 50%;
+                    transform: translateX(-43%);
+                }
+
+                span {
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+        }
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    footer {
+        .container {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .half-grid-section:not(.promises-section) .content {
+        grid-template-columns: 100%;
+    }
+
+    .benefits-section {
+        li {
+            padding: 20px 5%;
+            max-width: none;
+        }
+    }
+
+    .quote-section {
+        padding: 15.547% 4.64% 15.547% 7.675%;
+
+        blockquote::before {
+            top: -54px;
+            left: -20px;
+        }
+    }
+
+    .video-section {
+        .tablet {
+            padding: 29.25px 16.25px 57.02px;
+            width: 94.9%;
+
+            &::after {
+                top: 92%;
+            }
+        }
+    }
+
+    .reviews-section {
+        ul {
+            grid-template-columns: 100%;
+
+            li {
+                aspect-ratio: unset;
+                padding: 20px 7%;
+                gap: 20px;
+            }
+        }
+    }
+
 }
