@@ -1,4 +1,5 @@
 @use 'fonts.css' as *;
+@use 'hamburger.scss' as *;
 
 $main-dark-color: #161926;
 $dark-accent-color: #689FF2;
@@ -15,6 +16,7 @@ $divider-color-dark: #515773;
     margin: 0;
     box-sizing: border-box;
 }
+
 
 ul,
 ol {
@@ -131,7 +133,6 @@ h2 {
 }
 
 // === HEADER === //
-
 header {
     font-size: 0;
     background: linear-gradient(270deg, rgba(22, 25, 38, 0.50) 0%, rgba(22, 25, 38, 0.00) 24.1%, rgba(22, 25, 38, 0.00) 47.19%), rgba(22, 25, 38, 0.02);
@@ -141,21 +142,21 @@ header {
     position: sticky;
     top: 0px;
     z-index: 1000;
+    transition: all 0.2s ease;
 
     .container {
         height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
     }
 
-    ul {
+    ul:not(.nav-list) {
         display: flex;
         gap: 29px;
     }
 
-    li {
+    li:not(.nav-list li) {
         display: inline-block;
         font-size: 1.125rem;
 
@@ -164,8 +165,12 @@ header {
         }
     }
 
-    a {
+    a:not(.nav-list a) {
         max-height: 32px;
+    }
+
+    .hamburger {
+        display: none;
     }
 }
 
@@ -197,6 +202,147 @@ li a {
         width: calc(100% + 2px);
     }
 }
+
+.is-active {
+
+    .overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .mobile-menu-panel {
+        transform: translateY(78.5px);
+        visibility: visible;
+        opacity: 1;
+
+        .mobile-menu {
+            display: block;
+            overflow-y: auto;
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: all 0.2s ease;
+}
+
+.hamburger {
+    &-div {
+        position: relative;
+        top: 4px;
+    }
+}
+
+.mobile-menu-panel {
+    position: fixed;
+    top: 1.5px;
+    right: 0;
+    height: max-content;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    transition: all .2s ease-in-out;
+    transform: translateY(-1px);
+    visibility: hidden;
+    opacity: 0;
+
+    .mm-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        height: 60px;
+
+        .logo {
+            position: relative;
+            top: 2px;
+
+            a {
+                height: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
+    .nav-list {
+        text-align: center;
+
+        li {
+
+            border-top: 3px solid $divider-color-dark;
+            padding: 5px;
+            transition: all .2s ease;
+            cursor: pointer;
+
+            &:last-child {
+                border-bottom: 3px solid $divider-color-dark;
+            }
+
+            &:hover {
+                border-color: #fff;
+
+                &+li {
+                    border-top-color: #fff;
+                }
+            }
+
+            a {
+                position: relative;
+                width: 100%;
+                display: inline-block;
+
+                &::after {
+                    transition: all .2s ease;
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    // width: 40px;
+                    width: 0;
+                    background-color: #000;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                &:hover::after {
+                    width: 17%;
+                }
+            }
+
+            &:has(a:hover) {
+                background-color: #091221;
+            }
+        }
+    }
+
+    .mobile-menu {
+        display: none;
+        height: max-content;
+
+        a {
+            text-transform: uppercase;
+        }
+    }
+
+    .nav-list li {
+        padding: 0;
+
+        a {
+            padding: 7px;
+        }
+    }
+}
+
 
 
 // === HERO SECTION === //
@@ -734,6 +880,23 @@ footer {
 
         a::after {
             bottom: -3px;
+        }
+    }
+}
+
+// === MEDIA QUERIES === //
+@media screen and (max-width: 992px) {
+    header {
+        nav {
+            display: none;
+        }
+
+        .hamburger {
+            display: inline-block;
+            position: relative;
+            max-height: 22px;
+            top: -1px;
+            right: -.4px;
         }
     }
 }
