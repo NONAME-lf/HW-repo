@@ -139,13 +139,19 @@ h2 {
 header {
     font-size: 0;
     background: linear-gradient(270deg, rgba(22, 25, 38, 0.50) 0%, rgba(22, 25, 38, 0.00) 24.1%, rgba(22, 25, 38, 0.00) 47.19%), rgba(22, 25, 38, 0.02);
-    backdrop-filter: blur(4.5px);
     height: 80px;
     width: 100%;
     position: sticky;
     top: 0px;
     z-index: 1000;
-    transition: all 0.2s ease;
+    transition: all .2s ease;
+    transform: translateZ(0);
+
+    .blur-div {
+        height: 100%;
+        backdrop-filter: blur(4.5px);
+        -webkit-backdrop-filter: blur(4.5px);
+    }
 
     .container {
         height: 100%;
@@ -214,8 +220,8 @@ li a {
     }
 
     .mobile-menu-panel {
-        transform: translateY(78.5px);
-        visibility: visible;
+        transform: translateY(80px);
+        // visibility: visible;
         opacity: 1;
 
         .mobile-menu {
@@ -223,6 +229,7 @@ li a {
             overflow-y: auto;
         }
     }
+
 }
 
 .overlay {
@@ -247,16 +254,16 @@ li a {
 
 .mobile-menu-panel {
     position: fixed;
-    top: 1.5px;
+    top: 0;
     right: 0;
     height: max-content;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4.5px);
     z-index: 999;
-    transition: all .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
     transform: translateY(-1px);
-    visibility: hidden;
+    // visibility: hidden;
     opacity: 0;
 
     .mm-top {
@@ -279,7 +286,6 @@ li a {
 
     .nav-list {
         text-align: center;
-        backdrop-filter: blur(10px);
 
         li {
 
@@ -807,7 +813,7 @@ li a {
             background-color: transparent;
             border: none;
             border-bottom: 1px solid $divider-color-dark;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.8);
             font-family: "Playfair Display", sans-serif;
             font-size: 1.125rem;
             font-style: italic;
@@ -815,6 +821,10 @@ li a {
             line-height: 1.25rem;
             letter-spacing: 0.09rem;
             padding-bottom: 12px;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
         }
 
         input[type="email"] {
@@ -894,7 +904,7 @@ footer {
 
 @media screen and (max-width: 992px) {
     header {
-        nav {
+        .blur-div nav {
             display: none;
         }
 
@@ -989,9 +999,13 @@ footer {
 
 
 
-@media screen and (max-width: 855px) {
+@media screen and (max-width: 870px) {
 
     .reviews-section {
+        ul {
+            grid-template-columns: 100%;
+        }
+
         blockquote {
             font-size: clamp(1.25rem, 4vw, 2rem);
             line-height: 160%;
