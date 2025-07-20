@@ -1,0 +1,6 @@
+User-Agent: *
+Dissalow: /
+
+Sitemap: https://noname-lf.github.io/HW-repo/sitemap.xml
+
+Host: noname-lf.github.io/HW-repo/
