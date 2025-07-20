@@ -129,7 +129,7 @@ h2 {
 
 h1,
 h2 {
-    &>span {
+    &>em {
         color: $dark-accent-color;
         font-style: italic;
     }
@@ -150,7 +150,6 @@ header {
     .blur-div {
         height: 100%;
         backdrop-filter: blur(4.5px);
-        -webkit-backdrop-filter: blur(4.5px);
     }
 
     .container {
@@ -316,7 +315,6 @@ li a {
                     content: '';
                     position: absolute;
                     height: 1px;
-                    // width: 40px;
                     width: 0;
                     background-color: #000;
                     bottom: 0;
@@ -448,7 +446,8 @@ li a {
             display: none;
         }
 
-        &::before {
+        &::before,
+        &::after {
             content: '';
             display: block;
             width: 100px;
@@ -457,18 +456,13 @@ li a {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        &::before {
             top: -40.5px;
         }
 
         &::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 1px;
-            background-color: $outer-divider-color;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
             bottom: .5px;
         }
     }
@@ -598,7 +592,6 @@ li a {
     .tablet {
         border: 1px solid $divider-color-dark;
         border-radius: 32px;
-        // padding: 2.5% 5.9% 2.5% 2.5%;
         padding: 29.250px 69.023px 29.250px 29.250px;
         width: 82.9%;
         height: 601px;
@@ -658,11 +651,9 @@ li a {
     grid-template-columns: 51.3% 48.7%;
 
     .content {
-        // column-gap: 106px;
         column-gap: 22%;
         row-gap: 58px;
         padding: 75px 0 73px 70px;
-        // padding: 8.413% 0 8.413% 7.852%;
         left: -35.3%;
         grid-template-columns: 58% 60%;
     }
@@ -827,10 +818,7 @@ li a {
             }
         }
 
-        input[type="email"] {
-            padding-bottom: 11px;
-        }
-
+        input[type="email"],
         textarea {
             padding-bottom: 11px;
         }
