@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
 
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,10 @@
                             </li>
                         </ul>
                     </nav>
+                    <input type="checkbox" onchange="document.documentElement.dataset.theme = this.checked ? 'light' : '';
+                        window.document.body.dataset.bg= this.checked ? 'assets/img/first-screen-image-light.png' : 'assets/img/first-screen-image-min.png';
+                        window.document.body.style.backgroundImage = this.checked ? 'url(assets/img/first-screen-image-light.png)' : 'url(assets/img/first-screen-image-min.png)';
+                        ">
                     <button class="hamburger hamburger--emphatic" type="button" onclick="toggleBurger()">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>

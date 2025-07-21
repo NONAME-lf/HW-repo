@@ -633,7 +633,7 @@ li a {
     }
 
     hgroup {
-        padding-left: 4.274%;
+        padding-left: 8.55%;
     }
 
     h2 {
@@ -1163,4 +1163,144 @@ footer {
         }
     }
 
+}
+
+
+[data-theme="light"] {
+    $text-color: #262A3F;
+    $button-light-color: #F1897B;
+    $button-light-color-hover: #E54F3A;
+
+    body {
+        background-color: #fff;
+        color: rgba($color: $text-color, $alpha: 0.8);
+    }
+
+    header {
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.24) 24.1%, rgba(255, 255, 255, 0.00) 47.19%), rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(4.5px);
+    }
+
+    h1,
+    h2 {
+        &>em {
+            color: $outer-divider-color;
+            font-style: italic;
+        }
+    }
+
+    h2 {
+        color: $text-color;
+    }
+
+    .btn {
+        color: $button-light-color;
+
+        &::after {
+            background-color: $button-light-color;
+        }
+
+        &:hover {
+            color: $button-light-color-hover;
+
+            &::after {
+                background-color: $button-light-color-hover;
+            }
+        }
+    }
+
+    .half-grid-section .content {
+
+        background: rgba(255, 255, 255, 0.9);
+
+        .data {
+            color: $text-color;
+
+            span {
+                color: #e4e4e4;
+            }
+        }
+    }
+
+    li a {
+        color: $text-color;
+
+        &::after {
+            opacity: 0.3;
+            background: var(--Secondary-Coral, #F1897B);
+        }
+    }
+
+
+    blockquote {
+
+        &::before {
+            background: no-repeat url('../img/quote-icon-light.svg');
+        }
+    }
+
+    .promises-section.half-grid-section {
+        h3 {
+            color: $text-color;
+
+            span {
+                color: $text-color;
+                opacity: 0.8;
+            }
+        }
+
+        .btn-wrap {
+
+            border-color: #e4e4e4;
+
+            &:hover {
+                border-color: $button-light-color-hover;
+
+                .btn {
+                    color: $button-light-color-hover;
+
+                    &::after {
+                        background-color: $button-light-color-hover;
+                    }
+                }
+            }
+        }
+    }
+
+    .reviews-section {
+        blockquote {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .contact-section {
+
+        border-color: #e4e4e4;
+
+        form {
+
+            input,
+            textarea {
+                border-color: rgba($color: $text-color, $alpha: 0.1)
+            }
+
+            .placeholder {
+                color: rgba($text-color, 0.5);
+            }
+        }
+    }
+
+    footer {
+        .container {
+            border-color: #e4e4e4;
+
+            span {
+                color: rgba($color: $text-color, $alpha: 0.6);
+
+                span {
+                    color: rgba($color: $text-color, $alpha: 1);
+                }
+            }
+        }
+    }
 }
