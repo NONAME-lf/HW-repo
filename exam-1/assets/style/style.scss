@@ -153,8 +153,8 @@ h2 {
 // === HEADER === //
 header {
     font-size: 0;
-    background: -webkit-gradient(linear, right top, left top, from(rgba(22, 25, 38, 0.50)), color-stop(24.1%, rgba(22, 25, 38, 0.00)), color-stop(47.19%, rgba(22, 25, 38, 0.00))), rgba(22, 25, 38, 0.02);
     background: -o-linear-gradient(right, rgba(22, 25, 38, 0.50) 0%, rgba(22, 25, 38, 0.00) 24.1%, rgba(22, 25, 38, 0.00) 47.19%), rgba(22, 25, 38, 0.02);
+    background: -webkit-gradient(linear, right top, left top, from(rgba(22, 25, 38, 0.50)), color-stop(24.1%, rgba(22, 25, 38, 0.00)), color-stop(47.19%, rgba(22, 25, 38, 0.00))), rgba(22, 25, 38, 0.02);
     background: linear-gradient(270deg, rgba(22, 25, 38, 0.50) 0%, rgba(22, 25, 38, 0.00) 24.1%, rgba(22, 25, 38, 0.00) 47.19%), rgba(22, 25, 38, 0.02);
     height: 80px;
     width: 100%;
@@ -934,11 +934,9 @@ li a {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        // gap: 40px;
         min-width: 40.171%;
 
         label {
-            // height: 32px;
             position: relative;
             margin-bottom: 40px;
             height: 32px;
@@ -1376,9 +1374,13 @@ footer {
     }
 
     header {
-        background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.50)), color-stop(24.1%, rgba(255, 255, 255, 0.24)), color-stop(47.19%, rgba(255, 255, 255, 0.00))), rgba(255, 255, 255, 0.02);
         background: -o-linear-gradient(right, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.24) 24.1%, rgba(255, 255, 255, 0.00) 47.19%), rgba(255, 255, 255, 0.02);
+        background: -webkit-gradient(linear, right top, left top, from(rgba(255, 255, 255, 0.50)), color-stop(24.1%, rgba(255, 255, 255, 0.24)), color-stop(47.19%, rgba(255, 255, 255, 0.00))), rgba(255, 255, 255, 0.02);
         background: linear-gradient(270deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.24) 24.1%, rgba(255, 255, 255, 0.00) 47.19%), rgba(255, 255, 255, 0.02);
+
+        .blur-div {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
     }
 
     .is-active {
@@ -1488,11 +1490,18 @@ footer {
             input,
             textarea {
                 border-color: rgba($color: $text-color, $alpha: 0.1);
-                color: $text-color;
+                color: rgba($text-color, 0.5);
             }
 
             .placeholder {
                 color: rgba($text-color, 0.5);
+            }
+
+
+            label:focus-within>span,
+            input:not(:placeholder-shown)+span,
+            textarea:not(:placeholder-shown)+span {
+                color: rgba($text-color, 0.9);
             }
         }
     }
