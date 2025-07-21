@@ -775,9 +775,10 @@ li a {
     }
 }
 
+// == CONTACT SECTION === //
 .contact-section {
     margin-bottom: 101px;
-    padding-top: 59px;
+    padding-top: 60px;
     border-top: 1px solid $divider-color-dark;
     display: flex;
     flex-direction: row;
@@ -786,7 +787,7 @@ li a {
 
     hgroup {
         max-width: 470px;
-        margin-top: 17px;
+        margin-top: 16px;
 
         h2 {
             margin-bottom: 25px;
@@ -796,14 +797,42 @@ li a {
     form {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        // gap: 40px;
         min-width: 40.171%;
+
+        label {
+            // height: 32px;
+            position: relative;
+            margin-bottom: 40px;
+            height: 32px;
+
+            input,
+            textarea {
+                height: 100%;
+            }
+
+            $margins: 40.5px, 39.5px, 40px;
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    margin-bottom: nth($margins, $i);
+                }
+            }
+        }
+
+        label:focus-within>span,
+        input:not(:placeholder-shown)+span,
+        textarea:not(:placeholder-shown)+span {
+            color: rgba(255, 255, 255, 1);
+            transform: translateY(-25px);
+        }
+
 
         input,
         textarea {
             background-color: transparent;
             border: none;
-            border-bottom: 1px solid $divider-color-dark;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.8);
             font-family: "Playfair Display", sans-serif;
             font-size: 1.125rem;
@@ -811,16 +840,27 @@ li a {
             font-weight: 400;
             line-height: 1.25rem;
             letter-spacing: 0.09rem;
-            padding-bottom: 12px;
+            width: 100%;
 
             &::placeholder {
-                color: rgba(255, 255, 255, 0.5);
+                opacity: 0;
             }
         }
 
-        input[type="email"],
-        textarea {
-            padding-bottom: 11px;
+        .placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-family: "Playfair Display";
+            font-size: 1.125rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.25rem;
+            letter-spacing: 0.09rem;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-1px);
+            transition-duration: 300ms;
         }
 
         .btn {
