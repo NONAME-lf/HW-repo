@@ -52,7 +52,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <input type="checkbox" onchange="document.documentElement.dataset.theme = this.checked ? 'light' : '';
+                    <input type="checkbox" role="switch" onchange="document.documentElement.dataset.theme = this.checked ? 'light' : '';
                         window.document.body.dataset.bg= this.checked ? 'assets/img/first-screen-image-light.png' : 'assets/img/first-screen-image-min.png';
                         window.document.body.style.backgroundImage = this.checked ? 'url(assets/img/first-screen-image-light.png)' : 'url(assets/img/first-screen-image-min.png)';
                         ">

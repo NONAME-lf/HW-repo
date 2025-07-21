@@ -180,6 +180,49 @@ header {
     .hamburger {
         display: none;
     }
+
+    input[type=checkbox][role="switch"] {
+        width: 60px;
+        height: 30px;
+        position: relative;
+        appearance: none;
+
+        &::before {
+            content: '';
+            width: 60px;
+            display: block;
+            height: 30px;
+            border-radius: 18px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid $divider-color-dark;
+            transition: all .2s ease;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: all .2s ease;
+        }
+
+        &:checked {
+            &::before {
+                border-color: #fff;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            &::after {
+                background-color: $divider-color-dark;
+                left: calc(100% - 28px);
+            }
+        }
+    }
 }
 
 li a {
@@ -1170,6 +1213,10 @@ footer {
     $text-color: #262A3F;
     $button-light-color: #F1897B;
     $button-light-color-hover: #E54F3A;
+
+    *:focus {
+        outline-color: $button-light-color-hover;
+    }
 
     body {
         background-color: #fff;
