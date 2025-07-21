@@ -1487,7 +1487,8 @@ footer {
 
             input,
             textarea {
-                border-color: rgba($color: $text-color, $alpha: 0.1)
+                border-color: rgba($color: $text-color, $alpha: 0.1);
+                color: $text-color;
             }
 
             .placeholder {
