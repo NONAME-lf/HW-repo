@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/style.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header></header>
+        <main>
+            <div class="container">
+
+                <!-- Task 1 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 1
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.</p>
+                        <button class="btn btn-success" type="button" onclick="getPointThree()">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_1_output_v1"></output>
+                        <output id="task_1_output_v2"></output>
+                    </div>
+                </div>
+
+                <!-- Task 2 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 2
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Виконай додавання рядка "1" і цифри 2 (обидві операнди повинні бути в
+                            змінних), добийся математично правильної відповіді</p>
+                        <button class="btn btn-success" type="button" onclick="getStringNumSum()">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_2_output_v1"></output>
+                        <output id="task_2_output_v2"></output>
+                    </div>
+                </div>
+
+                <!-- Task 3 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 3
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки
+                            файлів розміром в 820 Мб поміщається на флешку.</p>
+                        <input class="form-control mb-3" type="text" id="task_3_input"
+                            placeholder="Enter the size of your flash-drive in Mb: ">
+                        <button class="btn btn-success" type="button" onclick="getQntFiles()">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_3_output"></output>
+                    </div>
+                </div>
+
+
+                <!-- Task 4 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 4
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма
+                            виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.</p>
+                        <input class="form-control mb-3" type="text" id="task_4_input"
+                            placeholder="Enter how much money you have: ">
+                        <input class="form-control mb-3" type="text" id="task_4_input_2"
+                            placeholder="Enter price of the chocolate: ">
+                        <button class="btn btn-success" type="button" onclick="(buyChocolates())">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_4_output"></output>
+                    </div>
+                </div>
+
+
+                <!-- Task 5 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 5
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Запитай у користувача тризначне число і виведи його задом наперед. Для
+                            вирішення завдання тобі знадобиться оператор % (залишок від ділення).</p>
+                        <input class="form-control mb-3" type="text" id="task_5_input"
+                            placeholder="Enter three digit integer: ">
+                        <button class="btn btn-success" type="button" onclick="getReverseDigit()">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_5_output"></output>
+                    </div>
+                </div>
+
+
+                <!-- Task 6 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 6
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою
+                            депозиту 5% річних. Вивести суму нарахованих відсотків.</p>
+                        <input class="form-control mb-3" type="text" id="task_6_input"
+                            placeholder="Enter your desired deposit amount for two month with 5% yearly interest: ">
+                        <button class="btn btn-success" type="button" onclick="getTwoMonthDeposit()">Press me!</button>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_6_output"></output>
+                    </div>
+                </div>
+
+
+                <!-- Task 7 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 7
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Що повернуть вирази:</p>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_7">
+                            2 && 0 && 3 -&gt; 0
+                            <br>
+                            2 || 0 || 3 -&gt; 2
+                            <br>
+                            2 && 0 || 3 -&gt; 3
+                        </output>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script src="assets/js/main.js"></script>
+        <script>
+        </script>
+    </div>
+</body>
+
+</html>
