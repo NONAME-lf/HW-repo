@@ -55,9 +55,15 @@
                     <div class="card-body">
                         <p class="card-text">Користувач вказує обсяг флешки в Гб. Програма повинна порахувати скільки
                             файлів розміром в 820 Мб поміщається на флешку.</p>
-                        <input class="form-control mb-3" type="text" id="task_3_input"
-                            placeholder="Enter the size of your flash-drive in Mb: ">
-                        <button class="btn btn-success" type="button" onclick="getQntFiles()">Press me!</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <input class="form-control mb-3" type="text" id="task_3_input"
+                                    placeholder="Enter the size of your flash-drive in Mb: ">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button" onclick="getQntFiles()">Press me!</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <output id="task_3_output"></output>
@@ -73,11 +79,20 @@
                     <div class="card-body">
                         <p class="card-text">Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма
                             виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.</p>
-                        <input class="form-control mb-3" type="text" id="task_4_input"
-                            placeholder="Enter how much money you have: ">
-                        <input class="form-control mb-3" type="text" id="task_4_input_2"
-                            placeholder="Enter price of the chocolate: ">
-                        <button class="btn btn-success" type="button" onclick="(buyChocolates())">Press me!</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <input class="form-control mb-3" type="text" id="task_4_input"
+                                    placeholder="Enter how much money you have: ">
+                            </div>
+                            <div class="col-4">
+                                <input class="form-control mb-3" type="text" id="task_4_input_2"
+                                    placeholder="Enter price of the chocolate: ">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button" onclick="(buyChocolates())">Press
+                                    me!</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <output id="task_4_output"></output>
@@ -93,9 +108,16 @@
                     <div class="card-body">
                         <p class="card-text">Запитай у користувача тризначне число і виведи його задом наперед. Для
                             вирішення завдання тобі знадобиться оператор % (залишок від ділення).</p>
-                        <input class="form-control mb-3" type="text" id="task_5_input"
-                            placeholder="Enter three digit integer: ">
-                        <button class="btn btn-success" type="button" onclick="getReverseDigit()">Press me!</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <input class="form-control mb-3" type="text" id="task_5_input"
+                                    placeholder="Enter three digit integer: ">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button" onclick="getReverseDigit()">Press
+                                    me!</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <output id="task_5_output"></output>
@@ -111,9 +133,16 @@
                     <div class="card-body">
                         <p class="card-text">Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою
                             депозиту 5% річних. Вивести суму нарахованих відсотків.</p>
-                        <input class="form-control mb-3" type="text" id="task_6_input"
-                            placeholder="Enter your desired deposit amount for two month with 5% yearly interest: ">
-                        <button class="btn btn-success" type="button" onclick="getTwoMonthDeposit()">Press me!</button>
+                        <div class="row">
+                            <div class="col-4">
+                                <input class="form-control mb-3" type="text" id="task_6_input"
+                                    placeholder="Enter your desired deposit amount for two month with 5% yearly interest: ">
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button" onclick="getTwoMonthDeposit()">Press
+                                    me!</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <output id="task_6_output"></output>
