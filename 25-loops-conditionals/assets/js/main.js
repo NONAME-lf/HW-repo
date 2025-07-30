@@ -65,17 +65,17 @@ function userSpecSymbol() {
 
 // Task 3
 function sumRange() {
-  const startRange = isValid(
+  let startRange = isValid(
     document.getElementById("task_3_input_from").value,
     true,
     true
   );
-  const endRange = isValid(
+  let endRange = isValid(
     document.getElementById("task_3_input_to").value,
     true,
     true
   );
-  let result;
+  let result = 0;
   if (typeof startRange === "string") {
     result = startRange;
     document.getElementById("task_3_output").innerHTML = result;
@@ -85,16 +85,16 @@ function sumRange() {
     document.getElementById("task_3_output").innerHTML = result;
     return;
   }
-  if (startRange >= endRange) {
-    result = "First number must be smaller than second one!";
-    document.getElementById("task_3_output").innerHTML = result;
+  if (startRange === endRange) {
+    document.getElementById("task_3_output").innerHTML = sum;
     return;
   }
-  let sum = 0;
-  for (let i = startRange; i <= endRange; ++i) {
-    sum += i;
+  if (startRange > endRange) {
+    [startRange, endRange] = [endRange, startRange];
   }
-  result = sum;
+  for (let i = startRange; i <= endRange; ++i) {
+    result += i;
+  }
   document.getElementById("task_3_output").innerHTML = result;
 }
 

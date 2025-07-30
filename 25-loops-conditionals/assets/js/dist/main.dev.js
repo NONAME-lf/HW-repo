@@ -84,7 +84,7 @@ function userSpecSymbol() {
 function sumRange() {
   var startRange = isValid(document.getElementById("task_3_input_from").value, true, true);
   var endRange = isValid(document.getElementById("task_3_input_to").value, true, true);
-  var result;
+  var result = 0;
 
   if (typeof startRange === "string") {
     result = startRange;
@@ -96,19 +96,21 @@ function sumRange() {
     return;
   }
 
-  if (startRange >= endRange) {
-    result = "First number must be smaller than second one!";
-    document.getElementById("task_3_output").innerHTML = result;
+  if (startRange === endRange) {
+    document.getElementById("task_3_output").innerHTML = sum;
     return;
   }
 
-  var sum = 0;
-
-  for (var i = startRange; i <= endRange; ++i) {
-    sum += i;
+  if (startRange > endRange) {
+    var _ref = [endRange, startRange];
+    startRange = _ref[0];
+    endRange = _ref[1];
   }
 
-  result = sum;
+  for (var i = startRange; i <= endRange; ++i) {
+    result += i;
+  }
+
   document.getElementById("task_3_output").innerHTML = result;
 } // Checks if number is not 0 or NaN
 
