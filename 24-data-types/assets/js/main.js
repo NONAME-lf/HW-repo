@@ -52,6 +52,7 @@ function getTwoMonthDeposit() {
   let twoMonthAquisition = userDepositInput * interestRate * (2 / 12);
   document.getElementById("task_6_output").innerHTML = twoMonthAquisition;
 }
+
 // Task 7
 /*
     2 && 0 && 3 -> 0 
