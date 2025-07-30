@@ -244,50 +244,12 @@ function calculateDiscount() {
 
 
 function cycleDaysOfWeek() {
-  var currentDayNumber = new Date().toLocaleDateString("en-us", {
-    weekday: "long"
-  });
-  var currentDay;
   var currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() - 1);
 
   do {
-    currentDay = currentDate.getDay();
-    currentDate.setDate(currentDay++); // if (currentDayNumber > 6) {
-    //   currentDayNumber = 0;
-    // }
-    // currentDay = currentDayNumber++;
-    // switch (currentDayNumber) {
-    //   case 0:
-    //     currentDay = "Monday";
-    //     break;
-    //   case 1:
-    //     currentDay = "Tuesday";
-    //     break;
-    //   case 2:
-    //     currentDay = "Wednesday";
-    //     break;
-    //   case 3:
-    //     currentDay = "Thursday";
-    //     break;
-    //   case 4:
-    //     currentDay = "Friday";
-    //     break;
-    //   case 5:
-    //     currentDay = "Saturday";
-    //     break;
-    //   case 6:
-    //     currentDay = "Sunday";
-    //     break;
-    //   default:
-    //     currentDay = "Something went wrong";
-    //     break;
-    // }
+    currentDate.setDate(currentDate.getDate() + 1);
   } while (confirm("".concat(currentDate.toLocaleDateString("en-us", {
     weekday: "long"
   }), ". Do you want to see the next day?")));
 }
-/*  
-TODO:  
-Finish normal tasks;
-Read 3 chapther of theory on js info
-*/
