@@ -148,8 +148,8 @@ function greatestCommonDivisor() {
   let result;
 
   result = EuclideanGcd(
-    Math.max(firstNum, secondNum),
-    Math.min(firstNum, secondNum)
+    Math.max(Math.abs(firstNum), Math.abs(secondNum)),
+    Math.min(Math.abs(firstNum), Math.abs(secondNum))
   );
 
   document.getElementById("task_4_output").innerHTML = result;
@@ -164,16 +164,22 @@ function greatestCommonDivisor() {
 
 // Task 5
 function numberDividers() {
-  const number = isValid(
-    document.getElementById("task_5_input").value,
-    false,
-    true
-  );
+  // In order to keep number const, use conditional(ternary) operator to asign wheter error message or modulus of it
+  const number =
+    typeof isValid(
+      document.getElementById("task_5_input").value,
+      false,
+      true
+    ) === "string"
+      ? isValid(document.getElementById("task_5_input").value, false, true)
+      : Math.abs(
+          isValid(document.getElementById("task_5_input").value, false, true)
+        );
   if (typeof number === "string") {
     document.getElementById("task_5_output").innerHTML = number;
     return;
   }
-
+  // number = Math.abs(number);
   let result = "";
   for (let i = 1; i <= number; ++i) {
     if (i == number) {
