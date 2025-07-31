@@ -261,3 +261,112 @@ function cycleDaysOfWeek() {
     )
   );
 }
+
+// Task 9
+let LOW = 0;
+let HIGH = 100;
+function guessNumber(button) {
+  let mid =
+    HIGH < 50 ? Math.floor((LOW + HIGH) / 2) : Math.ceil((LOW + HIGH) / 2);
+  const outputDiv = document.getElementById("task_9_output");
+
+  if (LOW === HIGH || mid === 0 || mid === 100) {
+    outputDiv.innerHTML = `Your number is ${mid}!`;
+    LOW = 0;
+    HIGH = 100;
+    return;
+  }
+  if (button === 0) {
+    LOW = 0;
+    HIGH = 100;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = `Your number is ${mid}?`;
+  }
+  if (button === 2) {
+    outputDiv.innerHTML = `Your number is ${mid}!`;
+  } else if (button === 1) {
+    HIGH = mid;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = `Your number is ${mid}?`;
+  } else if (button === 3) {
+    LOW = mid;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = `Your number is ${mid}?`;
+  }
+}
+
+// Taks 10
+function generateMultTable() {
+  let result = "";
+  for (let i = 2; i <= 9; i++) {
+    for (let j = 1; j <= 10; j++) {
+      result += `${i} * ${j} = ${i * j}<br>`;
+    }
+    result += "<br>";
+    document.getElementById(`task_10_output_${i}`).innerHTML = result;
+    result = "";
+  }
+}
+
+// Task 11
+function nextDate() {
+  const userDate = new Date(
+    document.getElementById("task_11_input").valueAsDate
+  );
+  let day = userDate.getDate();
+  let month = userDate.getMonth();
+  let year = userDate.getFullYear();
+  const leapYear = isLeap(year);
+  const qntDays = daysInMonth(month, leapYear);
+
+  if (!(qntDays - day)) {
+    day = 1;
+    if (month === 11) {
+      month = 0;
+      ++year;
+    } else {
+      month = month + 1;
+    }
+  } else {
+    ++day;
+  }
+  let result = "";
+  if (day < 10) {
+    result = `0${day}.`;
+  } else {
+    result = `${day}.`;
+  }
+  if (month < 9) {
+    result += `0${month + 1}.${year}`;
+  } else {
+    result += `${month + 1}.${year}`;
+  }
+  document.getElementById("task_11_output").innerHTML = result;
+}
+
+function isLeap(year) {
+  if (!(year % 4) && year % 100) return true;
+  else if (!(year % 4) && !(year % 100) && !(year % 400)) return true;
+  return false;
+}
+
+function daysInMonth(month, isLeap = false) {
+  switch (month) {
+    case 1:
+      if (isLeap) return 29;
+      return 28;
+    case 0:
+    case 2:
+    case 4:
+    case 6:
+    case 7:
+    case 9:
+    case 11:
+      return 31;
+    case 3:
+    case 5:
+    case 8:
+    case 10:
+      return 30;
+  }
+}

@@ -256,4 +256,123 @@ function cycleDaysOfWeek() {
   } while (confirm("".concat(currentDate.toLocaleDateString("en-us", {
     weekday: "long"
   }), ". Do you want to see the next day?")));
+} // Task 9
+
+
+var LOW = 0;
+var HIGH = 100;
+
+function guessNumber(button) {
+  var mid = HIGH < 50 ? Math.floor((LOW + HIGH) / 2) : Math.ceil((LOW + HIGH) / 2);
+  var outputDiv = document.getElementById("task_9_output");
+
+  if (LOW === HIGH || mid === 0 || mid === 100) {
+    outputDiv.innerHTML = "Your number is ".concat(mid, "!");
+    LOW = 0;
+    HIGH = 100;
+    return;
+  }
+
+  if (button === 0) {
+    LOW = 0;
+    HIGH = 100;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = "Your number is ".concat(mid, "?");
+  }
+
+  if (button === 2) {
+    outputDiv.innerHTML = "Your number is ".concat(mid, "!");
+  } else if (button === 1) {
+    HIGH = mid;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = "Your number is ".concat(mid, "?");
+  } else if (button === 3) {
+    LOW = mid;
+    mid = Math.trunc((LOW + HIGH) / 2);
+    outputDiv.innerHTML = "Your number is ".concat(mid, "?");
+  }
+} // Taks 10
+
+
+function generateMultTable() {
+  var result = "";
+
+  for (var i = 2; i <= 9; i++) {
+    for (var j = 1; j <= 10; j++) {
+      result += "".concat(i, " * ").concat(j, " = ").concat(i * j, "<br>");
+    }
+
+    result += "<br>";
+    document.getElementById("task_10_output_".concat(i)).innerHTML = result;
+    result = "";
+  }
+} // Task 11
+
+
+function nextDate() {
+  var userDate = new Date(document.getElementById("task_11_input").valueAsDate);
+  var day = userDate.getDate();
+  var month = userDate.getMonth();
+  var year = userDate.getFullYear();
+  var leapYear = isLeap(year);
+  var qntDays = daysInMonth(month, leapYear);
+
+  if (!(qntDays - day)) {
+    day = 1;
+
+    if (month === 11) {
+      month = 0;
+      ++year;
+    } else {
+      month = month + 1;
+    }
+  } else {
+    ++day;
+  }
+
+  var result = "";
+
+  if (day < 10) {
+    result = "0".concat(day, ".");
+  } else {
+    result = "".concat(day, ".");
+  }
+
+  if (month < 9) {
+    result += "0".concat(month + 1, ".").concat(year);
+  } else {
+    result += "".concat(month + 1, ".").concat(year);
+  }
+
+  document.getElementById("task_11_output").innerHTML = result;
+}
+
+function isLeap(year) {
+  if (!(year % 4) && year % 100) return true;else if (!(year % 4) && !(year % 100) && !(year % 400)) return true;
+  return false;
+}
+
+function daysInMonth(month) {
+  var isLeap = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  switch (month) {
+    case 1:
+      if (isLeap) return 29;
+      return 28;
+
+    case 0:
+    case 2:
+    case 4:
+    case 6:
+    case 7:
+    case 9:
+    case 11:
+      return 31;
+
+    case 3:
+    case 5:
+    case 8:
+    case 10:
+      return 30;
+  }
 }

@@ -207,10 +207,6 @@
                             так до тих пір, поки користувач натискає OK.
                         </p>
                         <div class="row">
-                            <!-- <div class="col-4">
-                                <input type="text" id="task_8_input" class="form-control mb-2"
-                                    placeholder="Enter purchase amount">
-                            </div> -->
                             <div class="col-2 align-self-center">
                                 <button class="btn btn-success" type="button" onclick="cycleDaysOfWeek()">Press
                                     me!</button>
@@ -219,6 +215,105 @@
                     </div>
                     <div class="card-footer">
                         <output id="task_8_output"></output>
+                    </div>
+                </div>
+
+                <!-- Task 9 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 9
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Гра «Вгадай число». Запропонуй користувачеві загадати число від 0 до 100 і відгадай його
+                            наступним способом: кожну ітерацію циклу діли діапазон чисел навпіл, записуй результат в N і
+                            питай у користувача «Ваше число більше N, менше N або==N?». Залежно від того що вказав
+                            користувач,
+                            зменшуй діапазон. Початковий діапазон від 0 до 100, поділи навпіл і отримай 50. Якщо
+                            користувач вказав, що його число> 50, то зміни діапазон на від 50 до 100. І так до тих
+                            пір, поки користувач не вибере == N (буде корисним почитати про алгоритм: "бінарний
+                            пошук").
+                        </p>
+                        <div class="row">
+                            <div class="col-2 align-self-center">
+                                <button class="btn btn-success" type="button" onclick="guessNumber(0)">Press
+                                    me!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row gap-2">
+                            <button class="btn btn-success col-3" id="lower" type="button"
+                                onclick="guessNumber(1);">Less
+                                than!</button>
+                            <button class="btn btn-success col-3" id="yes" type="button"
+                                onclick="guessNumber(2);">Exactly
+                                the
+                                number!</button>
+                            <button class="btn btn-success col-3" id="higher" type="button"
+                                onclick="guessNumber(3);">More
+                                than!</button>
+                        </div>
+                        <output id="task_9_output"></output>
+                    </div>
+                </div>
+
+
+                <!-- Task 10 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 10
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа
+                            від 1 до 10.
+                        </p>
+                        <div class="row">
+                            <div class="col-2 align-self-center">
+                                <button class="btn btn-success" type="button" onclick="generateMultTable()">Press
+                                    me!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer row gap-1 ms-0 me-0">
+                        <output class="col" id="task_10_output_2"></output>
+                        <output class="col" id="task_10_output_3"></output>
+                        <output class="col" id="task_10_output_4"></output>
+                        <output class="col" id="task_10_output_5"></output>
+                        <output class="col" id="task_10_output_6"></output>
+                        <output class="col" id="task_10_output_7"></output>
+                        <output class="col" id="task_10_output_8"></output>
+                        <output class="col" id="task_10_output_9"></output>
+                    </div>
+                </div>
+
+                <!-- Task 11 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 11
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Запитай дату (день, місяць, рік) і виведи наступну за нею дату. Враховуй можливість переходу
+                            на наступний місяць, рік, а також високосний рік.
+                        </p>
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="date" class="form-control mb-2" id="task_11_input"
+                                    placeholder="Enter day, month, year">
+                            </div>
+                            <div class="col-2 align-self-center">
+                                <button class="btn btn-success" type="button" onclick="nextDate()">Press
+                                    me!</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer row gap-1 ms-0 me-0">
+                        <output class="col" id="task_11_output"></output>
                     </div>
                 </div>
 
