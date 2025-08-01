@@ -1,33 +1,11 @@
 "use strict";
 
-var a = +prompt("a?", "");
-
-if (a == 0) {
-  alert(0);
+function ask(question, yes, no) {
+  if (confirm(question)) yes();else no();
 }
 
-if (a == 1) {
-  alert(1);
-}
-
-if (a == 2 || a == 3) {
-  alert("2,3");
-}
-
-switch (a) {
-  case 0:
-    alert(0);
-    break;
-
-  case 1:
-    alert(1);
-    break;
-
-  case 2:
-  case 3:
-    alert();
-    break;
-
-  default:
-    break;
-}
+ask("Do you agree?", function () {
+  return alert("You agreed.");
+}, function () {
+  return alert("You canceled the execution of the function");
+});
