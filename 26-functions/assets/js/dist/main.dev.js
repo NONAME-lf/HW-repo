@@ -101,7 +101,7 @@ function isPerfectNumber(num) {
     }
   }
 
-  return sum === num ? true : false;
+  return sum === num;
 }
 
 function checkIsPerfectNumber(num) {

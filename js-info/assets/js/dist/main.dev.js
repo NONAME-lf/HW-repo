@@ -1,11 +1,19 @@
 "use strict";
 
-function ask(question, yes, no) {
-  if (confirm(question)) yes();else no();
-}
-
-ask("Do you agree?", function () {
-  return alert("You agreed.");
-}, function () {
-  return alert("You canceled the execution of the function");
-});
+var ladder = {
+  step: 0,
+  up: function up() {
+    this.step++;
+    return this;
+  },
+  down: function down() {
+    this.step--;
+    return this;
+  },
+  showStep: function showStep() {
+    // shows the current step
+    alert(this.step);
+    return this;
+  }
+};
+ladder.up().up().down().showStep().down().showStep();

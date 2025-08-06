@@ -97,7 +97,7 @@ function isPerfectNumber(num) {
       sum += i;
     }
   }
-  return sum === num ? true : false;
+  return sum === num;
 }
 
 function checkIsPerfectNumber(num) {
