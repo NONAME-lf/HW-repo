@@ -111,7 +111,8 @@ const fraction = {
   denumerator: 1,
 
   addTwoFractions(fraction2) {
-    if (this.denumerator == fraction2) {
+    debugger;
+    if (this.denumerator == fraction2.denumerator) {
       return {
         numerator: this.numerator + fraction2.numerator,
         denumerator: this.denumerator,
@@ -121,9 +122,11 @@ const fraction = {
         this.denumerator,
         fraction2.denumerator
       );
-      this.denumerator *= newDen;
-      fraction2 *= newDen;
-      return this.addTwoFractions(fraction2.denumerator);
+      this.numerator *= newDen / this.denumerator;
+      this.denumerator *= newDen / this.denumerator;
+      fraction2.numerator *= newDen / fraction2.denumerator;
+      fraction2.denumerator *= newDen / fraction2.denumerator;
+      return this.addTwoFractions(fraction2);
     }
   },
 };
@@ -154,7 +157,7 @@ function findLeastCommonMultiple(denumerator1, denumerator2) {
       arr2.push(i);
     } else ++i;
   }
-  let result = 0;
+  let result = 1;
   for (let i = 0; i < Math.max(arr1.length, arr2.length); ++i) {
     if (arr1[i] !== arr2[i]) {
       result *= arr1[i];

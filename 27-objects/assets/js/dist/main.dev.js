@@ -112,16 +112,20 @@ var fraction = {
   numerator: 0,
   denumerator: 1,
   addTwoFractions: function addTwoFractions(fraction2) {
-    if (this.denumerator == fraction2) {
+    debugger;
+
+    if (this.denumerator == fraction2.denumerator) {
       return {
         numerator: this.numerator + fraction2.numerator,
         denumerator: this.denumerator
       };
     } else {
       var newDen = findLeastCommonMultiple(this.denumerator, fraction2.denumerator);
-      this.denumerator *= newDen;
-      fraction2 *= newDen;
-      return this.addTwoFractions(fraction2.denumerator);
+      this.numerator *= newDen / this.denumerator;
+      this.denumerator *= newDen / this.denumerator;
+      fraction2.numerator *= newDen / fraction2.denumerator;
+      fraction2.denumerator *= newDen / fraction2.denumerator;
+      return this.addTwoFractions(fraction2);
     }
   }
 };
@@ -155,7 +159,7 @@ function findLeastCommonMultiple(denumerator1, denumerator2) {
     } else ++i;
   }
 
-  var result = 0;
+  var result = 1;
 
   for (var _i = 0; _i < Math.max(arr1.length, arr2.length); ++_i) {
     if (arr1[_i] !== arr2[_i]) {
