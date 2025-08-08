@@ -111,7 +111,6 @@ const fraction = {
   denumerator: 1,
 
   addTwoFractions(fraction2) {
-    debugger;
     if (this.denumerator == fraction2.denumerator) {
       return {
         numerator: this.numerator + fraction2.numerator,
@@ -129,6 +128,38 @@ const fraction = {
       return this.addTwoFractions(fraction2);
     }
   },
+
+  substractTwoFractions(fraction2) {
+    if (this.denumerator == fraction2.denumerator) {
+      return {
+        numerator: this.numerator - fraction2.numerator,
+        denumerator: this.denumerator,
+      };
+    } else {
+      let newDen = findLeastCommonMultiple(
+        this.denumerator,
+        fraction2.denumerator
+      );
+      this.numerator *= newDen / this.denumerator;
+      this.denumerator *= newDen / this.denumerator;
+      fraction2.numerator *= newDen / fraction2.denumerator;
+      fraction2.denumerator *= newDen / fraction2.denumerator;
+      return this.substractTwoFractions(fraction2);
+    }
+  },
+
+  multiplyTwoFractions(fraction2) {
+    return {
+      numerator: this.numerator * fraction2.numerator,
+      denumerator: this.denumerator * fraction2.denumerator,
+    };
+  },
+  divideTwoFractions(fraction2) {
+    return {
+      numerator: this.numerator * fraction2.denumerator,
+      denumerator: this.denumerator * fraction2.numerator,
+    };
+  },
 };
 
 const fraction2 = Object.assign({}, fraction);
@@ -136,7 +167,9 @@ fraction.numerator = 5;
 fraction.denumerator = 3;
 fraction2.numerator = 3;
 fraction2.denumerator = 7;
-console.log(fraction.addTwoFractions(fraction2));
+console.log(fraction.substractTwoFractions(fraction2));
+console.log(fraction.multiplyTwoFractions(fraction2));
+console.log(fraction.divideTwoFractions(fraction2));
 
 function findLeastCommonMultiple(denumerator1, denumerator2) {
   let den1 = denumerator1;
