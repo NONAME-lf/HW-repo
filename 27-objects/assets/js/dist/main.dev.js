@@ -113,10 +113,8 @@ var fraction = {
   denumerator: 1,
   addTwoFractions: function addTwoFractions(fraction2) {
     if (this.denumerator == fraction2.denumerator) {
-      return {
-        numerator: this.numerator + fraction2.numerator,
-        denumerator: this.denumerator
-      };
+      this.numerator += fraction2.numerator;
+      return;
     } else {
       var newDen = findLeastCommonMultiple(this.denumerator, fraction2.denumerator);
       this.numerator *= newDen / this.denumerator;
@@ -128,10 +126,8 @@ var fraction = {
   },
   substractTwoFractions: function substractTwoFractions(fraction2) {
     if (this.denumerator == fraction2.denumerator) {
-      return {
-        numerator: this.numerator - fraction2.numerator,
-        denumerator: this.denumerator
-      };
+      this.numerator -= fraction2.numerator;
+      return;
     } else {
       var newDen = findLeastCommonMultiple(this.denumerator, fraction2.denumerator);
       this.numerator *= newDen / this.denumerator;
@@ -142,16 +138,20 @@ var fraction = {
     }
   },
   multiplyTwoFractions: function multiplyTwoFractions(fraction2) {
-    return {
-      numerator: this.numerator * fraction2.numerator,
-      denumerator: this.denumerator * fraction2.denumerator
-    };
+    this.numerator *= fraction2.numerator;
+    this.denumerator *= fraction2.denumerator;
   },
   divideTwoFractions: function divideTwoFractions(fraction2) {
-    return {
-      numerator: this.numerator * fraction2.denumerator,
-      denumerator: this.denumerator * fraction2.numerator
-    };
+    this.numerator *= fraction2.denumerator;
+    this.denumerator *= fraction2.numerator;
+  },
+  reductFraction: function reductFraction() {
+    for (var i = 2; i < Math.max(this.numerator, this.denumerator); ++i) {
+      if (!(this.numerator % i) && !(this.denumerator % i)) {
+        this.numerator /= i;
+        this.denumerator /= i;
+      }
+    }
   }
 };
 var fraction2 = Object.assign({}, fraction);
@@ -159,9 +159,14 @@ fraction.numerator = 5;
 fraction.denumerator = 3;
 fraction2.numerator = 3;
 fraction2.denumerator = 7;
-console.log(fraction.substractTwoFractions(fraction2));
-console.log(fraction.multiplyTwoFractions(fraction2));
-console.log(fraction.divideTwoFractions(fraction2));
+fraction.substractTwoFractions(fraction2);
+console.log(fraction);
+fraction.multiplyTwoFractions(fraction2);
+console.log(fraction);
+fraction.divideTwoFractions(fraction2);
+console.log(fraction);
+fraction.reductFraction();
+console.log(fraction);
 
 function findLeastCommonMultiple(denumerator1, denumerator2) {
   var den1 = denumerator1;
