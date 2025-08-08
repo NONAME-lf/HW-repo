@@ -100,12 +100,6 @@ function time2sec(object) {
 // getTime(time3);
 
 // Task 3
-/* Створи об'єкт, що описує звичайний дріб. Створи об'єкт, який має методи роботи з дробом:
-Складання 2-х об'єктів-дробів.
-Віднімання 2-х об'єктів-дробів.
-Множення 2-х об'єктів-дробів.
-Ділення 2-х об'єктів-дробів.
-Скорочення об'єкта-дробу. */
 const fraction = {
   numerator: 0,
   denumerator: 1,
@@ -119,10 +113,7 @@ const fraction = {
         this.denumerator,
         fraction2.denumerator
       );
-      this.numerator *= newDen / this.denumerator;
-      this.denumerator *= newDen / this.denumerator;
-      fraction2.numerator *= newDen / fraction2.denumerator;
-      fraction2.denumerator *= newDen / fraction2.denumerator;
+      useLeastCommonMultiple(this, fraction2, newDen);
       return this.addTwoFractions(fraction2);
     }
   },
@@ -136,10 +127,7 @@ const fraction = {
         this.denumerator,
         fraction2.denumerator
       );
-      this.numerator *= newDen / this.denumerator;
-      this.denumerator *= newDen / this.denumerator;
-      fraction2.numerator *= newDen / fraction2.denumerator;
-      fraction2.denumerator *= newDen / fraction2.denumerator;
+      useLeastCommonMultiple(this, fraction2, newDen);
       return this.substractTwoFractions(fraction2);
     }
   },
@@ -167,45 +155,41 @@ fraction.numerator = 5;
 fraction.denumerator = 3;
 fraction2.numerator = 3;
 fraction2.denumerator = 7;
-fraction.substractTwoFractions(fraction2);
-console.log(fraction);
-fraction.multiplyTwoFractions(fraction2);
-console.log(fraction);
-fraction.divideTwoFractions(fraction2);
-console.log(fraction);
-fraction.reductFraction();
-console.log(fraction);
+// fraction.multiplyTwoFractions(fraction2);
+// fraction.reductFraction(fraction2);
+// console.log(fraction);
+// fraction.substractTwoFractions(fraction2);
+// fraction.reductFraction(fraction2);
+// console.log(fraction);
+// fraction.divideTwoFractions(fraction2);
+// fraction.reductFraction(fraction2);
+// console.log(fraction);
+// fraction.reductFraction();
+// fraction.reductFraction(fraction2);
+// console.log(fraction);
 
 function findLeastCommonMultiple(denumerator1, denumerator2) {
-  let den1 = denumerator1;
-  let den2 = denumerator2;
-  let arr1 = [];
-  let arr2 = [];
-  let i = 2;
-  while (den1 > 1) {
-    if (!(den1 % i)) {
-      arr1.push(i);
-      den1 /= i;
-    } else ++i;
+  return (
+    (denumerator1 * denumerator2) /
+    EuclideanGcd(
+      Math.max(Math.abs(denumerator1), Math.abs(denumerator2)),
+      Math.min(Math.abs(denumerator1), Math.abs(denumerator2))
+    )
+  );
+}
+
+function useLeastCommonMultiple(fraction1, fraction2, newDen) {
+  fraction1.numerator *= newDen / fraction1.denumerator;
+  fraction1.denumerator *= newDen / fraction1.denumerator;
+  fraction2.numerator *= newDen / fraction2.denumerator;
+  fraction2.denumerator *= newDen / fraction2.denumerator;
+}
+
+// 25-loops-conditionals - Task 4
+function EuclideanGcd(a, b) {
+  while (true) {
+    if (!a) return b;
+    else if (!b) return a;
+    return EuclideanGcd(Math.max(b, a % b), Math.min(b, a % b));
   }
-  i = 2;
-  while (den2 > 1) {
-    if (!(den2 % i)) {
-      den2 /= i;
-      arr2.push(i);
-    } else ++i;
-  }
-  let result = 1;
-  for (let i = 0; i < Math.max(arr1.length, arr2.length); ++i) {
-    if (arr1[i] !== arr2[i]) {
-      result *= arr1[i];
-    }
-    if (arr2[i] !== arr1[i]) {
-      result *= arr2[i];
-    }
-    if (arr1[i] === arr2[i]) {
-      result *= arr1[i];
-    }
-  }
-  return result;
 }
