@@ -42,13 +42,13 @@ var car = {
     console.log("Time requaired: ".concat(arr[0]));
     console.log("Fuel requaired: ".concat(arr[1]));
   }
-}; // console.log(car.getInfo());
-// console.log(car.isDriver("Bob"));
-// car.addDriver("Bob");
-// console.log(car.getInfo());
-// console.log(car.isDriver("Bob"));
-// car.getToDist(car.calcToDist(1500));
-// Task 2
+};
+console.log(car.getInfo());
+console.log(car.isDriver("Bob"));
+car.addDriver("Bob");
+console.log(car.getInfo());
+console.log(car.isDriver("Bob"));
+car.getToDist(car.calcToDist(1500)); // Task 2
 
 var time = {
   hours: 0,
@@ -91,15 +91,15 @@ function sec2time(sec) {
 
 function time2sec(object) {
   return object.hours * 3600 + object.minutes * 60 + object.seconds;
-} // getTime(time);
-// let time1 = addSeconds(20000);
-// getTime(time1);
-// let time2 = addMinutes(333.33333);
-// getTime(time2);
-// let time3 = addHours(5.5555555);
-// getTime(time3);
-// Task 3
+}
 
+getTime(time);
+var time1 = addSeconds(20000);
+getTime(time1);
+var time2 = addMinutes(333.33333);
+getTime(time2);
+var time3 = addHours(5.5555555);
+getTime(time3); // Task 3
 
 var fraction = {
   numerator: 0,
@@ -145,18 +145,19 @@ var fraction2 = Object.assign({}, fraction);
 fraction.numerator = 5;
 fraction.denumerator = 3;
 fraction2.numerator = 3;
-fraction2.denumerator = 7; // fraction.multiplyTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.substractTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.divideTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.reductFraction();
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
+fraction2.denumerator = 7;
+fraction.multiplyTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.substractTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.divideTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.reductFraction();
+fraction.reductFraction(fraction2);
+console.log(fraction);
 
 function findLeastCommonMultiple(denumerator1, denumerator2) {
   return denumerator1 * denumerator2 / EuclideanGcd(Math.max(Math.abs(denumerator1), Math.abs(denumerator2)), Math.min(Math.abs(denumerator1), Math.abs(denumerator2)));

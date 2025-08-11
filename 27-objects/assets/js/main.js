@@ -42,12 +42,12 @@ const car = {
   },
 };
 
-// console.log(car.getInfo());
-// console.log(car.isDriver("Bob"));
-// car.addDriver("Bob");
-// console.log(car.getInfo());
-// console.log(car.isDriver("Bob"));
-// car.getToDist(car.calcToDist(1500));
+console.log(car.getInfo());
+console.log(car.isDriver("Bob"));
+car.addDriver("Bob");
+console.log(car.getInfo());
+console.log(car.isDriver("Bob"));
+car.getToDist(car.calcToDist(1500));
 
 // Task 2
 const time = {
@@ -91,13 +91,13 @@ function time2sec(object) {
   return object.hours * 3600 + object.minutes * 60 + object.seconds;
 }
 
-// getTime(time);
-// let time1 = addSeconds(20000);
-// getTime(time1);
-// let time2 = addMinutes(333.33333);
-// getTime(time2);
-// let time3 = addHours(5.5555555);
-// getTime(time3);
+getTime(time);
+let time1 = addSeconds(20000);
+getTime(time1);
+let time2 = addMinutes(333.33333);
+getTime(time2);
+let time3 = addHours(5.5555555);
+getTime(time3);
 
 // Task 3
 const fraction = {
@@ -155,18 +155,18 @@ fraction.numerator = 5;
 fraction.denumerator = 3;
 fraction2.numerator = 3;
 fraction2.denumerator = 7;
-// fraction.multiplyTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.substractTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.divideTwoFractions(fraction2);
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
-// fraction.reductFraction();
-// fraction.reductFraction(fraction2);
-// console.log(fraction);
+fraction.multiplyTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.substractTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.divideTwoFractions(fraction2);
+fraction.reductFraction(fraction2);
+console.log(fraction);
+fraction.reductFraction();
+fraction.reductFraction(fraction2);
+console.log(fraction);
 
 function findLeastCommonMultiple(denumerator1, denumerator2) {
   return (
