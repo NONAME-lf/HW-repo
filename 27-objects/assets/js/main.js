@@ -34,11 +34,13 @@ const car = {
     const fuel = +((this.fuelConsumption * distance) / 100).toFixed(2);
     if (!(time % 4)) time += Math.trunc(time / 4) - 1;
     else if (time > 4) time += Math.trunc(time / 4);
-    return [time, fuel];
+    return { time, fuel };
   },
-  getToDist(arr) {
-    console.log(`Time requaired: ${arr[0]}`);
-    console.log(`Fuel requaired: ${arr[1]}`);
+  getToDist(obj) {
+    console.log(`Time requaired: ${obj.time}`);
+    console.log(`Fuel requaired: ${obj.fuel}`);
+    console.log(obj.time);
+    console.log(obj.fuel);
   },
 };
 

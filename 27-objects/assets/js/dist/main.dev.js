@@ -36,11 +36,16 @@ var car = {
     var time = +(distance / this.avgSpeed).toFixed(2);
     var fuel = +(this.fuelConsumption * distance / 100).toFixed(2);
     if (!(time % 4)) time += Math.trunc(time / 4) - 1;else if (time > 4) time += Math.trunc(time / 4);
-    return [time, fuel];
+    return {
+      time: time,
+      fuel: fuel
+    };
   },
-  getToDist: function getToDist(arr) {
-    console.log("Time requaired: ".concat(arr[0]));
-    console.log("Fuel requaired: ".concat(arr[1]));
+  getToDist: function getToDist(obj) {
+    console.log("Time requaired: ".concat(obj.time));
+    console.log("Fuel requaired: ".concat(obj.fuel));
+    console.log(obj.time);
+    console.log(obj.fuel);
   }
 };
 console.log(car.getInfo());
