@@ -49,16 +49,21 @@ thead.forEach(function (element) {
 }); // Task 3
 
 var cornerDiv = document.querySelector(".corner-div");
-cornerDiv.addEventListener("mousedown", function (event) {
-  // console.log(event);
+cornerDiv.addEventListener("mousedown", function (e) {
+  var resizableDiv = document.querySelector(".resizable-div");
+  var startX = e.clientX;
+  var startY = e.clientY;
+  var startWidth = resizableDiv.offsetWidth;
+  var startHeight = resizableDiv.offsetHeight;
+
   function onMouseMove(event) {
-    console.log(event);
-    console.log([document.querySelector(".resizable-div")]);
+    resizableDiv.style.width = "".concat(startWidth + (event.clientX - startX), "px");
+    resizableDiv.style.height = "".concat(startHeight + (event.clientY - startY), "px");
   }
 
-  cornerDiv.addEventListener("mousemove", onMouseMove);
-  cornerDiv.addEventListener("mouseup", function () {
-    cornerDiv.removeEventListener("mousemove", onMouseMove);
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", function () {
+    document.removeEventListener("mousemove", onMouseMove);
   });
 });
 

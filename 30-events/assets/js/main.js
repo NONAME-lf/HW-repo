@@ -56,17 +56,21 @@ thead.forEach((element) => {
 
 // Task 3
 const cornerDiv = document.querySelector(".corner-div");
-cornerDiv.addEventListener("mousedown", (event) => {
-  // console.log(event);
+cornerDiv.addEventListener("mousedown", (e) => {
+  const resizableDiv = document.querySelector(".resizable-div");
+  const startX = e.clientX;
+  const startY = e.clientY;
+  const startWidth = resizableDiv.offsetWidth;
+  const startHeight = resizableDiv.offsetHeight;
 
   function onMouseMove(event) {
-    console.log(event);
-    console.log([document.querySelector(".resizable-div")]);
+    resizableDiv.style.width = `${startWidth + (event.clientX - startX)}px`;
+    resizableDiv.style.height = `${startHeight + (event.clientY - startY)}px`;
   }
 
-  cornerDiv.addEventListener("mousemove", onMouseMove);
-  cornerDiv.addEventListener("mouseup", () => {
-    cornerDiv.removeEventListener("mousemove", onMouseMove);
+  document.addEventListener("mousemove", onMouseMove);
+  document.addEventListener("mouseup", () => {
+    document.removeEventListener("mousemove", onMouseMove);
   });
 });
 cornerDiv.ondragstart = function () {
