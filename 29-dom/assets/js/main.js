@@ -47,6 +47,13 @@ const tasks = [
       });
     },
   },
+  {
+    index: 2,
+    description: `Створити HTML-сторінку з кнопкою "Відкрити" і модальним вікном. 
+    На модальном вікні повинен бути текст і кнопка "Закрити". Спочатку модальне вікно не відображається. 
+    При кліку на кнопку "Відкрити" з'являється модальне вікно, на кнопку "Закрити" — зникає.`,
+    function: function toggleModal() {},
+  },
 ];
 
 function fillHTML() {
@@ -99,6 +106,3 @@ function createTask(container, task = { index: 0, description: "task" }) {
 }
 
 fillHTML();
-
-// Task 2
-// function toggleModal() {}
