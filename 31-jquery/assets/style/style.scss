@@ -60,7 +60,7 @@ body {
     justify-content: space-between;
     padding: 15.4% 0;
     background: url('../img/bg-image.jpg') no-repeat center center;
-    min-height: 860px;
+    min-height: 100dvh;
 
     main {
         flex-grow: 1;
@@ -164,6 +164,12 @@ header {
         flex-direction: column;
         gap: 15px;
         align-items: center;
+        position: relative;
+
+        svg,
+        span {
+            pointer-events: none;
+        }
 
         &:hover {
             color: #fff;
@@ -392,9 +398,10 @@ main {
 
     .donut-text {
         font-size: 2rem;
-        top: 35px;
-        left: 25px;
-
+        top: unset;
+        left: unset;
+        bottom: 38px;
+        right: 25px;
     }
 
     .buy-info {
