@@ -7,7 +7,22 @@ async function loadPage(page) {
   }
   const html = await response.text();
   document.getElementById("main-content").innerHTML = html;
-  createMyDonut();
+  if (page === "pages/main.html") {
+    var donut = $("#donutty").donutty({
+      radius: 400,
+      value: 8.7,
+      min: 0,
+      max: 10,
+      color: "url(#grad)",
+      dir: "rtl",
+      anchor: "top",
+      padding: 4,
+      thickness: 40,
+      round: "false",
+      bg: "#B7BACD",
+    });
+    createMyDonut();
+  }
 }
 const menu = document.querySelector(".main-menu");
 menu.addEventListener("click", function (e) {
@@ -49,6 +64,5 @@ function createMyDonut() {
       so we must call it with given parameter */
   chart.insertFragments(chart.getDashValues());
 }
-$(document).ready(() => {
-  createMyDonut();
-});
+
+loadPage("pages/main.html");

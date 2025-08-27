@@ -216,6 +216,45 @@ main {
         aspect-ratio: 1/1;
         display: inline-block;
         fill: $svg-color;
+        cursor: pointer;
+
+        &:hover {
+            scale: 1.3;
+            fill: $star-color;
+            transition: all .1s ease-in-out;
+
+            &+svg {
+                fill: $svg-color;
+            }
+
+            &+svg+svg {
+                fill: $svg-color;
+            }
+
+            &+svg+svg+svg {
+                fill: $svg-color;
+            }
+
+            &+svg+svg+svg+svg {
+                fill: $svg-color;
+            }
+        }
+
+        &:has(+svg:hover) {
+            fill: $star-color;
+        }
+
+        &:has(+svg+svg:hover) {
+            fill: $star-color;
+        }
+
+        &:has(+svg+svg+svg:hover) {
+            fill: $star-color;
+        }
+
+        &:has(+svg+svg+svg+svg:hover) {
+            fill: $star-color;
+        }
     }
 
     .yellow {

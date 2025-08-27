@@ -1,7 +1,7 @@
 "use strict";
 
 function loadPage(page) {
-  var response, html;
+  var response, html, donut;
   return regeneratorRuntime.async(function loadPage$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -22,7 +22,23 @@ function loadPage(page) {
         case 6:
           html = _context.sent;
           document.getElementById("main-content").innerHTML = html;
-          createMyDonut();
+
+          if (page === "pages/main.html") {
+            donut = $("#donutty").donutty({
+              radius: 400,
+              value: 8.7,
+              min: 0,
+              max: 10,
+              color: "url(#grad)",
+              dir: "rtl",
+              anchor: "top",
+              padding: 4,
+              thickness: 40,
+              round: "false",
+              bg: "#B7BACD"
+            });
+            createMyDonut();
+          }
 
         case 9:
         case "end":
@@ -71,6 +87,4 @@ function createMyDonut() {
   chart.insertFragments(chart.getDashValues());
 }
 
-$(document).ready(function () {
-  createMyDonut();
-});
+loadPage("pages/main.html");
