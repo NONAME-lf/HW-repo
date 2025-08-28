@@ -1,10 +1,4 @@
-@use "fonts.css" as *;
-$text-color: #B7BACD;
-$background-color: #2B3040;
-$background-color-dark: #212534;
-$svg-color: #8D91A3;
-$star-color: #FFDD3F;
-$btn-success: #13E28D;
+$text-color: #232323;
 
 *,
 *::before,
@@ -22,7 +16,6 @@ ol {
 a,
 button {
     transition: all .2s ease;
-    text-decoration: none;
 }
 
 button {
@@ -38,29 +31,20 @@ img {
 }
 
 .container {
-    width: min(90%, 600px);
+    width: min(90%, 1200px);
     margin: 0 auto;
 }
 
 body {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: $text-color;
-    font-family: Lato, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.375rem;
-    background-color: $background-color;
-    padding: 5.695% 15.278%;
+    font-family: sans-serif;
 }
-
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15.4% 0;
-    background: url('../img/bg-image.jpg') no-repeat center center;
-    min-height: 100dvh;
 
     main {
         flex-grow: 1;
@@ -69,390 +53,26 @@ body {
 
 
 .img-wrap {
-    aspect-ratio: 160 / 230.62;
-    max-width: 160px;
+    aspect-ratio: 4/3;
+    max-width: 280px;
 }
 
-.btn {
-    background-color: $btn-success;
-    color: #FFF;
-    font-family: Lato;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.25rem;
-    text-transform: uppercase;
-    border-radius: 2px;
-    padding: 5.883% 9.315%;
-    border: 2px solid transparent;
-    text-align: center;
 
-    &:hover {
-        background-color: $background-color;
-        border: 2px solid $btn-success;
-    }
-
-    &:active {
-        opacity: 0.5;
-    }
-}
-
-// <== HEADER ==>
-header {
-    background-color: $background-color;
-    padding: 4.667% 2% 4.667% 2.335%;
-    max-height: 120px;
-
-    svg {
-        display: block;
-        fill: $svg-color;
-        stroke: $svg-color;
-        stroke-width: 0;
-
-
-    }
-
-    li {
-        &:nth-child(1) {
-            a {
-                gap: 14px;
-            }
-
-            svg {
-                max-width: 26px;
-                max-height: 23px;
-            }
-        }
-
-        &:nth-child(2) {
-            a {
-                gap: 13px;
-            }
-
-            svg {
-                max-width: 25px;
-                max-height: 24px;
-                position: relative;
-                top: -1px;
-                right: -1px;
-            }
-        }
-
-        &:nth-child(3) svg {
-            max-width: 24px;
-            max-height: 22px;
-        }
-
-    }
-}
-
-.nav-list {
-    font-size: 0;
-    display: flex;
-    justify-content: space-around;
-
-    a {
-        color: $svg-color;
-        font-size: 1rem;
-        text-decoration: none;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.75rem;
-        text-transform: uppercase;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-        position: relative;
-
-        svg,
-        span {
-            pointer-events: none;
-        }
-
-        &:hover {
-            color: #fff;
-
-            svg {
-                stroke: #fff;
-                fill: #fff
-            }
-        }
-
-        &:active {
-            opacity: 0.7;
-        }
-    }
-}
-
-// <== MAIN ==>
-main {
-    background-color: $background-color-dark;
-    padding: 10% 6.667%;
-    min-height: 432px;
-}
-
-.content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 41px;
-
-
-    .img-info>.img-wrap {
-        margin-bottom: 43px;
-        position: relative;
-        top: 18.1px;
-    }
-}
-
-.rating {
-    display: flex;
-    justify-content: space-evenly;
-    height: 20px;
-
-    svg {
-        max-width: 20px;
-        aspect-ratio: 1/1;
-        display: inline-block;
-        fill: $svg-color;
-        cursor: pointer;
-
-        &:hover {
-            scale: 1.3;
-            fill: $star-color;
-            transition: all .1s ease-in-out;
-
-            &+svg {
-                fill: $svg-color;
-            }
-
-            &+svg+svg {
-                fill: $svg-color;
-            }
-
-            &+svg+svg+svg {
-                fill: $svg-color;
-            }
-
-            &+svg+svg+svg+svg {
-                fill: $svg-color;
-            }
-        }
-
-        &:has(+svg:hover) {
-            fill: $star-color;
-        }
-
-        &:has(+svg+svg:hover) {
-            fill: $star-color;
-        }
-
-        &:has(+svg+svg+svg:hover) {
-            fill: $star-color;
-        }
-
-        &:has(+svg+svg+svg+svg:hover) {
-            fill: $star-color;
-        }
-    }
-
-    .yellow {
-        fill: $star-color;
-    }
-}
-
-.text-info {
-    hgroup {
-        margin-top: 12px;
-        margin-bottom: 36px;
-
-        display: inline-block;
-
-        h2 {
-            color: #FFF;
-            font-size: 2rem;
-            line-height: 2rem;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #FFF;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-        }
-    }
-
-    &>p {
-        margin-bottom: 50px;
-        max-width: 277px;
-    }
-}
-
-.buy-info {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 4.08%;
-
-    gap: 20px;
-
-    .price {
-        display: inline-block;
-    }
-
-    .discount {
-        color: $star-color;
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        margin-bottom: 3px;
-        display: inline-block;
-    }
-
-    .current-price {
-        color: #FFF;
-        font-size: 2rem;
-        line-height: 2rem;
-    }
-
-    .btn {
-        margin-top: -1px;
-    }
-}
-
-.donutty {
-    position: relative;
-    display: inline-block;
-    max-width: 75px;
-    max-height: 75px;
-}
-
-.main-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.donut-text {
-    color: $text-color;
-    text-align: center;
-    font-family: Lato, sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.375rem;
-    position: absolute;
-    top: 26px;
-    left: 24px;
-}
-
-@media screen and (max-width: 896px) {
-    header {
-        height: 60px;
-        padding: 0;
-
-        nav {
-            height: 100%;
-        }
-
-        .nav-list {
-            height: 100%;
-            align-items: center;
-
-            li {
-                height: 35px;
-            }
-        }
-
-        svg {
-            max-height: 35px !important;
-            max-width: 35px !important;
-        }
-
-        span {
-            display: none;
-        }
-    }
+body {
+    background-color: #F7F7F7;
 
     .container {
-        width: min(100%, 600px);
+        background-color: #fff;
+        padding: 35px 34px 16px 36px;
+        margin: 55px auto;
+        border-radius: 6px;
     }
+}
 
-    .page-wrapper {
-        background: none;
-        padding: 0;
-    }
-
-    body {
-        background: url('../img/bg-image.jpg') no-repeat / cover;
-        line-height: 2rem;
-        padding: 0;
-    }
-
-    .content {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
-
-    .img-wrap {
-        max-width: 400px;
-    }
-
-    .rating {
-        height: 30px;
-        justify-content: space-between;
-
-        svg {
-            max-width: 30px;
-
-            use {
-                scale: 1.5;
-            }
-        }
-    }
-
-
-    .text-info {
-        hgroup {
-            h2 {
-                font-size: 3rem;
-                line-height: 3rem;
-            }
-
-            p {
-                font-size: 1.5rem;
-                line-height: 2rem;
-            }
-        }
-
-        &>p {
-            font-size: 1.5rem;
-            max-width: 400px;
-        }
-    }
-
-    .donutty {
-        max-width: 95px;
-        max-height: 95px;
-    }
-
-    .donut-text {
-        font-size: 2rem;
-        top: unset;
-        left: unset;
-        bottom: 38px;
-        right: 25px;
-    }
-
-    .buy-info {
-        padding-right: 0;
-
-        .discount {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .current-price {
-            font-size: 3rem;
-        }
-    }
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-family: Inter, sans-serif;
+    margin-bottom: 5px;
+    display: block;
 }

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 31 - jQuery plugins - OnWawe</title>
+    <link type="text/css" rel="stylesheet" href="assets/js/lightslider-master/dist/css/lightslider.min.css" />
+    <link rel="stylesheet" href="assets/style/style.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <div class="img-wrap logo">
+                    <a href="#" class="logo-link">
+                        <img src="assets/img/logo.svg" alt="OnWawe logo">
+                    </a>
+                </div>
+                <nav class="main-menu">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Catalog</a>
+                        </li>
+                        <li>
+                            <a href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="nav-icons">
+                    <a href="#">
+                        <svg class="icon">
+                            <use xlink:href="assets/img/sprite.svg#search-icon"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <svg class="icon">
+                            <use xlink:href="assets/img/sprite.svg#profile-icon"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="hero-section">
+                <div class="slider">
+                    <ul id="lightSlider">
+                        <li>
+                            <div class="container">
+                                <div class="content">
+                                    <h2>Discover new Options</h2>
+                                    <a href="#" class="btn white">View More</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="container">
+                                <div class="content">
+                                    <h2>Expand your Horizons</h2>
+                                    <a href="#" class="btn white">View More</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="container">
+                                <div class="content">
+                                    <h2>Find your own style</h2>
+                                    <a href="#" class="btn white">View More</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="new-arrivals">
+                <div class="container">
+                    <h3>New Arrivals</h3>
+                    <div class="slider">
+                        <span class="prev">
+                            <a href="#" id="prev">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#prev-icon"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <ul id="lightSlider2">
+                            <li class="in-stock">
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="img-wrap">
+                                            <img src="assets/img/h-alvar.png"
+                                                alt="Hagstrom Alvar Limited Edition image">
+                                        </div>
+                                        <span class="prod-name">Hagstrom Alvar Limited Edition</span>
+                                        <span class="price">€2.990,00</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="in-stock">
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="img-wrap">
+                                            <img src="assets/img/h-tremar.png"
+                                                alt="Hagstrom Tremar Viking Deluxe Cloudy Seas image">
+                                        </div>
+                                        <span class="prod-name">Hagstrom Tremar Viking Deluxe Cloudy Seas</span>
+                                        <span class="price">€1.300,00</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="sold">
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="img-wrap">
+                                            <img src="assets/img/g-les-paul.png"
+                                                alt="Gibson Les Paul Standard 60s image">
+                                        </div>
+                                        <span class="prod-name">Gibson Les Paul Standard 60s</span>
+                                        <span class="price">€3.749,00</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="in-stock">
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="img-wrap">
+                                            <img src="assets/img/suhr-s.png"
+                                                alt="Suhr Standard Plus Trans Blue Denim image">
+                                        </div>
+                                        <span class="prod-name">Suhr Standard Plus Trans Blue Denim</span>
+                                        <span class="price">€3.449,00</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="in-stock">
+                                <div class="card">
+                                    <a href="#">
+                                        <div class="img-wrap">
+                                            <img src="assets/img/f-telecaster.png"
+                                                alt="Fender Telecaster Black Paisley Limited Edition image">
+                                        </div>
+                                        <span class="prod-name">Fender Telecaster Black Paisley Limited Edition</span>
+                                        <span class="price">€1.499,00</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <span class="next">
+                            <a href="#" id="next">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#next-icon"></use>
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                    <a href="#" class="btn">View More</a>
+                </div>
+            </section>
+            <section class="partners">
+                <div class="container">
+                    <h3>Our Partners</h3>
+                    <div class="slider">
+                        <span class="prev">
+                            <a href="#" id="prev2">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#prev-icon"></use>
+                                </svg>
+                            </a>
+                        </span>
+                        <ul id="lightSlider3">
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/epiphone.svg" alt="Epiphone logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/g11852.svg" alt="ESP logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/Group.svg" alt="Gibson logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/engl.svg" alt="Engl logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/roland.svg" alt="Roland logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/fender.svg" alt="Fender logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/peavey.svg" alt="Peavey logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/marshal.svg" alt="Marshall logo">
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="img-wrap">
+                                        <img src="assets/img/orange.svg" alt="Orange logo">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <span class="next">
+                            <a href="#" id="next2">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#next-icon"></use>
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="container">
+                <div class="navigation">
+                    <div class="img-wrap logo">
+                        <a href="#">
+                            <img src="assets/img/logo-white.svg" alt="OnWawe logo white"></a>
+                    </div>
+                    <nav class="footer-menu">
+                        <ul class="nav-list">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Catalog</a>
+                            </li>
+                            <li>
+                                <a href="#">News</a>
+                            </li>
+                            <li>
+                                <a href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="contacts">
+                    <h3>Contact Us</h3>
+                    <ul class="soc-list">
+                        <li>
+                            <a href="#">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#instagram-icon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#facebook-icon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#pinterest-icon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#twitter-icon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon">
+                                    <use xlink:href="assets/img/sprite.svg#youtube-icon"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="phone" href="tel:0800 300 4040">0800 300 4040</a>
+                </div>
+                <div class="copyright">
+                    <p>© Copyright 2025. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="../introduction/assets/js/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script src="assets/js/lightslider-master/dist/js/lightslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const slider = $("#lightSlider").lightSlider({
+                item: 1,
+                loop: false,
+                slideMove: 1,
+                controls: false,
+            });
+        })
+        $(document).ready(function () {
+            const slider2 = $("#lightSlider2").lightSlider({
+                item: 5,
+                loop: true,
+                slideMove: 1,
+                controls: false,
+                pager: false,
+            });
+            $('#prev').click(function (e) {
+                e.preventDefault();
+                slider2.goToPrevSlide();
+            });
+            $('#next').click(function (e) {
+                e.preventDefault();
+                slider2.goToNextSlide();
+            });
+        })
+
+        $(document).ready(function () {
+            const slider3 = $("#lightSlider3").lightSlider({
+                item: 9,
+                loop: true,
+                slideMove: 1,
+                controls: false,
+                pager: false,
+            });
+            $('#prev2').click(function (e) {
+                e.preventDefault();
+                slider3.goToPrevSlide();
+            });
+            $('#next2').click(function (e) {
+                e.preventDefault();
+                slider3.goToNextSlide();
+            });
+        })
+
+    </script>
+</body>
+
+</html>
