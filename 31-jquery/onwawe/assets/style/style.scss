@@ -74,7 +74,7 @@ body {
     text-transform: uppercase;
     position: relative;
     right: -5px;
-
+    color: #000;
 
     &.white {
         border: 2px solid #FFF;
@@ -105,7 +105,8 @@ header {
     }
 
     .main-menu {
-        padding-left: 26px;
+        position: relative;
+        right: 2.167%;
     }
 
     div,
@@ -114,18 +115,15 @@ header {
     }
 
     .img-wrap.logo {
-        max-width: 182px;
-        max-height: 34px;
+        max-width: 15.167%;
+        min-width: 168px;
+        max-height: 42.5%;
     }
 
     .icon {
         max-width: 36px;
     }
 
-    .main-menu {
-        position: relative;
-        right: 40px;
-    }
 
     .nav-list {
         display: flex;
@@ -301,13 +299,13 @@ header {
         }
 
         .prev {
-            left: -59px;
+            left: -4.917%;
             top: calc(50% + 1px);
             transform: translateY(-50%);
         }
 
         .next {
-            right: -61px;
+            right: -5.084%;
             top: calc(50% + 1px);
             transform: translateY(-50%);
         }
@@ -321,12 +319,13 @@ header {
             }
         }
 
+
         li {
             border: 1px solid $accent-color;
             position: relative;
             padding: 20px 10px 19px 10px;
-            width: 225.2px !important;
-            margin-right: 16.9px !important;
+            // width: 225.2px;
+            // margin-right: 16.9px !important;
 
             &.in-stock::before,
             &.sold::before {
@@ -405,6 +404,10 @@ header {
     padding: 70px 0;
     margin-bottom: 2px;
 
+    .container {
+        width: min(86%, 1200px);
+    }
+
     h3 {
         font-size: 2rem;
         font-weight: 700;
@@ -439,7 +442,7 @@ header {
     }
 
     .prev {
-        left: 40.4px;
+        left: 2.887%;
         top: calc(64% + 2px);
         transform: translateY(-50%);
 
@@ -450,7 +453,7 @@ header {
     }
 
     .next {
-        right: 40px;
+        right: 2.858%;
         top: calc(64% + 1px);
         transform: translateY(-50%);
     }
@@ -469,7 +472,7 @@ header {
 footer {
     background-color: $accent-dark;
     position: relative;
-    padding: 70px 66px 89px 68.5px;
+    padding: 69px 66px 89px 68.5px;
 
     .container {
         display: flex;
@@ -493,7 +496,7 @@ footer {
 
     .img-wrap.logo {
         max-width: 150px;
-        margin-bottom: 35px;
+        margin-bottom: 34px;
 
         a {
             height: 100%;
@@ -593,12 +596,293 @@ footer {
 
     .copyright {
         position: absolute;
-        bottom: 17px;
+        bottom: 19px;
         left: 50%;
         transform: translateX(-50%);
 
         color: $accent-color;
         font-size: 0.875rem;
         font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: min(97%, 1200px);
+    }
+
+    header {
+        height: 60px;
+
+        .main-menu {
+            right: -3.5px;
+        }
+
+        .img-wrap.logo {
+            position: relative;
+            top: -3px;
+            right: -3px;
+        }
+
+
+        .nav-list li a {
+            font-size: 1rem;
+            max-height: 60px;
+            padding: 21px 15px;
+        }
+
+        .nav-icons {
+            a {
+                left: 2px;
+                padding: 0;
+            }
+
+            a:first-child {
+                margin-right: 5px;
+            }
+
+            svg {
+                max-height: 28px;
+            }
+        }
+    }
+
+    .hero-section {
+        .lSPager.lSpg {
+            bottom: 16px;
+            right: 43.75%;
+
+            &>li {
+                padding: 0 10px;
+
+                a {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+
+        #lightSlider li {
+            min-height: 380px;
+        }
+
+        h2 {
+            font-size: 1.625rem;
+            max-width: 210px;
+            margin-top: 60px;
+        }
+
+        .content {
+            right: 71px;
+            gap: 17px;
+        }
+
+        .btn {
+            padding: 8px 25px 8.3px;
+            margin-right: 9px;
+            font-size: 1rem;
+        }
+    }
+
+
+    .new-arrivals {
+        padding: 49px 0;
+        margin-bottom: 10.5px;
+
+        .container {
+            width: min(92%, 1200px);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 36.5px;
+        }
+
+        .btn {
+            padding: 8px 25px 8.5px;
+            margin-right: 9px;
+            font-size: 1rem;
+            margin-right: 2px;
+        }
+
+        .slider {
+            margin-bottom: 49.5px;
+
+            .next,
+            .prev {
+                right: -3.35%;
+                top: calc(49% + 1px);
+                transform: translateY(-50%);
+
+                max-width: 16px;
+                max-height: 30px;
+
+                &>a {
+                    max-width: 16px;
+                    max-height: 30px;
+                }
+
+                svg {
+
+                    &,
+                    use {
+                        width: 16px;
+                        height: 30px;
+
+                    }
+
+                    use {
+                        scale: 0.405;
+                    }
+                }
+            }
+
+            .prev {
+                right: 0;
+                top: calc(50% + 2px);
+                left: -3.35%;
+            }
+        }
+    }
+
+    .partners {
+        padding: 49.5px 0 47.5px 0;
+
+        .container {
+            width: min(96.5%, 1200px);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 35.8px;
+        }
+
+        li {
+            min-width: 100px;
+        }
+
+        .slider {
+
+            .next,
+            .prev {
+                right: 0.9%;
+                top: calc(64% + 1px);
+                transform: translateY(-50%);
+
+                max-width: 16px;
+                max-height: 30px;
+
+                &>a {
+                    max-width: 16px;
+                    max-height: 30px;
+                }
+
+                svg {
+
+                    &,
+                    use {
+                        width: 16px;
+                        height: 30px;
+
+                    }
+
+                    use {
+                        scale: 0.405;
+                    }
+                }
+            }
+
+            .prev {
+                right: 0;
+                top: calc(63% + 0.5px);
+                left: 0.8%;
+            }
+        }
+    }
+
+    footer {
+        padding: 51px 23px 70px 11.5px;
+
+
+        .navigation {
+            flex-direction: row;
+            gap: 126px;
+
+            a {
+                font-size: 1rem;
+
+            }
+        }
+
+        .img-wrap.logo a {
+            height: unset;
+        }
+
+        .contacts {
+            width: 212px;
+
+            h3 {
+                font-size: 1.25rem;
+                margin-bottom: 21.5px;
+                left: 10px;
+            }
+
+            .phone {
+                font-size: 1.25rem;
+                margin-left: 10px;
+            }
+
+            svg {
+                height: 22px;
+            }
+
+            .soc-list {
+                max-width: 176px;
+                gap: 19px;
+                margin-bottom: 21px;
+
+                li {
+                    width: auto;
+                    height: 20px;
+
+                    &:nth-child(1) {
+
+                        a,
+                        svg {
+                            width: 20px;
+                        }
+                    }
+
+                    &:nth-child(3) {
+
+                        a,
+                        svg {
+                            width: 15px;
+                        }
+                    }
+
+                    &:nth-child(4) {
+
+                        a,
+                        svg {
+                            width: 24px;
+                        }
+                    }
+
+                    &:nth-child(5) {
+
+                        a,
+                        svg {
+                            width: 27px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            bottom: 14.5px;
+            transform: translateX(-50.5%);
+        }
     }
 }

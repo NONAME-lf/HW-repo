@@ -321,7 +321,7 @@
             </div>
         </footer>
     </div>
-    <script src="../introduction/assets/js/jquery/jquery-3.7.1.slim.min.js"></script>
+    <script src="../introduction/assets/js/jquery/jquery-3.7.1.min.js"></script>
     <script src="assets/js/lightslider-master/dist/js/lightslider.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -334,6 +334,7 @@
                 pauseOnHover: true,
             });
         })
+
         $(document).ready(function () {
             const slider2 = $("#lightSlider2").lightSlider({
                 item: 5,
@@ -341,7 +342,20 @@
                 slideMove: 1,
                 controls: false,
                 pager: false,
-                vThumbWidth: 226,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            item: 3
+                        }
+                    },
+                    {
+                        breakpoint: 544,
+                        settings: {
+                            item: 1
+                        }
+                    }
+                ]
             });
             $('#prev').click(function (e) {
                 e.preventDefault();
@@ -360,6 +374,20 @@
                 slideMove: 1,
                 controls: false,
                 pager: false,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            item: 6
+                        }
+                    },
+                    {
+                        breakpoint: 544,
+                        settings: {
+                            item: 2
+                        }
+                    }
+                ]
             });
             $('#prev2').click(function (e) {
                 e.preventDefault();
@@ -370,6 +398,7 @@
                 slider3.goToNextSlide();
             });
         })
+
 
     </script>
 </body>
