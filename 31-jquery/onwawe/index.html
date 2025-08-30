@@ -46,6 +46,11 @@
                         </svg>
                     </a>
                 </div>
+                <button class="hamburger hamburger--emphatic" type="button" onclick="toggleBurger()">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
             </div>
         </header>
         <main>
@@ -352,7 +357,8 @@
                     {
                         breakpoint: 544,
                         settings: {
-                            item: 1
+                            item: 1,
+                            pager: true,
                         }
                     }
                 ]
@@ -384,7 +390,10 @@
                     {
                         breakpoint: 544,
                         settings: {
-                            item: 2
+                            item: 2,
+                            slideMargin: 20,
+                            pager: true,
+                            slideMove: 2,
                         }
                     }
                 ]
