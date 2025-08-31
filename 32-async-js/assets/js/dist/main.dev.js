@@ -25,7 +25,7 @@ function searchMovies(search) {
           type = _args.length > 1 && _args[1] !== undefined ? _args[1] : "";
           year = _args.length > 2 && _args[2] !== undefined ? _args[2] : "";
           _context.next = 4;
-          return regeneratorRuntime.awrap(fetch("https://www.omdbapi.com/?apikey=".concat(API_KEY, "&s=").concat(search, "&type=").concat(type, "&y= ").concat(year)));
+          return regeneratorRuntime.awrap(fetch("https://www.omdbapi.com/?apikey=".concat(API_KEY, "&s=").concat(search, "&type=").concat(type, "&y=").concat(year)));
 
         case 4:
           response = _context.sent;
@@ -95,35 +95,85 @@ function getMovieDetails(movie) {
 }
 
 function showMovieDetails(movie) {
-  var details = "";
-  console.log(movie);
+  var details, _i, _Object$entries, _Object$entries$_i, key, value, imgResponse;
 
-  for (var _i = 0, _Object$entries = Object.entries(movie); _i < _Object$entries.length; _i++) {
-    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-        key = _Object$entries$_i[0],
-        value = _Object$entries$_i[1];
+  return regeneratorRuntime.async(function showMovieDetails$(_context3) {
+    while (1) {
+      switch (_context3.prev = _context3.next) {
+        case 0:
+          details = "";
+          _i = 0, _Object$entries = Object.entries(movie);
 
-    if (key === "imdbID") {
-      continue;
+        case 2:
+          if (!(_i < _Object$entries.length)) {
+            _context3.next = 28;
+            break;
+          }
+
+          _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2), key = _Object$entries$_i[0], value = _Object$entries$_i[1];
+
+          if (!(key === "imdbID")) {
+            _context3.next = 6;
+            break;
+          }
+
+          return _context3.abrupt("continue", 25);
+
+        case 6:
+          if (!(key === "Poster")) {
+            _context3.next = 20;
+            break;
+          }
+
+          _context3.prev = 7;
+          _context3.next = 10;
+          return regeneratorRuntime.awrap(fetch(value));
+
+        case 10:
+          imgResponse = _context3.sent;
+          _context3.next = 18;
+          break;
+
+        case 13:
+          _context3.prev = 13;
+          _context3.t0 = _context3["catch"](7);
+          console.log("Failed to get the ".concat(movie.Title, " poster!"));
+          details += "<b>".concat(key, ":</b> N/A<br>");
+          return _context3.abrupt("continue", 25);
+
+        case 18:
+          details += "<b>".concat(key, ":</b> <a href=").concat(value, " target=\"_blank\">link</a><br>");
+          return _context3.abrupt("continue", 25);
+
+        case 20:
+          if (!(_typeof(value) === "object")) {
+            _context3.next = 24;
+            break;
+          }
+
+          details += "<b>".concat(key, ":</b><br>");
+          value.forEach(function (rating) {
+            details += "<b style=\"margin-left: 14%;\">".concat(Object.values(rating)[0], "</b>: ").concat(Object.values(rating)[1], "<br>");
+          });
+          return _context3.abrupt("continue", 25);
+
+        case 24:
+          details += "<b>".concat(key, ":</b> ").concat(value, "<br>");
+
+        case 25:
+          _i++;
+          _context3.next = 2;
+          break;
+
+        case 28:
+          document.querySelector(".modal-body").innerHTML = details;
+
+        case 29:
+        case "end":
+          return _context3.stop();
+      }
     }
-
-    if (key === "Poster") {
-      details += "<b>".concat(key, ":</b> <a href=").concat(value, " target=\"_blank\">link</a><br>");
-      continue;
-    }
-
-    if (_typeof(value) === "object") {
-      details += "<b>".concat(key, ":</b><br>");
-      value.forEach(function (rating) {
-        details += "<b style=\"margin-left: 14%;\">".concat(Object.values(rating)[0], "</b>: ").concat(Object.values(rating)[1], "<br>");
-      });
-      continue;
-    }
-
-    details += "<b>".concat(key, ":</b> ").concat(value, "<br>");
-  }
-
-  document.querySelector(".modal-body").innerHTML = details;
+  }, null, null, [[7, 13]]);
 }
 
 var form = document.getElementById("search-form");

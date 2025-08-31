@@ -2,7 +2,7 @@ const API_KEY = "fe91a24c";
 
 async function searchMovies(search, type = "", year = "") {
   const response = await fetch(
-    `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&type=${type}&y= ${year}`
+    `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&type=${type}&y=${year}`
   );
   const data = await response.json();
   if (data.Response === "False") {
@@ -47,15 +47,20 @@ async function getMovieDetails(movie) {
   showMovieDetails(data);
 }
 
-function showMovieDetails(movie) {
+async function showMovieDetails(movie) {
   let details = "";
-  console.log(movie);
-
   for (const [key, value] of Object.entries(movie)) {
     if (key === "imdbID") {
       continue;
     }
     if (key === "Poster") {
+      try {
+        const imgResponse = await fetch(value);
+      } catch {
+        console.log(`Failed to get the ${movie.Title} poster!`);
+        details += `<b>${key}:</b> N/A<br>`;
+        continue;
+      }
       details += `<b>${key}:</b> <a href=${value} target="_blank">link</a><br>`;
       continue;
     }
