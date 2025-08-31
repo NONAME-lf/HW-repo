@@ -63,3 +63,14 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 20px;
 }
+
+.modal-header .close {
+    padding: 1rem;
+    margin: -1rem -1rem -1rem auto;
+    border: none;
+    background-color: unset;
+
+    span {
+        font-size: 1.7rem;
+    }
+}
