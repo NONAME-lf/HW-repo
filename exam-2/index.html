@@ -70,25 +70,25 @@
             <div class="nav-dots">
                 <ul class="pager">
                     <li class="active">
-                        <a href="#" id="hero-pager"></a>
+                        <a href="#hero-section" id="hero-pager"></a>
                     </li>
                     <li>
-                        <a href="#" id="what-we-do-pager"></a>
+                        <a href="#what-we-do" id="what-we-do-pager"></a>
                     </li>
                     <li>
-                        <a href="#" id="news-pager"></a>
+                        <a href="#latest-news" id="news-pager"></a>
                     </li>
                     <li>
-                        <a href="#" id="gallery-pager"></a>
+                        <a href="#gallery" id="gallery-pager"></a>
                     </li>
                     <li>
-                        <a href="#" id="contact-pager"></a>
+                        <a href="#contact" id="contact-pager"></a>
                     </li>
                 </ul>
             </div>
             <ul id="page-slider">
                 <li>
-                    <section class="hero-section">
+                    <section id="hero-section" class="hero-section">
                         <div class="background"></div>
                         <div class="container">
                             <hgroup>
@@ -120,11 +120,19 @@
                                         of
                                         mind.
                                         The truth is, our thoughts are very powerful.</p>
-                                    <a href="#" class="btn">More Details</a>
-                                    <span class="adress">New York City, United States - 1776 feet</span>
+                                    <a href="#" class="btn glow-on-hover">
+                                        <div class="holographic-card">More Details</div>
+                                    </a>
+                                    <span class="address">
+                                        <span class="icon">
+                                            <svg class="icon">
+                                                <use xlink:href="../exam-2/assets/img/sprite.svg#location-pin"></use>
+                                            </svg>
+                                        </span>New York City, United States - 1776 feet
+                                    </span>
                                 </div>
                             </div>
-                            <div class="half-grid">
+                            <div class="half-grid reverse">
                                 <div class="img-wrap">
                                     <img src="assets/img/what-we-do-img2.png" alt="Monticello commerce centre">
                                 </div>
@@ -136,15 +144,17 @@
                                     <p>Successful businesses have many things in common, today we’ll look at the big ‘R’
                                         of
                                         recognition and how a digital advertising network may help.</p>
-                                    <a href="#" class="btn">More Details</a>
-                                    <span class="adress">Hong Kong - 1588 feet</span>
+                                    <a href="#" class="btn glow-on-hover">
+                                        <div class="holographic-card">More Details</div>
+                                    </a>
+                                    <span class="address">Hong Kong - 1588 feet</span>
                                 </div>
                             </div>
                         </div>
                     </section>
                 </li>
                 <li>
-                    <section class="latest-news">
+                    <section id="latest-news" class="latest-news">
                         <div class="container">
                             <h2>Latest News</h2>
                             <div class="slider">
@@ -174,7 +184,7 @@
                     </section>
                 </li>
                 <li>
-                    <section class="gallery">
+                    <section id="gallery" class="gallery">
                         <div class="container">
                             <div class="lightSlider">
 
@@ -184,7 +194,7 @@
                     </section>
                 </li>
                 <li>
-                    <section class="contact">
+                    <section id="contact" class="contact">
                         <div class="container">
                             <div class="map"></div>
                             <div class="contact-window">
@@ -214,6 +224,27 @@
         </main>
         <footer>
             <div class="container">
+                <svg class="icon">
+                    <use xlink:href="#clock-nine"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#inbox"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#location-pin"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#phone"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#facebook"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#twitter"></use>
+                </svg>
+                <svg class="icon">
+                    <use xlink:href="#instagram"></use>
+                </svg>
                 <div class="img-wrap">
                     <img src="assets/img/logo.png" alt="Monticello logo">
                 </div>
@@ -241,46 +272,46 @@
     <script>
         /* CHANGED LIGHTSLIDER MOVING BEHAVIOR OF  move: function (a, b) - lightslider.min.js:432 */
         // LightSlider
-        $(document).ready(function () {
-            const slider = $("#page-slider").lightSlider({
-                item: 1,
-                loop: false,
-                slideMove: 1,
-                controls: false,
-                vertical: true,
-                adaptiveHeight: true,
-                slideMargin: 0,
-                pager: false,
-                enableDrag: false,
-                freeMove: true,
-                enableTouch: false,
-                // verticalHeight: 5648,
-            });
-            $("#arrow").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(2);
-            });
-            $("#hero-paiger").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(1);
-            });
-            $("#what-we-do-pager").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(2);
-            });
-            $("#news-pager").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(3);
-            });
-            $("#gallery-pager").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(4);
-            });
-            $("#contact-pager").click(function (e) {
-                e.preventDefault();
-                slider.goToSlide(5);
-            });
-        });
+        // $(document).ready(function () {
+        //     const slider = $("#page-slider").lightSlider({
+        //         item: 1,
+        //         loop: false,
+        //         slideMove: 1,
+        //         controls: false,
+        //         vertical: true,
+        //         // adaptiveHeight: true,
+        //         slideMargin: 0,
+        //         pager: false,
+        //         enableDrag: false,
+        //         freeMove: true,
+        //         enableTouch: false,
+        //         // verticalHeight: 5648,
+        //     });
+        //     $("#arrow").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(2);
+        //     });
+        //     $("#hero-paiger").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(1);
+        //     });
+        //     $("#what-we-do-pager").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(2);
+        //     });
+        //     $("#news-pager").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(3);
+        //     });
+        //     $("#gallery-pager").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(4);
+        //     });
+        //     $("#contact-pager").click(function (e) {
+        //         e.preventDefault();
+        //         slider.goToSlide(5);
+        //     });
+        // });
 
     </script>
 </body>
