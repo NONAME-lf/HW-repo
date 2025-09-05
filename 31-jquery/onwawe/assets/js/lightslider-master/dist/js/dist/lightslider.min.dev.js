@@ -462,10 +462,12 @@
       }, g.parent().parent().find(".lSAction, .lSPager").remove(), g.removeClass("lightSlider lSFade lSSlide lsGrab lsGrabbing leftEnd right").removeAttr("style").unwrap().unwrap(), g.children().removeAttr("style"), h.removeClass("lslide active"), g.find(".clone").remove(), h = null, x = null, n = !1, q = 0);
     }, setTimeout(function () {
       e.onSliderLoad.call(this, g);
-    }, 10), a(window).on("resize orientationchange", function (a) {
-      setTimeout(function () {
-        a.preventDefault ? a.preventDefault() : a.returnValue = !1, z.init();
-      }, 200);
-    }), this;
+    }, 10), // a(window).on("resize orientationchange", function (a) {
+    //   setTimeout(function () {
+    //     a.preventDefault ? a.preventDefault() : (a.returnValue = !1),
+    //       z.init();
+    //   }, 200);
+    // }),
+    this;
   };
 }(jQuery);
