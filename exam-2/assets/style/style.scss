@@ -87,6 +87,19 @@ h3 {
 
 h2 {
     text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 1px;
+        background-color: $text-color;
+        position: absolute;
+        top: -31px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .btn {
@@ -283,7 +296,6 @@ header {
     min-height: 500px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 130px;
 
     .container {
         min-height: 100dvh;
@@ -418,6 +430,14 @@ header {
             background-color: #fff;
         }
 
+        &:hover {
+            background-color: #fff;
+        }
+
+        &:active {
+            background: linear-gradient(243deg, #7e5aff 16.9%, #55B7FF 83.27%);
+        }
+
         a {
             width: 300%;
             height: 300%;
@@ -467,26 +487,16 @@ header {
 
 // <== WHAT WE DO SECTION ==>
 .what-we-do {
+    padding-top: 129px;
+    margin-bottom: 150px;
+
     h2 {
         position: relative;
         margin-bottom: 147.5px;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 1px;
-            background-color: $text-color;
-            position: absolute;
-            top: -31px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     }
 
     .half-grid {
         display: grid;
-        // grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
         grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
         gap: 70px;
 
@@ -495,6 +505,25 @@ header {
 
             .img-wrap {
                 box-shadow: -260px -57px 0 0 $accent-color-light;
+            }
+        }
+
+        &:nth-child(3) {
+            gap: 64px;
+
+            .img-wrap {
+                box-shadow: 260px -57px 0px 0px $accent-color-dark;
+                margin: 57px 0 0 -77px;
+            }
+
+            .content {
+                justify-self: baseline;
+                max-width: 476px;
+                align-content: center;
+
+                hgroup {
+                    margin: 129px 0 18px;
+                }
             }
         }
 
@@ -659,6 +688,22 @@ header {
         svg {
             max-width: 12px;
             max-height: 12px;
+        }
+    }
+}
+
+// <== LATEST NEWS SECTION==>
+.latest-news {
+    padding-top: 150px;
+    background: url('../img/news-bg.png') no-repeat center center/cover;
+    height: 100dvh;
+    min-height: 500px;
+
+    h2 {
+        color: #fff;
+
+        &::before {
+            background-color: #fff;
         }
     }
 }
