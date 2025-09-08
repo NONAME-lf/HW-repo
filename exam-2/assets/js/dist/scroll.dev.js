@@ -27,26 +27,38 @@ document.addEventListener("scroll", function (e) {
   switch (true) {
     case windowScroll < heroHeight:
       togglePagerClass(document.getElementById("hero-pager"));
+      togglePagerClass(document.getElementById("hero-section-link"));
       break;
 
     case windowScroll >= heroHeight && windowScroll < whatWeDoHeight:
       togglePagerClass(document.getElementById("what-we-do-pager"));
+      togglePagerClass(document.getElementById("what-we-do-link"));
       break;
 
     case windowScroll >= whatWeDoHeight && windowScroll < latestNewsHeight:
       togglePagerClass(document.getElementById("news-pager"));
+      togglePagerClass(document.getElementById("latest-news-link"));
       break;
 
     case windowScroll >= latestNewsHeight && windowScroll < galleryHeight:
       togglePagerClass(document.getElementById("gallery-pager"));
+      togglePagerClass(document.getElementById("gallery-link"));
       break;
 
     case windowScroll >= galleryHeight && windowScroll < contactHeight:
       togglePagerClass(document.getElementById("contact-pager"));
+      togglePagerClass(document.getElementById("contact-link"));
       break;
 
     default:
       togglePagerClass(document.getElementById("contact-pager"));
+      togglePagerClass(document.getElementById("contact-link"));
       break;
   }
 });
+
+function togglePagerClass(element) {
+  var parent = element.parentElement;
+  parent.parentElement.querySelector(".active").classList.remove("active");
+  parent.classList.add("active");
+}

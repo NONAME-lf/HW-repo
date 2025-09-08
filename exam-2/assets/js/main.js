@@ -26,19 +26,6 @@ function jumpingArrow() {
 
 jumpingArrow();
 
-const dots = document.querySelectorAll(".pager a");
-dots.forEach((element) => {
-  element.addEventListener("click", function (e) {
-    togglePagerClass(e.target);
-  });
-});
-
-function togglePagerClass(element) {
-  const parent = element.parentElement;
-  document.querySelector(".active").classList.remove("active");
-  parent.classList.add("active");
-}
-
 lightGallery(document.getElementById("lightgallery"), {
   plugins: [lgZoom, lgThumbnail],
   licenseKey: "0000-0000-000-0000",

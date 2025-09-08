@@ -292,6 +292,10 @@ header {
                 display: inline-block;
                 position: relative;
 
+                &.active a::before {
+                    background-color: #fff;
+                }
+
                 a {
                     color: #FFF;
                     font-family: "Source Sans Pro",
@@ -524,7 +528,7 @@ header {
     top: 50%;
     transform: translateY(-50%);
     background-color: #fff0;
-    z-index: 1;
+    z-index: 1000;
     border-radius: 10px;
     padding: 5px 5px;
     transition: all .4s ease-in-out;
@@ -589,7 +593,7 @@ header {
 
     h2 {
         position: relative;
-        margin-bottom: 147.5px;
+        margin-bottom: 12.608%;
     }
 
     .icon {
@@ -600,14 +604,23 @@ header {
 
     .half-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+        // grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
         gap: 70px;
 
+        justify-items: center;
+
         &:nth-child(2) {
-            margin-bottom: 120px;
+            margin-bottom: 10.257%;
 
             .img-wrap {
                 box-shadow: -260px -57px 0 0 $accent-color-light;
+                margin-right: -14.5%;
+                width: 114.546%;
+            }
+
+            .content {
+                margin-left: 14.5%;
             }
         }
 
@@ -617,11 +630,12 @@ header {
             .img-wrap {
                 box-shadow: 260px -57px 0px 0px $accent-color-dark;
                 margin: 57px 0 0 -77px;
+                width: 113.925%;
             }
 
             .content {
-                justify-self: baseline;
-                max-width: 476px;
+                margin-right: 14%;
+                // max-width: 476px;
                 align-content: center;
 
                 &>p {
@@ -632,27 +646,28 @@ header {
                     margin: 129px 0 18px;
                 }
             }
+
+            &.reverse {
+                .content {
+                    order: 1;
+                }
+
+                .img-wrap {
+                    order: 2;
+                }
+            }
         }
 
-        &.reverse {
-            .content {
-                order: 1;
-            }
-
-            .img-wrap {
-                order: 2;
-            }
-        }
     }
 
     .img-wrap {
-        min-width: 630px;
         aspect-ratio: 630/470;
+        max-width: 700px;
     }
 
     .content {
-        max-width: 470px;
-        justify-self: end;
+        justify-self: auto;
+        max-width: 700px;
 
         hgroup {
             margin: 94px 0 18px 0;
@@ -713,11 +728,13 @@ header {
 
     .card-news {
         background-color: #fff;
-        max-width: 370px;
+        // max-width: 370px;
         height: 100%;
+        position: relative;
 
         &>.img-wrap {
-            max-width: 370px;
+            max-width: unset;
+            max-height: 240px;
             width: 100%;
             aspect-ratio: 370/240;
             margin-bottom: 30px;
@@ -730,7 +747,7 @@ header {
     }
 
     .content {
-        margin-bottom: 41px;
+        min-height: 154px;
 
         h4 {
             font-family: Montserrat, sans-serif;
@@ -748,6 +765,11 @@ header {
 
     .author-profile {
         max-height: 60px;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        bottom: 5.7%;
 
         .img-wrap {
             display: inline-block;
@@ -759,9 +781,9 @@ header {
         .info {
             display: inline-block;
             height: 100%;
+            margin-left: 20px;
             position: relative;
-            top: -17px;
-            margin-left: 15px;
+            top: -3px;
 
             .author-name,
             .news-date {
@@ -772,6 +794,7 @@ header {
                 font-family: Montserrat, sans-serif;
                 font-size: 1.125rem;
                 line-height: normal;
+                margin-bottom: 6px;
             }
 
             .news-date {
@@ -779,8 +802,7 @@ header {
                 font-family: Montserrat, sans-serif;
                 font-size: 0.875rem;
                 line-height: normal;
-                position: relative;
-                top: 6px;
+                margin-bottom: -6px;
             }
         }
     }
@@ -851,7 +873,7 @@ header {
 
     #lightgallery {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(285px, 2fr));
         gap: 10px;
         margin-bottom: 60px;
 
@@ -1204,7 +1226,9 @@ header {
 
 // <== FOOTER ==>
 footer {
-    padding: 203px 367px 292px 372px;
+    // padding: 203px 367px 292px 372px;
+    // padding: 12.688% 22.938% 18.25% 23.25%;
+    padding: 203px 22.938% 292px 23.25%;
     background: url('../img/footer-bg.png') no-repeat center center/cover;
 
     .container {
@@ -1237,5 +1261,134 @@ footer {
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .latest-news .slider #next-arrow {
+        right: -4.57%;
+    }
+
+    .latest-news .slider #prev-arrow {
+        left: -4.57%;
+    }
+}
+
+@media screen and (max-width: 1122px) {
+    .what-we-do .half-grid {
+
+        &.reverse {
+            .content {
+                order: 1;
+            }
+
+            .img-wrap {
+                order: 2;
+            }
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            gap: 80px;
+
+            .img-wrap {
+                margin: 0;
+                width: 100%;
+            }
+        }
+
+        .content {
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin: 0;
+
+            }
+
+            hgroup {
+                p {
+                    font-size: 2.375rem;
+                }
+
+                h3 {
+                    font-size: 3.75rem;
+                }
+            }
+
+            &>p {
+                font-size: 2.125rem;
+                line-height: 3rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .address {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .latest-news .lSPager.lSpg>li {
+        margin: 0 20px;
+
+        a {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    #prev-arrow,
+    #next-arrow {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-section .container hgroup p {
+        font-size: 1.5rem;
+    }
+
+
+    .what-we-do {
+        .content {
+            text-align: justify;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .latest-news {
+        .card-news>.img-wrap {
+            margin-bottom: 20px;
+        }
+
+        .content {
+            h4 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+
+        .author-profile {
+            bottom: 2.7%;
+
+        }
+    }
+
+
+    .contact {
+        .body {
+            flex-direction: column-reverse;
+        }
+
+        .btn {
+            max-width: unset;
+            width: 100%;
+        }
     }
 }

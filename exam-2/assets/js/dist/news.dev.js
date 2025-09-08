@@ -32,28 +32,38 @@ function showLatestNews(news) {
     markup += "<li class=\"card-news\">\n        <div class=\"img-wrap\">\n           <img src=\"".concat(element.img, "\" alt=\"News image\">\n        </div>\n        <div class=\"content\">\n            <h4>").concat(element.topic, "</h4>\n            <p>").concat(element.detailed, "</p>\n        </div>\n        <div class=\"author-profile\">\n            <div class=\"img-wrap\">\n              <img src=\"").concat(element.author.photo, "\" alt=\"Author image\">\n            </div>\n            <div class=\"info\">\n              <span class=\"author-name\">").concat(element.author.name, "</span>\n              <span class=\"news-date\">").concat(element.author.date, "</span>\n            </div>\n        </div>\n    </li>");
   });
   document.getElementById("news-slider").innerHTML = markup; // LightSlider
-
-  $(document).ready(function () {
-    var slider = $("#news-slider").lightSlider({
-      item: 3,
-      loop: true,
-      slideMove: 1,
-      controls: false,
-      auto: true,
-      pause: 4000,
-      slideMargin: 30,
-      freeMove: true,
-      pauseOnHover: true
-    });
-    $("#prev-arrow").click(function (e) {
-      e.preventDefault();
-      slider.goToPrevSlide();
-    });
-    $("#next-arrow").click(function (e) {
-      e.preventDefault();
-      slider.goToNextSlide();
-    });
-  });
 }
 
+$(document).ready(function () {
+  var slider = $("#news-slider").lightSlider({
+    item: 3,
+    loop: true,
+    slideMove: 1,
+    controls: false,
+    // auto: true,
+    pause: 4000,
+    slideMargin: 30,
+    freeMove: true,
+    pauseOnHover: true,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        item: 2
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        item: 1
+      }
+    }]
+  });
+  $("#prev-arrow").click(function (e) {
+    e.preventDefault();
+    slider.goToPrevSlide();
+  });
+  $("#next-arrow").click(function (e) {
+    e.preventDefault();
+    slider.goToNextSlide();
+  });
+});
 document.addEventListener("load", getLatestNews());

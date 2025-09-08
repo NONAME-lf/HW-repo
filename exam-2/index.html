@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <div class="overlay"></div>
     <div class="page-wrapper">
         <header>
             <div class="header-background"></div>
@@ -23,17 +24,20 @@
                 </a>
                 <nav class="main-menu">
                     <ul class="nav-list">
-                        <li>
-                            <a href="#">About Us</a>
+                        <li class="active">
+                            <a id="hero-section-link" href="#hero-section">About Us</a>
                         </li>
                         <li>
-                            <a href="#">Projects</a>
+                            <a id="what-we-do-link" href="#what-we-do">Projects</a>
                         </li>
                         <li>
-                            <a href="#">News</a>
+                            <a id="latest-news-link" href="#latest-news">News</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a id="gallery-link" href="#gallery">Gallery</a>
+                        </li>
+                        <li>
+                            <a id="contact-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -66,6 +70,33 @@
                         </a>
                     </li>
                 </ul>
+                <button class="hamburger hamburger--emphatic" type="button" onclick="toggleBurger()"
+                    style="display: none;">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="mobile-menu-panel" style="display: none;">
+                <nav class="mobile-menu">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#hero-section">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#what-we-do">Projects</a>
+                        </li>
+                        <li>
+                            <a href="#latest-news">News</a>
+                        </li>
+                        <li>
+                            <a href="#gallery">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <main>
@@ -105,7 +136,7 @@
             <section id="what-we-do" class="what-we-do">
                 <div class="container">
                     <h2>What we do</h2>
-                    <div class="half-grid">
+                    <div class="half-grid reverse">
                         <div class="img-wrap">
                             <img src="assets/img/what-we-do-img.png" alt="Monticello trading centre">
                         </div>
@@ -157,27 +188,6 @@
                             <div class="arrow-down"></div>
                         </a>
                         <ul id="news-slider">
-                            <li class="card news">
-                                <div class="img-wrap">
-                                    <img src="assets/img/news-img1.jpg" alt="News image">
-                                </div>
-                                <div class="content">
-                                    <h3>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h3>
-                                    <p>Free directories: directories are perfect for customers that are
-                                        searching
-                                        for...
-                                    </p>
-                                </div>
-                                <div class="author-profile">
-                                    <div class="img-wrap">
-
-                                    </div>
-                                    <span class="author-name"></span>
-                                    <span class="news-date"></span>
-                                </div>
-                            </li>
-                            <li class="card news"></li>
-                            <li class="card news"></li>
                         </ul>
                         <a href="#" id="prev-arrow">
                             <div class="arrow-bg"></div>
@@ -309,9 +319,9 @@
     <script src="assets/js/lightgallery-master/dist/plugins/zoom/lg-zoom.umd.js"></script>
     <script src="assets/js/lightgallery-master/dist/plugins/thumbnail/lg-thumbnail.umd.js"></script>
     <script src="..//31-jquery/onwawe/assets/js/lightslider-master/dist/js/lightslider.min.js"></script>
+    <script src="assets/js/news.js"></script>
     <script src="assets/js/map.js"></script>
     <script src="assets/js/telegram-form.js" type="module"></script>
-    <script src="assets/js/news.js"></script>
     <script src="assets/js/scroll.js"></script>
     <script src="assets/js/gradient.js"></script>
     <script src="assets/js/main.js"></script>

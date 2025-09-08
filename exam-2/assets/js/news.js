@@ -31,27 +31,42 @@ function showLatestNews(news) {
   });
   document.getElementById("news-slider").innerHTML = markup;
   // LightSlider
-  $(document).ready(function () {
-    const slider = $("#news-slider").lightSlider({
-      item: 3,
-      loop: true,
-      slideMove: 1,
-      controls: false,
-      auto: true,
-      pause: 4000,
-      slideMargin: 30,
-      freeMove: true,
-      pauseOnHover: true,
-    });
-    $("#prev-arrow").click(function (e) {
-      e.preventDefault();
-      slider.goToPrevSlide();
-    });
-    $("#next-arrow").click(function (e) {
-      e.preventDefault();
-      slider.goToNextSlide();
-    });
-  });
 }
 
+$(document).ready(function () {
+  const slider = $("#news-slider").lightSlider({
+    item: 3,
+    loop: true,
+    slideMove: 1,
+    controls: false,
+    // auto: true,
+    pause: 4000,
+    slideMargin: 30,
+    freeMove: true,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          item: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          item: 1,
+        },
+      },
+    ],
+  });
+
+  $("#prev-arrow").click(function (e) {
+    e.preventDefault();
+    slider.goToPrevSlide();
+  });
+  $("#next-arrow").click(function (e) {
+    e.preventDefault();
+    slider.goToNextSlide();
+  });
+});
 document.addEventListener("load", getLatestNews());
