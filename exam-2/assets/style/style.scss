@@ -585,8 +585,7 @@ header {
 
 // <== WHAT WE DO SECTION ==>
 .what-we-do {
-    padding-top: 129px;
-    margin-bottom: 150px;
+    padding: 129px 0 150px 0;
 
     h2 {
         position: relative;
@@ -844,7 +843,7 @@ header {
 
 // <== GALLERY SECTION ==>
 .gallery {
-    padding-top: 150px;
+    padding: 150px 0 150px 0;
 
     h2 {
         margin-bottom: 90px;
@@ -908,7 +907,7 @@ header {
 .contact {
     position: relative;
     width: 100%;
-    margin-top: 150px;
+    // margin-top: 150px;
     min-height: 700px;
 
     #map {
@@ -985,6 +984,58 @@ header {
                 font-size: 1.125rem;
                 line-height: 1.6875rem;
             }
+
+            &::after {
+                content: '';
+                display: block;
+                width: max-content;
+                height: 100%;
+                color: #c1121f;
+                font-family: Montserrat, sans-serif;
+                font-size: 0.75rem;
+                position: absolute;
+                bottom: unset;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+
+            &:first-child::after {
+                content: "Enter a valid name!";
+            }
+
+            &:nth-child(2)::after {
+                content: "Enter a valid email!";
+            }
+
+
+            &.invalid {
+
+                &:focus-within>.placeholder,
+                input:not(:placeholder-shown)+.placeholder {
+                    opacity: 1;
+                    color: #c1121f;
+                    transform: translateY(-27px);
+                }
+
+                .placeholder {
+                    color: #c1121f;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+
+                input {
+                    border-bottom: 2px solid #c1121f;
+                    opacity: 1;
+                    position: relative;
+
+                    &:focus {
+                        border: 2px solid #c1121f;
+                    }
+                }
+            }
         }
 
         label:nth-child(2) {
@@ -1017,11 +1068,19 @@ header {
                 border-radius: 3px;
             }
         }
+
+        button {
+            &:disabled {
+                cursor: progress;
+                opacity: 0.5;
+            }
+        }
     }
 
     label:focus-within>.placeholder,
     input:not(:placeholder-shown)+.placeholder {
         opacity: 1;
+        color: $accent-color-dark;
         transform: translateY(-27px);
     }
 
