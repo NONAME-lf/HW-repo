@@ -80,7 +80,7 @@ document.addEventListener("scroll", (e) => {
       togglePagerClass(document.getElementById("contact-pager"));
       break;
     default:
-      togglePagerClass(document.getElementById("hero-pager"));
+      togglePagerClass(document.getElementById("contact-pager"));
       break;
   }
 });
@@ -124,4 +124,109 @@ function togglePagerClass(element) {
   const parent = element.parentElement;
   document.querySelector(".active").classList.remove("active");
   parent.classList.add("active");
+}
+
+async function getLatestNews() {
+  const response = await fetch(
+    "http://127.0.0.1:5500/exam-2/assets/json/news.json"
+  );
+  const data = await response.json();
+
+  showLatestNews(data);
+}
+
+function showLatestNews(news) {
+  let markup = "";
+  news.forEach((element) => {
+    markup += `<li class="card-news">
+        <div class="img-wrap">
+           <img src="${element.img}" alt="News image">
+        </div>
+        <div class="content">
+            <h4>${element.topic}</h4>
+            <p>${element.detailed}</p>
+        </div>
+        <div class="author-profile">
+            <div class="img-wrap">
+              <img src="${element.author.photo}" alt="Author image">
+            </div>
+            <div class="info">
+              <span class="author-name">${element.author.name}</span>
+              <span class="news-date">${element.author.date}</span>
+            </div>
+        </div>
+    </li>`;
+  });
+  document.getElementById("news-slider").innerHTML = markup;
+  // LightSlider
+  $(document).ready(function () {
+    const slider = $("#news-slider").lightSlider({
+      item: 3,
+      loop: true,
+      slideMove: 1,
+      controls: false,
+      auto: true,
+      pause: 4000,
+      slideMargin: 30,
+      freeMove: true,
+      pauseOnHover: true,
+    });
+    $("#prev-arrow").click(function (e) {
+      e.preventDefault();
+      slider.goToPrevSlide();
+    });
+    $("#next-arrow").click(function (e) {
+      e.preventDefault();
+      slider.goToNextSlide();
+    });
+  });
+}
+
+document.addEventListener("load", getLatestNews());
+
+lightGallery(document.getElementById("lightgallery"), {
+  plugins: [lgZoom, lgThumbnail],
+  licenseKey: "0000-0000-000-0000",
+  speed: 500,
+  height: "500px",
+  width: "500px",
+});
+
+const mapLink = document.getElementById("load-map-link");
+mapLink.onclick = function (e) {
+  e.preventDefault();
+  const link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("href", "assets/js/map-master/leaflet.css");
+  document.head.append(link);
+
+  const script = document.createElement("script");
+  script.src = "assets/js/map-master/leaflet.js";
+  script.onload = initMap;
+  document.body.append(script);
+};
+
+function initMap() {
+  mapLink.remove();
+  // https://tile.openstreetmap.org/{z}/{x}/{y}.png
+  const map = L.map("map").setView(
+    [40.657398972846416, -73.89017185450878],
+    13
+  );
+  const myIcon = L.icon({
+    iconUrl: "http://127.0.0.1:5500/exam-2/assets/img/marker.svg",
+    iconSize: [106, 106],
+  });
+  L.tileLayer(
+    "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+    {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+    }
+  ).addTo(map);
+  L.marker([40.67959842315331, -73.90396068726848], {
+    icon: myIcon,
+  })
+    .addTo(map)
+    .bindPopup("<b>Monticello</b> -<br> Our trade center.");
 }
