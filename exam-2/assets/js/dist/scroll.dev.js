@@ -4,6 +4,7 @@
 document.addEventListener("scroll", function (e) {
   var hero = document.querySelector(".hero-section");
   var header = document.querySelector("header");
+  var mobilePanel = document.querySelector(".mobile-menu-panel");
   var headerBg = document.querySelector(".header-background");
   var windowScroll = window.scrollY;
   var heroHeight = hero.clientHeight;
@@ -12,7 +13,14 @@ document.addEventListener("scroll", function (e) {
   var galleryHeight = document.querySelector(".gallery").clientHeight + latestNewsHeight;
   var contactHeight = document.querySelector(".contact").clientHeight + galleryHeight; // Move header proportional to scroll up to 0y
 
-  if (windowScroll <= 41) header.style.top = "".concat(41 - windowScroll, "px");else header.style.top = "0px"; // Blur header if scroll is proportionaly close to the hero section content
+  if (windowScroll <= 41) {
+    header.style.top = "".concat(41 - windowScroll, "px");
+    mobilePanel.style.top = "".concat(121 - windowScroll, "px"); // 121 is initial top value for the mobile panel
+  } else {
+    header.style.top = "0px";
+    mobilePanel.style.top = "".concat(121 - 41, "px"); // 121 is initial top value for the mobile panel
+  } // Blur header if scroll is proportionaly close to the hero section content
+
 
   if (windowScroll > heroHeight * 0.1) {
     header.classList.add("blur");

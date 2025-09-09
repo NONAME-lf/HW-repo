@@ -36,3 +36,23 @@ lightGallery(document.getElementById("lightgallery"), {
   height: "500px",
   width: "500px"
 });
+
+var toggleMenu = function toggleMenu() {
+  return document.body.classList.toggle("is-active");
+};
+
+var toggleBurger = function toggleBurger() {
+  document.querySelectorAll(".hamburger").forEach(function (btn) {
+    return btn.classList.toggle("is-active");
+  });
+  toggleMenu();
+};
+
+window.addEventListener("resize", function (event) {
+  if (event.target.outerWidth > 1122 && document.body.classList.contains("is-active")) {
+    document.body.classList.remove("is-active");
+    document.querySelectorAll(".hamburger").forEach(function (btn) {
+      return btn.classList.remove("is-active");
+    });
+  }
+});

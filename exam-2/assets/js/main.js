@@ -33,3 +33,23 @@ lightGallery(document.getElementById("lightgallery"), {
   height: "500px",
   width: "500px",
 });
+
+const toggleMenu = () => document.body.classList.toggle("is-active");
+const toggleBurger = () => {
+  document
+    .querySelectorAll(".hamburger")
+    .forEach((btn) => btn.classList.toggle("is-active"));
+  toggleMenu();
+};
+
+window.addEventListener("resize", function (event) {
+  if (
+    event.target.outerWidth > 1122 &&
+    document.body.classList.contains("is-active")
+  ) {
+    document.body.classList.remove("is-active");
+    document
+      .querySelectorAll(".hamburger")
+      .forEach((btn) => btn.classList.remove("is-active"));
+  }
+});

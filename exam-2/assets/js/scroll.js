@@ -2,6 +2,7 @@
 document.addEventListener("scroll", (e) => {
   const hero = document.querySelector(".hero-section");
   const header = document.querySelector("header");
+  const mobilePanel = document.querySelector(".mobile-menu-panel");
   const headerBg = document.querySelector(".header-background");
   const windowScroll = window.scrollY;
   const heroHeight = hero.clientHeight;
@@ -15,8 +16,13 @@ document.addEventListener("scroll", (e) => {
     document.querySelector(".contact").clientHeight + galleryHeight;
 
   // Move header proportional to scroll up to 0y
-  if (windowScroll <= 41) header.style.top = `${41 - windowScroll}px`;
-  else header.style.top = `0px`;
+  if (windowScroll <= 41) {
+    header.style.top = `${41 - windowScroll}px`;
+    mobilePanel.style.top = `${121 - windowScroll}px`; // 121 is initial top value for the mobile panel
+  } else {
+    header.style.top = `0px`;
+    mobilePanel.style.top = `${121 - 41}px`; // 121 is initial top value for the mobile panel
+  }
 
   // Blur header if scroll is proportionaly close to the hero section content
   if (windowScroll > heroHeight * 0.1) {
