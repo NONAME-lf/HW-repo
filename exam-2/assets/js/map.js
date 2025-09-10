@@ -20,7 +20,7 @@ function initMap() {
     13
   );
   const myIcon = L.icon({
-    iconUrl: "http://127.0.0.1:5500/exam-2/assets/img/marker.svg",
+    iconUrl: "https://noname-lf.github.io/HW-repo/exam-2/assets/img/marker.svg",
     iconSize: [106, 106],
   });
   L.tileLayer(

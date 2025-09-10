@@ -45,3 +45,5 @@ window.addEventListener("resize", function (event) {
       .forEach((btn) => btn.classList.remove("is-active"));
   }
 });
+
+const lazyLoadInstance = new LazyLoad();

@@ -49,3 +49,4 @@ window.addEventListener("resize", function (event) {
     });
   }
 });
+var lazyLoadInstance = new LazyLoad();

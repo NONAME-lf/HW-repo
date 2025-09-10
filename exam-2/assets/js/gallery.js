@@ -16,7 +16,6 @@ document
   });
 let i = 0;
 document.querySelectorAll(".lg-thumb-item").forEach((element) => {
-  console.log([element.children[0]]);
   element.children[0].dataset.src = dataSrc[i++];
   element.children[0].classList.add("lazy");
 });

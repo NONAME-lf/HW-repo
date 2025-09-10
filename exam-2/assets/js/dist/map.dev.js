@@ -19,7 +19,7 @@ function initMap() {
 
   var map = L.map("map").setView([40.657398972846416, -73.89017185450878], 13);
   var myIcon = L.icon({
-    iconUrl: "http://127.0.0.1:5500/exam-2/assets/img/marker.svg",
+    iconUrl: "https://noname-lf.github.io/HW-repo/exam-2/assets/img/marker.svg",
     iconSize: [106, 106]
   });
   L.tileLayer("https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png", {

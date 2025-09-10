@@ -32,66 +32,66 @@ function showLatestNews(news) {
     </li>`;
   });
   document.getElementById("news-slider").innerHTML = markup;
+
+  // JQUERY LightSlider
+  $(document).ready(function () {
+    const slider = $("#news-slider").lightSlider({
+      item: 3,
+      loop: true,
+      slideMove: 1,
+      controls: false,
+      auto: true,
+      pause: 4000,
+      slideMargin: 30,
+      freeMove: true,
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            item: 2,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            item: 1,
+          },
+        },
+      ],
+      // prevent lightslider of not showing next images due to lazy loading interfering
+      onSliderLoad: function (el) {
+        const showActiveSlides = function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.src = entry.target.dataset.src;
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        const imageWidth = el.find("li").outerWidth() + "px";
+
+        const observer = new window.IntersectionObserver(showActiveSlides, {
+          root: el.parent()[0],
+          rootMargin: "0px " + imageWidth + " 0px " + imageWidth,
+        });
+
+        el.find("li img").each(function () {
+          observer.observe(this);
+        });
+      },
+    });
+
+    $("#prev-arrow").click(function (e) {
+      e.preventDefault();
+      slider.goToPrevSlide();
+    });
+    $("#next-arrow").click(function (e) {
+      e.preventDefault();
+      slider.goToNextSlide();
+    });
+  });
 }
 
-// LightSlider
-$(document).ready(function () {
-  const slider = $("#news-slider").lightSlider({
-    item: 3,
-    loop: true,
-    slideMove: 1,
-    controls: false,
-    auto: true,
-    pause: 4000,
-    slideMargin: 30,
-    freeMove: true,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          item: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          item: 1,
-        },
-      },
-    ],
-    // prevent lightslider of not showing next images due to lazy loading interfering
-    onSliderLoad: function (el) {
-      var showActiveSlides = function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.src = entry.target.dataset.src;
-            observer.unobserve(entry.target);
-          }
-        });
-      };
-
-      var imageWidth = el.find("li").outerWidth() + "px";
-
-      var observer = new window.IntersectionObserver(showActiveSlides, {
-        root: el.parent()[0],
-        rootMargin: "0px " + imageWidth + " 0px " + imageWidth,
-      });
-
-      el.find("li img").each(function () {
-        observer.observe(this);
-      });
-    },
-  });
-
-  $("#prev-arrow").click(function (e) {
-    e.preventDefault();
-    slider.goToPrevSlide();
-  });
-  $("#next-arrow").click(function (e) {
-    e.preventDefault();
-    slider.goToNextSlide();
-  });
-  const lazyLoadInstance = new LazyLoad();
-});
 document.addEventListener("load", getLatestNews());
