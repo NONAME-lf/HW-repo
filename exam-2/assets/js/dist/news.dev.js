@@ -29,7 +29,7 @@ function getLatestNews() {
 function showLatestNews(news) {
   var markup = "";
   news.forEach(function (element) {
-    markup += "<li class=\"card-news\">\n        <div class=\"img-wrap\">\n           <img src=\"".concat(element.img, "\" alt=\"News image\">\n        </div>\n        <div class=\"content\">\n            <h4>").concat(element.topic, "</h4>\n            <p>").concat(element.detailed, "</p>\n        </div>\n        <div class=\"author-profile\">\n            <div class=\"img-wrap\">\n              <img src=\"").concat(element.author.photo, "\" alt=\"Author image\">\n            </div>\n            <div class=\"info\">\n              <span class=\"author-name\">").concat(element.author.name, "</span>\n              <span class=\"news-date\">").concat(element.author.date, "</span>\n            </div>\n        </div>\n    </li>");
+    markup += "<li class=\"card-news\">\n    <a href=\"#\" target=\"_blank\">\n        <div class=\"img-wrap\">\n           <img src=\"".concat(element.img, "\" alt=\"News image\">\n        </div>\n        <div class=\"content\">\n            <h4>").concat(element.topic, "</h4>\n            <p>").concat(element.detailed, "</p>\n        </div>\n        <div class=\"author-profile\">\n            <div class=\"img-wrap\">\n              <img src=\"").concat(element.author.photo, "\" alt=\"Author image\">\n            </div>\n            <div class=\"info\">\n              <span class=\"author-name\">").concat(element.author.name, "</span>\n              <span class=\"news-date\">").concat(element.author.date, "</span>\n            </div>\n        </div>\n    </a>\n    </li>");
   });
   document.getElementById("news-slider").innerHTML = markup; // LightSlider
 }
@@ -40,7 +40,7 @@ $(document).ready(function () {
     loop: true,
     slideMove: 1,
     controls: false,
-    // auto: true,
+    auto: true,
     pause: 4000,
     slideMargin: 30,
     freeMove: true,

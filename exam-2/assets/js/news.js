@@ -11,6 +11,7 @@ function showLatestNews(news) {
   let markup = "";
   news.forEach((element) => {
     markup += `<li class="card-news">
+    <a href="#" target="_blank">
         <div class="img-wrap">
            <img src="${element.img}" alt="News image">
         </div>
@@ -27,6 +28,7 @@ function showLatestNews(news) {
               <span class="news-date">${element.author.date}</span>
             </div>
         </div>
+    </a>
     </li>`;
   });
   document.getElementById("news-slider").innerHTML = markup;
@@ -39,7 +41,7 @@ $(document).ready(function () {
     loop: true,
     slideMove: 1,
     controls: false,
-    // auto: true,
+    auto: true,
     pause: 4000,
     slideMargin: 30,
     freeMove: true,
