@@ -1,6 +1,6 @@
 async function getLatestNews() {
   const response = await fetch(
-    "http://127.0.0.1:5500/exam-2/assets/json/news.json"
+    "https://noname-lf.github.io/HW-repo/exam-2/assets/json/news.json"
   );
   const data = await response.json();
 

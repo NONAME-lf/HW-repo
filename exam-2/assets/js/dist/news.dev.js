@@ -7,7 +7,7 @@ function getLatestNews() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(fetch("http://127.0.0.1:5500/exam-2/assets/json/news.json"));
+          return regeneratorRuntime.awrap(fetch("https://noname-lf.github.io/HW-repo/exam-2/assets/json/news.json"));
 
         case 2:
           response = _context.sent;
