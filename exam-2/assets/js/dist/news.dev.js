@@ -29,10 +29,11 @@ function getLatestNews() {
 function showLatestNews(news) {
   var markup = "";
   news.forEach(function (element) {
-    markup += "<li class=\"card-news\">\n    <a href=\"#\" target=\"_blank\">\n        <div class=\"img-wrap\">\n           <img src=\"".concat(element.img, "\" alt=\"News image\">\n        </div>\n        <div class=\"content\">\n            <h4>").concat(element.topic, "</h4>\n            <p>").concat(element.detailed, "</p>\n        </div>\n        <div class=\"author-profile\">\n            <div class=\"img-wrap\">\n              <img src=\"").concat(element.author.photo, "\" alt=\"Author image\">\n            </div>\n            <div class=\"info\">\n              <span class=\"author-name\">").concat(element.author.name, "</span>\n              <span class=\"news-date\">").concat(element.author.date, "</span>\n            </div>\n        </div>\n    </a>\n    </li>");
+    markup += "<li class=\"card-news\">\n    <a href=\"#\" target=\"_blank\">\n        <div class=\"img-wrap\">\n           <img class=\"lazy\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=\" data-src=\"".concat(element.img, "\" alt=\"News image\">\n        </div>\n        <div class=\"content\">\n            <h4>").concat(element.topic, "</h4>\n            <p>").concat(element.detailed, "</p>\n        </div>\n        <div class=\"author-profile\">\n            <div class=\"img-wrap\">\n              <img class=\"lazy\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=\" data-src=\"").concat(element.author.photo, "\" alt=\"Author image\">\n            </div>\n            <div class=\"info\">\n              <span class=\"author-name\">").concat(element.author.name, "</span>\n              <span class=\"news-date\">").concat(element.author.date, "</span>\n            </div>\n        </div>\n    </a>\n    </li>");
   });
-  document.getElementById("news-slider").innerHTML = markup; // LightSlider
-}
+  document.getElementById("news-slider").innerHTML = markup;
+} // LightSlider
+
 
 $(document).ready(function () {
   var slider = $("#news-slider").lightSlider({
@@ -55,7 +56,27 @@ $(document).ready(function () {
       settings: {
         item: 1
       }
-    }]
+    }],
+    // prevent lightslider of not showing next images due to lazy loading interfering
+    onSliderLoad: function onSliderLoad(el) {
+      var showActiveSlides = function showActiveSlides(entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      var imageWidth = el.find("li").outerWidth() + "px";
+      var observer = new window.IntersectionObserver(showActiveSlides, {
+        root: el.parent()[0],
+        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+      });
+      el.find("li img").each(function () {
+        observer.observe(this);
+      });
+    }
   });
   $("#prev-arrow").click(function (e) {
     e.preventDefault();
@@ -65,5 +86,6 @@ $(document).ready(function () {
     e.preventDefault();
     slider.goToNextSlide();
   });
+  var lazyLoadInstance = new LazyLoad();
 });
 document.addEventListener("load", getLatestNews());

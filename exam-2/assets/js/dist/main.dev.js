@@ -29,13 +29,6 @@ function jumpingArrow() {
 }
 
 jumpingArrow();
-lightGallery(document.getElementById("lightgallery"), {
-  plugins: [lgZoom, lgThumbnail],
-  licenseKey: "0000-0000-000-0000",
-  speed: 500,
-  height: "500px",
-  width: "500px"
-});
 
 var toggleMenu = function toggleMenu() {
   return document.body.classList.toggle("is-active");

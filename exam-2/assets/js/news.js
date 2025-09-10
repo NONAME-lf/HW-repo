@@ -13,7 +13,7 @@ function showLatestNews(news) {
     markup += `<li class="card-news">
     <a href="#" target="_blank">
         <div class="img-wrap">
-           <img src="${element.img}" alt="News image">
+           <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="${element.img}" alt="News image">
         </div>
         <div class="content">
             <h4>${element.topic}</h4>
@@ -21,7 +21,7 @@ function showLatestNews(news) {
         </div>
         <div class="author-profile">
             <div class="img-wrap">
-              <img src="${element.author.photo}" alt="Author image">
+              <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="${element.author.photo}" alt="Author image">
             </div>
             <div class="info">
               <span class="author-name">${element.author.name}</span>
@@ -32,9 +32,9 @@ function showLatestNews(news) {
     </li>`;
   });
   document.getElementById("news-slider").innerHTML = markup;
-  // LightSlider
 }
 
+// LightSlider
 $(document).ready(function () {
   const slider = $("#news-slider").lightSlider({
     item: 3,
@@ -60,6 +60,28 @@ $(document).ready(function () {
         },
       },
     ],
+    // prevent lightslider of not showing next images due to lazy loading interfering
+    onSliderLoad: function (el) {
+      var showActiveSlides = function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      var imageWidth = el.find("li").outerWidth() + "px";
+
+      var observer = new window.IntersectionObserver(showActiveSlides, {
+        root: el.parent()[0],
+        rootMargin: "0px " + imageWidth + " 0px " + imageWidth,
+      });
+
+      el.find("li img").each(function () {
+        observer.observe(this);
+      });
+    },
   });
 
   $("#prev-arrow").click(function (e) {
@@ -70,5 +92,6 @@ $(document).ready(function () {
     e.preventDefault();
     slider.goToNextSlide();
   });
+  const lazyLoadInstance = new LazyLoad();
 });
 document.addEventListener("load", getLatestNews());

@@ -507,7 +507,7 @@ header {
 
 // <== HERO SECTION ==>
 .hero-section {
-    background: url('../img/hero-background.png') no-repeat center center/cover;
+    background: url('../img/hero-background-min.png') no-repeat center center/cover;
     height: 100dvh;
     min-height: 500px;
     overflow: hidden;
@@ -859,7 +859,7 @@ header {
 // <== LATEST NEWS SECTION==>
 .latest-news {
     padding: 150px 0 112px 0;
-    background: url('../img/news-bg.png') no-repeat center bottom/cover;
+    background: url('../img/news-bg-min.png') no-repeat center bottom/cover;
     height: 100%;
     min-height: 500px;
 
@@ -1116,7 +1116,7 @@ header {
         max-width: 770px;
         // padding: 5.625% 3.75% 2.625% 3.752%;
         padding: 90px 3.75% 42px 3.752%;
-        background: #fff url('../img/contact-bg.png') no-repeat center center/cover;
+        background: #fff url('../img/contact-bg-min.png') no-repeat center center/cover;
         position: relative;
         bottom: -400px;
         z-index: 400;
@@ -1461,7 +1461,7 @@ footer {
     // padding: 203px 367px 292px 372px;
     // padding: 12.688% 22.938% 18.25% 23.25%;
     padding: 203px 22.938% 292px 23.25%;
-    background: url('../img/footer-bg.png') no-repeat center center/cover;
+    background: url('../img/footer-bg-min.png') no-repeat center center/cover;
 
     .container {
         display: -webkit-box;
