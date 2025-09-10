@@ -54,6 +54,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 1.875rem;
+    min-width: 320px;
 }
 
 .page-wrapper {
@@ -945,7 +946,8 @@ header {
     .container {
         align-content: center;
         max-width: 770px;
-        padding: 90px 60px 42px 60.04px;
+        // padding: 5.625% 3.75% 2.625% 3.752%;
+        padding: 90px 3.75% 42px 3.752%;
         background: #fff url('../img/contact-bg.png') no-repeat center center/cover;
         position: relative;
         bottom: -400px;
@@ -1190,6 +1192,8 @@ header {
             transform: translate(-50%, 50%);
             z-index: 2;
             transition: all .2s ease;
+            width: 100%;
+            text-align: center;
         }
 
         &:hover {
@@ -1289,18 +1293,24 @@ footer {
     top: 121px;
     left: 0;
     width: 100%;
-    background-color: rgba($color: $text-color, $alpha: 0.5);
+    height: 100dvh;
+    background-color: rgba($color: $text-color, $alpha: 0.6);
     z-index: 999;
-    overflow-y: auto;
     transition: transform .2s ease-in-out;
     transition: opacity .2s ease-in-out;
     transform: translateX(-100%);
     // visibility: hidden;
     opacity: 0;
     width: 35%;
-    height: 100dvh;
+
+    .mobile-menu {
+        height: 100%;
+    }
 
     .nav-list {
+        overflow-y: auto;
+        height: 100%;
+        max-height: 60dvh;
         text-align: center;
 
         li {
@@ -1371,6 +1381,10 @@ footer {
             }
         }
     }
+
+    .soc-list {
+        display: none;
+    }
 }
 
 
@@ -1385,6 +1399,10 @@ footer {
 
 
 .is-active {
+
+    header {
+        background: rgba($color: $text-color, $alpha: 0.6);
+    }
 
     .overlay {
         visibility: visible;
@@ -1421,6 +1439,10 @@ footer {
             display: none;
         }
 
+        .container .soc-list {
+            margin-left: 35%;
+        }
+
         li:last-child {
             vertical-align: bottom;
         }
@@ -1428,6 +1450,9 @@ footer {
         .hamburger {
             display: inline-block;
             max-height: 34px;
+            align-self: center;
+            position: relative;
+            top: 2px;
         }
     }
 
@@ -1515,10 +1540,74 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    .hero-section {
+        .container hgroup {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+        }
+
+    }
+
+    .pager {
+        display: none;
+    }
+
+    .container {
+        .soc-list {
+            display: none;
+        }
+    }
+
+    .mobile-menu-panel {
+        .soc-list {
+            margin: 0;
+            display: block;
+            justify-self: center;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            li {
+                margin: 0;
+            }
+        }
+    }
+
+    .what-we-do {
+        .half-grid {
+            grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+
+            .content {
+                hgroup {
+                    h3 {
+                        font-size: 2.75rem;
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                    }
+                }
+
+            }
+
+            .img-wrap {
+                display: none;
+            }
+        }
+    }
+
     .latest-news {
         .card-news>.img-wrap {
             margin-bottom: 20px;
         }
+
 
         .content {
             h4 {
@@ -1536,6 +1625,14 @@ footer {
         }
     }
 
+    .gallery #lightgallery {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+
+        li:first-child {
+            grid-column: auto;
+            grid-row: auto;
+        }
+    }
 
     .contact {
         .body {
@@ -1545,6 +1642,25 @@ footer {
         .btn {
             max-width: unset;
             width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .mobile-menu-panel {
+        .soc-list {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .latest-news {
+        .content h4 {
+            font-size: 1.25rem;
+        }
+
+        .lSPager.lSpg>li {
+            margin: 0 15px;
         }
     }
 }
