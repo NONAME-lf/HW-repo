@@ -55,4 +55,5 @@ form.onsubmit = async function (e) {
 
 // 7951225413:AAGje8ftyap6ekTfHz-K-oQGLZMyQ9g7__o
 // -4965449774
-// https://api.telegram.org/bot7951225413:AAGje8ftyap6ekTfHz-K-oQGLZMyQ9g7__o/sendMessage?chat_id=-4965449774&parse_mode=html&text=<b>Enter</b> <i>your</i> text here
+// https://api.telegram.org/bot7951225413:AAGje8ftyap6ekTfHz-K-oQGLZMyQ9g7__o/sendMessage?chat_id=-4965449774&parse_mode=html&text=<b>Enter</b><i>your</i>texthere
+// https://api.telegram.org/bot8202774602:AAGofHbE5hYajzr4sWllJBEFVNFUlrI0gBU/sendMessage?chat_id=-4965449774&text=Enteryourtexthere

@@ -1462,6 +1462,7 @@ footer {
     // padding: 12.688% 22.938% 18.25% 23.25%;
     padding: 203px 22.938% 292px 23.25%;
     background: url('../img/footer-bg-min.png') no-repeat center center/cover;
+    min-height: 549px;
 
     .container {
         display: -webkit-box;
@@ -1802,6 +1803,22 @@ footer {
     }
 }
 
+@media screen and (max-width: 900px) {
+    footer {
+        padding: 203px 2.938% 292px 4.25%;
+
+        .container {
+            bottom: -214px;
+            top: unset;
+            flex-wrap: wrap;
+
+            &>a {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hero-section {
         .container hgroup {
@@ -1824,9 +1841,11 @@ footer {
         display: none;
     }
 
-    .container {
-        .soc-list {
-            display: none;
+    header {
+        .container {
+            .soc-list {
+                display: none;
+            }
         }
     }
 
@@ -1941,6 +1960,15 @@ footer {
                     font-size: 1rem;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 491px) {
+    footer {
+        .container {
+            justify-content: center;
+            ;
         }
     }
 }
