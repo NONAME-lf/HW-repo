@@ -1,10 +1,10 @@
 // Event listener for fixed(sticky) header
 document.addEventListener("scroll", (e) => {
-  const hero = document.querySelector(".hero-section");
-  const header = document.querySelector("header");
   const mobilePanel = document.querySelector(".mobile-menu-panel");
-  const headerBg = document.querySelector(".header-background");
   const windowScroll = window.scrollY;
+  const header = document.querySelector("header");
+  const hero = document.querySelector(".hero-section");
+  const headerBg = document.querySelector(".header-background");
   const heroHeight = hero.clientHeight;
   const whatWeDoHeight =
     document.querySelector(".what-we-do").clientHeight + heroHeight;
@@ -16,13 +16,7 @@ document.addEventListener("scroll", (e) => {
     document.querySelector(".contact").clientHeight + galleryHeight;
 
   // Move header proportional to scroll up to 0y
-  if (windowScroll <= 41) {
-    header.style.top = `${41 - windowScroll}px`;
-    mobilePanel.style.top = `${121 - windowScroll}px`; // 121 is initial top value for the mobile panel
-  } else {
-    header.style.top = `0px`;
-    mobilePanel.style.top = `${121 - 41}px`; // 121 is initial top value for the mobile panel
-  }
+  headerTop(windowScroll, header, mobilePanel);
 
   // Blur header if scroll is proportionaly close to the hero section content
   if (windowScroll > heroHeight * 0.1) {
@@ -64,6 +58,27 @@ document.addEventListener("scroll", (e) => {
       break;
   }
 });
+
+// Change the top position if user resized <= 768px @media breakpoint
+window.addEventListener("resize", () => {
+  const mobilePanel = document.querySelector(".mobile-menu-panel");
+  const windowScroll = window.scrollY;
+  const header = document.querySelector("header");
+  headerTop(windowScroll, header, mobilePanel);
+});
+
+function headerTop(windowScroll, header, mobilePanel) {
+  if (windowScroll <= 41 && windowScroll >= 0) {
+    header.style.top = `${41 - windowScroll}px`;
+    mobilePanel.style.top =
+      window.innerWidth > 768
+        ? `${121 - windowScroll}px`
+        : `${101 - windowScroll}px`; // 121 is initial top value for the mobile panel
+  } else {
+    header.style.top = `0px`;
+    mobilePanel.style.top = window.innerWidth > 768 ? `80px` : `60px`; // 121px - 41px
+  }
+}
 
 function togglePagerClass(element) {
   const parent = element.parentElement;

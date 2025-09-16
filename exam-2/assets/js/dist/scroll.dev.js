@@ -2,25 +2,18 @@
 
 // Event listener for fixed(sticky) header
 document.addEventListener("scroll", function (e) {
-  var hero = document.querySelector(".hero-section");
-  var header = document.querySelector("header");
   var mobilePanel = document.querySelector(".mobile-menu-panel");
-  var headerBg = document.querySelector(".header-background");
   var windowScroll = window.scrollY;
+  var header = document.querySelector("header");
+  var hero = document.querySelector(".hero-section");
+  var headerBg = document.querySelector(".header-background");
   var heroHeight = hero.clientHeight;
   var whatWeDoHeight = document.querySelector(".what-we-do").clientHeight + heroHeight;
   var latestNewsHeight = document.querySelector(".latest-news").clientHeight + whatWeDoHeight;
   var galleryHeight = document.querySelector(".gallery").clientHeight + latestNewsHeight;
   var contactHeight = document.querySelector(".contact").clientHeight + galleryHeight; // Move header proportional to scroll up to 0y
 
-  if (windowScroll <= 41) {
-    header.style.top = "".concat(41 - windowScroll, "px");
-    mobilePanel.style.top = "".concat(121 - windowScroll, "px"); // 121 is initial top value for the mobile panel
-  } else {
-    header.style.top = "0px";
-    mobilePanel.style.top = "".concat(121 - 41, "px"); // 121 is initial top value for the mobile panel
-  } // Blur header if scroll is proportionaly close to the hero section content
-
+  headerTop(windowScroll, header, mobilePanel); // Blur header if scroll is proportionaly close to the hero section content
 
   if (windowScroll > heroHeight * 0.1) {
     header.classList.add("blur");
@@ -63,7 +56,24 @@ document.addEventListener("scroll", function (e) {
       togglePagerClass(document.getElementById("contact-link"));
       break;
   }
+}); // Change the top position if user resized <= 768px @media breakpoint
+
+window.addEventListener("resize", function () {
+  var mobilePanel = document.querySelector(".mobile-menu-panel");
+  var windowScroll = window.scrollY;
+  var header = document.querySelector("header");
+  headerTop(windowScroll, header, mobilePanel);
 });
+
+function headerTop(windowScroll, header, mobilePanel) {
+  if (windowScroll <= 41 && windowScroll >= 0) {
+    header.style.top = "".concat(41 - windowScroll, "px");
+    mobilePanel.style.top = window.innerWidth > 768 ? "".concat(121 - windowScroll, "px") : "".concat(101 - windowScroll, "px"); // 121 is initial top value for the mobile panel
+  } else {
+    header.style.top = "0px";
+    mobilePanel.style.top = window.innerWidth > 768 ? "80px" : "60px"; // 121px - 41px
+  }
+}
 
 function togglePagerClass(element) {
   var parent = element.parentElement;

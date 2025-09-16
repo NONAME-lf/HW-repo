@@ -1810,6 +1810,7 @@ footer {
         .container {
             bottom: -214px;
             top: unset;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
 
             &>a {
@@ -1820,6 +1821,20 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        height: 60px;
+
+        .container {
+            .img-wrap {
+                max-width: 200px;
+            }
+
+            .soc-list {
+                top: 0;
+            }
+        }
+    }
+
     .hero-section {
         .container hgroup {
             h2 {
@@ -1967,6 +1982,8 @@ footer {
 @media screen and (max-width: 491px) {
     footer {
         .container {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
             justify-content: center;
             ;
         }
