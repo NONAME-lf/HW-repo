@@ -9,9 +9,11 @@ document.addEventListener("scroll", function (e) {
   var headerBg = document.querySelector(".header-background");
   var heroHeight = hero.clientHeight;
   var whatWeDoHeight = document.querySelector(".what-we-do").clientHeight + heroHeight;
-  var latestNewsHeight = document.querySelector(".latest-news").clientHeight + whatWeDoHeight;
-  var galleryHeight = document.querySelector(".gallery").clientHeight + latestNewsHeight;
-  var contactHeight = document.querySelector(".contact").clientHeight + galleryHeight; // Move header proportional to scroll up to 0y
+  var latestNewsHeight = document.querySelector(".latest-news").clientHeight + whatWeDoHeight - 0.5; // For some reason anchor scroll scrolls 0.5px less than supposed to
+
+  var galleryHeight = document.querySelector(".gallery").clientHeight + latestNewsHeight - 0.5; // So we need to retract them from height for it to work properly
+
+  var contactHeight = document.querySelector(".contact").clientHeight + galleryHeight - 0.5; // Move header proportional to scroll up to 0y
 
   headerTop(windowScroll, header, mobilePanel); // Blur header if scroll is proportionaly close to the hero section content
 
@@ -46,7 +48,7 @@ document.addEventListener("scroll", function (e) {
       togglePagerClass(document.getElementById("gallery-link"));
       break;
 
-    case windowScroll >= galleryHeight && windowScroll < contactHeight:
+    case windowScroll >= galleryHeight && windowScroll <= contactHeight:
       togglePagerClass(document.getElementById("contact-pager"));
       togglePagerClass(document.getElementById("contact-link"));
       break;
