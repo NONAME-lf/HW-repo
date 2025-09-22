@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/style.min.css">
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header></header>
+        <main>
+            <div class="container">
+                <!-- Task 1 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 1
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Реалізуй клас, що описує коло. У класі повинні бути такі компоненти:
+                        <ol>
+                            <li>поле, що зберігає радіус кола;</li>
+                            <li>get-властивість, яке повертає радіус кола;</li>
+                            <li>set-властивість, що встановлює радіус кола;</li>
+                            <li>get-властивість, яке повертає діаметр кола;</li>
+                            <li>метод, що обчислює площу кола;</li>
+                            <li>метод, що обчислює довжину кола.</li>
+                        </ol>
+                        Продемонструй роботу властивостей і методів.
+                        </p>
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" id="task_1_input" class="form-control" placeholder="Circle radius">
+                            </div>
+                            <div class="col-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>Choose calculation</option>
+                                    <option value="1">Get circle radius</option>
+                                    <option value="2">Set circle radius</option>
+                                    <option value="3">Get circle diameter</option>
+                                    <option value="4">Get circle area</option>
+                                    <option value="5">Get circle length</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button"
+                                    onclick="document.getElementById('task_1_output').innerHTML = 
+                                    getCircleInfo(+document.querySelector('.form-select').value, document.querySelector('#task_1_input').valueAsNumber)">Pressme!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_1_output"></output>
+                    </div>
+                </div>
+                <!-- Task 2 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 2
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Реалізуй клас, що описує канцелярський маркер. У класі повинні бути такі компоненти:
+                        <ol>
+                            <li>
+                                поле, яке зберігає колір маркера;
+                            </li>
+                            <li>
+                                поле, яке зберігає кількість чорнил у маркері (у відсотках);
+                            </li>
+                            <li>
+                                метод для вводу (приймає рядок і виводить текст відповідним кольором; текст виводиться
+                                доти,
+                                доки в маркері є чорнило; один не пробільний символ — це 0,5 % чорнил у маркері).
+                            </li>
+                            <li>
+                                Реалізуй клас, що описує маркер, який можна перезаправляти. Успадкуй цей клас від
+                                простого
+                                маркера й додай метод для заправки.
+                            </li>
+                        </ol>
+                        Продемонструй роботу написаних методів.
+                        </p>
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" id="task_1_input" class="form-control" placeholder="Circle radius">
+                            </div>
+                            <div class="col-3">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected disabled>Choose calculation</option>
+                                    <option value="1">Get circle radius</option>
+                                    <option value="2">Set circle radius</option>
+                                    <option value="3">Get circle diameter</option>
+                                    <option value="4">Get circle area</option>
+                                    <option value="5">Get circle length</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-success" type="button"
+                                    onclick="document.getElementById('task_1_output').innerHTML = 
+                                    getCircleInfo(+document.querySelector('.form-select').value, document.querySelector('#task_1_input').valueAsNumber)">Pressme!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_1_output"></output>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
