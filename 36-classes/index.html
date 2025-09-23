@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Template</title>
+    <title>HW 36 - Classes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/style.min.css">
@@ -50,7 +50,8 @@
                             <div class="col-2">
                                 <button class="btn btn-success" type="button"
                                     onclick="document.getElementById('task_1_output').innerHTML = 
-                                    getCircleInfo(+document.querySelector('.form-select').value, document.querySelector('#task_1_input').valueAsNumber)">Pressme!</button>
+                                    getCircleInfo(+document.querySelector('.form-select').value, document.querySelector('#task_1_input').valueAsNumber)">Press
+                                    me!</button>
                             </div>
                         </div>
                     </div>
@@ -88,27 +89,44 @@
                         </p>
                         <div class="row">
                             <div class="col-4">
-                                <input type="text" id="task_1_input" class="form-control" placeholder="Circle radius">
-                            </div>
-                            <div class="col-3">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected disabled>Choose calculation</option>
-                                    <option value="1">Get circle radius</option>
-                                    <option value="2">Set circle radius</option>
-                                    <option value="3">Get circle diameter</option>
-                                    <option value="4">Get circle area</option>
-                                    <option value="5">Get circle length</option>
-                                </select>
+                                <input type="text" id="task_2_input" class="form-control"
+                                    placeholder="Enter a phrase to color">
                             </div>
                             <div class="col-2">
-                                <button class="btn btn-success" type="button"
-                                    onclick="document.getElementById('task_1_output').innerHTML = 
-                                    getCircleInfo(+document.querySelector('.form-select').value, document.querySelector('#task_1_input').valueAsNumber)">Pressme!</button>
+                                <button id="task_2_button1" class="btn btn-success" type="button">Press me!</button>
+                            </div>
+                            <div class="col-2">
+                                <button id="task_2_button2" class="btn btn-success" type="button">Refill me!</button>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <output id="task_1_output"></output>
+                        <output id="task_2_output"></output>
+                    </div>
+                </div>
+                <!-- Task 3 -->
+                <div class="card mb-3 mt-3">
+                    <div class="card-header">
+                        Task 3
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Реалізуй клас Employee, що описує працівника, і створи масив працівників банку.
+
+                            Реалізуй клас EmpTable для генерації HTML-коду таблиці зі списком працівників банку. Масив
+                            працівників необхідно передавати через конструктор, а отримувати HTML-код за допомогою
+                            методу getHtml ().
+
+                            Створи об’єкт класу EmpTable і виведи на екран результат роботи методу getHtml ().
+                        </p>
+                        <div class="row">
+                            <div class="col-2">
+                                <button id="task_3_button" class="btn btn-success" type="button">Press me!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <output id="task_3_output"></output>
                     </div>
                 </div>
             </div>

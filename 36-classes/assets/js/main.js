@@ -50,6 +50,107 @@ function getCircleInfo(select, input = 0) {
 
 //  Task 2
 class Marker {
-  color;
-  ink;
+  constructor(color, ink) {
+    this.color = color;
+    this.ink = ink;
+  }
+
+  inputMarkerText(text) {
+    document.getElementById("task_2_output").style.color = this.color;
+    let result = "";
+    for (let i = 0; this.ink && i < text.length; i++) {
+      if (text[i] === " ") {
+        result += " ";
+        continue;
+      }
+      result += text[i];
+      this.ink -= 0.5;
+    }
+    if (!this.ink) {
+      result += "<div style='color: black;'>Marker's ink is empty!</div>";
+    }
+    return result;
+  }
 }
+
+class RefillableMarker extends Marker {
+  refill() {
+    this.ink = 100;
+  }
+
+  callRefill() {
+    this.refill();
+    return "Marker's ink has been refilled!";
+  }
+}
+
+window.addEventListener("load", () => {
+  const marker = new RefillableMarker("red", 100);
+  const output = document.getElementById("task_2_output");
+
+  document.getElementById("task_2_button1").addEventListener("click", () => {
+    output.innerHTML = marker.inputMarkerText(
+      document.getElementById("task_2_input").value
+    );
+  });
+
+  document.getElementById("task_2_button2").addEventListener("click", () => {
+    output.style.color = "black";
+    output.innerHTML = marker.callRefill();
+  });
+});
+
+// Task 3
+class Employee {
+  constructor(name, position) {
+    this.name = name;
+    this.position = position;
+  }
+}
+
+class EmpTalbe {
+  constructor(emplArr) {
+    this.emplArr = emplArr;
+  }
+
+  getHtml() {
+    let html = `<table class="table table-striped table-bordered table-hover">
+        <caption>List of employees</caption>
+        <thead class="table-dark">
+            <tr>
+                <th role="button" tabindex="0" scope="col">#</th>
+                <th role="button" tabindex="0" scope="col">Name</th>
+                <th role="button" tabindex="0" scope="col">Position</th>
+            </tr>
+        </thead>
+        <tbody>`;
+    this.emplArr.forEach((employee, index) => {
+      html += `
+       <tr>
+          <th scope="row">${index + 1}</th>
+          <td>${employee.name}</td>
+          <td>${employee.position}</td>
+      </tr>
+      `;
+    });
+    html += `
+        </tbody>
+    </table>
+    `;
+    return html;
+  }
+}
+
+const employees = [
+  new Employee("Bob", "Vibe control"),
+  new Employee("Alice", "HR"),
+  new Employee("Travis", "CEO"),
+  new Employee("Michael", "Product Manager"),
+  new Employee("Trevor", "Quality Controll"),
+];
+
+document.getElementById("task_3_button").addEventListener("click", () => {
+  const emplTable = new EmpTalbe(employees).getHtml();
+
+  document.getElementById("task_3_output").innerHTML = emplTable;
+});
