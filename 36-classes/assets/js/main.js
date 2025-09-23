@@ -19,6 +19,7 @@ class Circle {
 
   caclCircleDiametr() {
     const diametr = this.radius * 2;
+    return diametr;
   }
 
   calcCircleLength() {
@@ -34,7 +35,7 @@ function getCircleInfo(select, input = 0) {
     case 1:
       return circle.getRadius();
     case 2:
-      if (input) return "Enter a number!";
+      if (isNaN(input)) return "Enter a number!";
       circle.setRadius(document.getElementById("task_1_input").value);
       return "Circle radius successfully set!";
     case 3:

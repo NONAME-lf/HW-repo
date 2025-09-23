@@ -48,6 +48,7 @@ function () {
     key: "caclCircleDiametr",
     value: function caclCircleDiametr() {
       var diametr = this.radius * 2;
+      return diametr;
     }
   }, {
     key: "calcCircleLength",
@@ -70,7 +71,7 @@ function getCircleInfo(select) {
       return circle.getRadius();
 
     case 2:
-      if (input) return "Enter a number!";
+      if (isNaN(input)) return "Enter a number!";
       circle.setRadius(document.getElementById("task_1_input").value);
       return "Circle radius successfully set!";
 
